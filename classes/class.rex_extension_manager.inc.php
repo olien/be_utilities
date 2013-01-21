@@ -22,7 +22,7 @@ class rex_extension_manager {
 			$REX['PERM'][] = $extension->getPermission();
 		}
 		
-		if ($extension->hasBackendPage() && $REX['USER'] && $REX['USER']->isAdmin()) {
+		if ($extension->hasBackendPage()) {
 			$REX['ADDON']['be_extensions']['SUBPAGES'][] = array('plugin.' . $extensionName, $extension->getTitle());
 		}
 	
