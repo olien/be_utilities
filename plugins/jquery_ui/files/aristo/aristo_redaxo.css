@@ -1,0 +1,8 @@
+.ui-widget-content { 
+	color: #32353A !important;
+	font-size: 100% !important;
+} 
+
+.ui-widget a:hover {
+	text-decoration: none !important;
+}

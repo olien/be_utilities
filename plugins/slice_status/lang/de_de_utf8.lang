@@ -1,0 +1,12 @@
+# plugin:slice_status de_de
+
+slice_status_description = Fügt einen On/Offline-Schalter für Blöcke (Slices) hinzu.
+toggle_slice_offline = Offline schalten
+toggle_slice_online = Online schalten
+import_msg = Daten von AddOn "slice_onoff" wurden übernommen
+slice_status_ajax_mode = Slices per Ajax umschalten
+slice_status_css_hint = Aussehen der Offline-Slices änderbar in:
+slice_status_menuitem_position = Position im Slice-Menu
+slice_status_left = links
+slice_status_right = rechts
+

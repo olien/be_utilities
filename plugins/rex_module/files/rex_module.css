@@ -1,0 +1,38 @@
+#rex-module input[type="checkbox"],
+#rex-module input[type="radio"],
+#rex-module .margin-fix {
+	position: relative;
+    top: 3px;
+}
+
+#rex-module h2 {
+	font-weight: bold;
+	font-size: 13px;
+	margin-bottom: 1px;
+}
+
+#rex-module h2 span {
+	font-weight: normal;
+	/* font-size: 11px; */
+}
+
+#rex-module .spacer {
+	height: 15px;
+	display: block;
+	clear: both;
+}
+
+#rex-module .spacer.small {
+	height: 6px;
+}
+
+#rex-module ul,
+#rex-module ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#rex-module .markItUpEditor {
+	padding: 7px !important;
+}
+
