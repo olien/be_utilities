@@ -23,10 +23,26 @@ Mitgelieferte PlugIns
 * Rex Module
 * Slice Status
 
+Weitere PlugIns
+---------------
+
+Hier werden (hoffentlich) in Zukunft weitere PlugIns für das AddOn gelistet werden.
+
+Screenshots
+-----------
+
+Übersichtseite: https://www.dropbox.com/s/4i47xxmu8gyokk4/be_extensions.png
+
 PlugIn-Interface
 ----------------
 
-Ein PlugIn wird in seiner eigenen `config.inc.php` über die Klassen `rex_extension` und `rex_extension_manager` eingebunden:
+Der sog. Extension Manager wird automatisch in der `config.inc.php` des AddOn's erzeugt:
+
+```php
+$REX['extension_manager'] = new rex_extension_manager();
+```
+
+Ein PlugIn wird als sog. Extension in seiner eigenen `config.inc.php` erzeugt und dem Extension Manager mitgegeben:
 
 ```php
 // add to extension manager
@@ -34,7 +50,7 @@ $extension = new rex_extension('plugin_name', 'Titel', 'Eine Beschreibung.', '1.
 $REX['extension_manager']->addExtension($extension);
 ```
 
-Und so kann in der `help.inc.php` des PlugIns der Beschreibungstext automatisch angezeigt werden:
+Und so kann z.B. in der `help.inc.php` des PlugIns der Beschreibungstext automatisch angezeigt werden:
 
 ```php
 echo $REX['extension_manager']->getExtension('plugin_name')->getDescription();
@@ -45,3 +61,11 @@ Hinweise
 
 * Getestet mit REDAXO 4.4.1
 * AddOn-Ordner lautet: `be_extensions`
+
+Ein herzliches Dankeschön geht an:
+----------------------------------
+
+* [gharlan](https://github.com/gharlan) für die Inspiration und den Code ;) für das `cat_art_name_sync` PlugIns
+* [jdlx](https://github.com/jdlx) für das `rex_codemirror` Plugin, dass nun vorerst hier beigelegt wurde
+* [joachimdoerr](https://github.com/joachimdoerr) für das 'jquery_ui' Plugin, das ebenfalls vorerst hier (in einer modifizierten Version) beigelegt wurde
+
