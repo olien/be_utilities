@@ -18,12 +18,16 @@ class rex_frontend_link {
 				break;
 		}
 
-		$posBeginList = strpos($content, 'rex_logout');
-		$posEndList = strpos($content, '</ul>', $posBeginList);
-
-		$content = substr($content, 0, $posEndList) . '<li><a href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndList);
-
-		return $content;
+		$posBeginUL = strpos($content, 'rex_logout');
+		
+		if ($posBeginUL === false) {
+			return $content;
+		} else {
+			$posEndUL = strpos($content, '</ul>', $posBeginUL);	
+			$content = substr($content, 0, $posEndUL) . '<li><a href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
+			
+			return $content;
+		}
 	}
 
 	static function getFrontendUrl() {
