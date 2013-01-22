@@ -11,7 +11,9 @@ if ($REX['REDAXO']) {
 	require_once($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/favicon/classes/class.rex_favicon.inc.php');
 
 	// in rex version > 4.4.1 there is already a favicon ;)
-	if ($REX['VERSION'] <= 4 && $REX['SUBVERSION'] <= 4 && $REX['MINORVERSION'] <= 1) {
+	$thisRexVersion = $REX['VERSION']. '.' . $REX['SUBVERSION'] . '.' . $REX['MINORVERSION'];
+
+	if (version_compare($thisRexVersion, '4.4.1', '<=')) {
 		// add favicon to page header
 		rex_register_extension('PAGE_HEADER', 'rex_favicon::appendToPageHeader');
 	}
