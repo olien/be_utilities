@@ -1,16 +1,17 @@
 <?php
+
+if ($REX['REDAXO']) {
+
 // --- DYN
 $REX['ADDON']['frontend_link']['link_text_mode'] = "default";
 $REX['ADDON']['frontend_link']['link_text'] = "";
 // --- /DYN
 
-if ($REX['REDAXO']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/frontend_link/lang/');
 
-	// add to extension manager
-	$extension = new rex_extension('frontend_link', 'Frontend Link', $I18N->msg('frontend_link_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
-	$REX['extension_manager']->addExtension($extension);
+	/// register plugin
+	rex_plugin_factory::registerPlugin('be_extensions', 'frontend_link', 'Frontend Link', $I18N->msg('frontend_link_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
 
 	// lang support
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/frontend_link/lang/');

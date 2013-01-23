@@ -13,9 +13,8 @@ if ($REX['REDAXO']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/jquery_ui/lang/');
 
-	// add to extension manager
-	$extension = new rex_extension('jquery_ui', 'jQuery UI', $I18N->msg('jquery_ui_description'), '1.3.0', 'Joachim Doerr', 'forum.redaxo.de', false);
-	$REX['extension_manager']->addExtension($extension);
+	// register plugin
+	rex_plugin_factory::registerPlugin('be_extensions', 'jquery_ui', 'jQuery UI', $I18N->msg('jquery_ui_description'), '1.3.0', 'Joachim Doerr', 'forum.redaxo.de', false);
 
 	//	include jquery ui
 	$arrJQueryUi['path'] = '../files/addons/be_extensions/plugins/jquery_ui';

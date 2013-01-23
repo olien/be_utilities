@@ -10,50 +10,68 @@ Features
 
 * Übersichtsseite mit allen installierten PlugIns
 * Jedes PlugIn kann eine eigene Seite haben
-* Einfaches Interface zum Andocken der PlugIns an das Addon
-
-Mitgelieferte PlugIns
----------------------
-
-* Cat-Art Name Sync
-* Favicon
-* Frontend Link
-* jQuery UI
-* Rex Codemirror
-* Rex Module
-* Slice Status
-
-Weitere PlugIns
----------------
-
-Hier werden (hoffentlich) in Zukunft weitere PlugIns für das AddOn gelistet werden.
+* Vereinfachte Einbindung der PlugIns möglich
 
 Screenshots
 -----------
 
 Übersichtseite: https://www.dropbox.com/s/4i47xxmu8gyokk4/be_extensions.png
 
-PlugIn-Interface
-----------------
+Mitgelieferte PlugIns
+---------------------
 
-Der sog. Extension Manager wird automatisch in der `config.inc.php` des AddOn's erzeugt:
+* `Cat-Art Name Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
+* `Favicon` Ein Favicon fürs Backend.
+* `Frontend Link` Fügt ins Menü rechts oben einen Link zum Frontend hinzu.
+* `jQuery UI` jQuery UI inkl. jQuery Cookie Plugin und Aristo Skin.
+* `Rex Codemirror` Syntax Highlighting für TextAreas (Templates, Module, etc.).
+* `Rex Module` Einige Tools damit Module auf globale Variablen, Methoden und Styles zugreifen können.
+* `Slice Status` Fügt einen On/Offline-Schalter für Blöcke (Slices) hinzu.
+
+Weitere PlugIns
+---------------
+
+Hier werden in Zukunft weitere PlugIns für das AddOn gelistet werden.
+
+Vereinfachte Einbindung eines PlugIns
+-------------------------------------
+
+Ein PlugIn kann ganz einfach in der `config.inc.php` des PlugIns eingebunden werden:
 
 ```php
-$REX['extension_manager'] = new rex_extension_manager();
+// register plugin
+rex_plugin_factory::registerPlugin('be_extensions', 'my_plugin', 'Mein Plugin', 'Eine kurze Beschreibung.', '1.0.0', 'Der Autor', 'forum.redaxo.de', /* $hasBackendPage = */ true, /* $permission = '' */);
 ```
 
-Ein PlugIn wird als sog. Extension in seiner eigenen `config.inc.php` erzeugt und dem Extension Manager mitgegeben:
+In der `help.inc.php` des PlugIns lässt sich der Beschreibungstext so angezeigen:
 
 ```php
-// add to extension manager
-$extension = new rex_extension('plugin_name', 'Titel', 'Eine Beschreibung.', '1.0.0', 'Autor', 'forum.redaxo.de', /* $hasBackendPage = */ true);
-$REX['extension_manager']->addExtension($extension);
+// show plugin description
+echo rex_plugin_factory::getPluginDescription('be_extensions', 'my_plugin');
 ```
 
-Und so kann z.B. in der `help.inc.php` des PlugIns der Beschreibungstext automatisch angezeigt werden:
+Klassische Einbindung eines PlugIns
+-----------------------------------
+
+Alternativ lässt sich ein PlugIn auch wie gewohnt einbinden:
 
 ```php
-echo $REX['extension_manager']->getExtension('plugin_name')->getDescription();
+// register plugin
+$REX['ADDON']['page']['my_plugin'] = 'Mein Plugin';
+$REX['ADDON']['version']['my_plugin'] = '1.0.0';
+$REX['ADDON']['author']['my_plugin'] = 'Der Autor';
+$REX['ADDON']['supportpage']['my_plugin'] = 'forum.redaxo.de';
+$REX['ADDON']['description']['my_plugin'] = 'Eine kurze Beschreibung.';
+
+// add sub page (if needed)
+$REX['ADDON']['be_extensions']['SUBPAGES'][] = array('plugin.my_plugin', $REX['ADDON']['page']['my_plugin']);
+```
+
+Und hier die Anzeige des Beschreibungstext für die `help.inc.php`:
+
+```php
+// show plugin description
+echo OOPlugin::getProperty('be_extensions', 'my_plugin', 'description');
 ```
 
 Hinweise
@@ -66,6 +84,6 @@ Ein herzliches Dankeschön geht an:
 ----------------------------------
 
 * [gharlan](https://github.com/gharlan) für die Inspiration und den Code ;) für das `cat_art_name_sync` PlugIns
-* [jdlx](https://github.com/jdlx) für das `rex_codemirror` Plugin, dass nun vorerst hier beigelegt wurde
-* [joachimdoerr](https://github.com/joachimdoerr) für das 'jquery_ui' Plugin, das ebenfalls vorerst hier (in einer modifizierten Version) beigelegt wurde
+* [jdlx](https://github.com/jdlx) für das `rex_codemirror` Plugin, dass nun hier beigelegt wurde
+* [joachimdoerr](https://github.com/joachimdoerr) für das `jquery_ui` Plugin, das hier (in einer modifizierten Version) beigelegt wurde
 

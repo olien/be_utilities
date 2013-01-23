@@ -1,4 +1,7 @@
 <?php
+
+if ($REX['REDAXO']) {
+
 // --- DYN
 $REX['ADDON']['rex_module']['include_template_id'] = 4;
 $REX['ADDON']['rex_module']['pre_include_file'][0] = "";
@@ -6,13 +9,11 @@ $REX['ADDON']['rex_module']['pre_include_file'][1] = "";
 $REX['ADDON']['rex_module']['pre_include_file'][2] = "";
 // --- /DYN
 
-if ($REX['REDAXO']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_module/lang/');
 
-	// add to extension manager
-	$extension = new rex_extension('rex_module', 'Rex Module', $I18N->msg('rex_module_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
-	$REX['extension_manager']->addExtension($extension);
+	// register plugin
+	rex_plugin_factory::registerPlugin('be_extensions', 'rex_module', 'Rex Module', $I18N->msg('rex_module_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
 
 	// include php files 
 	for ($i = 0; $i < count($REX['ADDON']['rex_module']['pre_include_file']); $i++) {

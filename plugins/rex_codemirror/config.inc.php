@@ -14,9 +14,8 @@ if ($REX['REDAXO']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_codemirror/lang/');
 
-	// add to extension manager
-	$extension = new rex_extension($mypage, 'Rex Codemirror', $I18N->msg('rex_codemirror_description'), '1.0.8', 'jdlx', 'forum.redaxo.de', false);
-	$REX['extension_manager']->addExtension($extension);	
+	// register plugin
+	rex_plugin_factory::registerPlugin('be_extensions', $mypage, 'Rex Codemirror', $I18N->msg('rex_codemirror_description'), '1.0.8', 'jdlx', 'forum.redaxo.de', false);	
 
 	// SETTINGS
 	////////////////////////////////////////////////////////////////////////////////

@@ -1,4 +1,5 @@
 <?php
-echo $REX['extension_manager']->getExtension('rex_module')->getDescription();
+// show plugin description
+echo rex_plugin_factory::getPluginDescription('be_extensions', 'rex_module');
 ?>
 <br />

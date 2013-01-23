@@ -1,4 +1,5 @@
 <?php
-echo $REX['extension_manager']->getExtension('slice_status')->getDescription();
+// show plugin description
+echo rex_plugin_factory::getPluginDescription('be_extensions', 'slice_status');
 ?>
 <br />

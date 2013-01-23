@@ -1,4 +1,5 @@
 <?php
-echo $REX['extension_manager']->getExtension('favicon')->getDescription();
+// show plugin description
+echo rex_plugin_factory::getPluginDescription('be_extensions', 'favicon');
 ?>
 <br />

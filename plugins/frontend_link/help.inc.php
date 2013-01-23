@@ -1,4 +1,5 @@
 <?php
-echo $REX['extension_manager']->getExtension('frontend_link')->getDescription();
+// show plugin description
+echo rex_plugin_factory::getPluginDescription('be_extensions', 'frontend_link');
 ?>
 <br />

@@ -3,9 +3,8 @@ if ($REX['REDAXO']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/favicon/lang/');
 
-	// add to extension manager
-	$extension = new rex_extension('favicon', 'Favicon', $I18N->msg('favicon_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', false);
-	$REX['extension_manager']->addExtension($extension);
+	// register plugin
+	rex_plugin_factory::registerPlugin('be_extensions', 'favicon', 'Favicon', $I18N->msg('favicon_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', false);
 
 	// includes
 	require_once($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/favicon/classes/class.rex_favicon.inc.php');

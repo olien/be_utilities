@@ -1,19 +1,20 @@
 <?php
-// --- DYN
-$REX['ADDON']['slice_status']['ajax_mode'] = "1";
-$REX['ADDON']['slice_status']['menuitem_position'] = "right";
-// --- /DYN
 
 // includes
 require_once($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/slice_status/classes/class.rex_slice_status.inc.php');
 
 if ($REX['REDAXO']) {
+
+// --- DYN
+$REX['ADDON']['slice_status']['ajax_mode'] = "1";
+$REX['ADDON']['slice_status']['menuitem_position'] = "right";
+// --- /DYN
+
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/slice_status/lang/');
 
-	// add to extension manager
-	$extension = new rex_extension('slice_status', 'Slice Status', $I18N->msg('slice_status_description'), '1.2.5', 'WebDevOne', 'forum.redaxo.de', true);
-	$REX['extension_manager']->addExtension($extension);
+	// register plugin
+	rex_plugin_factory::registerPlugin('be_extensions', 'slice_status', 'Slice Status', $I18N->msg('slice_status_description'), '1.2.5', 'WebDevOne', 'forum.redaxo.de', true);
 
 	// update slice status in db if necessary
 	if (rex_get('function') == 'updateslicestatus') {
