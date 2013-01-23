@@ -27,7 +27,7 @@ table.rex-table th {
 }
 
 table.rex-table td p {
-	margin-top: 8px;
+	margin-top: 6px;
 	color: grey;
 }
 
