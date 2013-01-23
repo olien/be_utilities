@@ -3,6 +3,7 @@ if ($REX['REDAXO']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/lang/');
 
+	// register addon
 	$REX['ADDON']['rxid']['be_extensions'] = '1045';
 	$REX['ADDON']['name']['be_extensions'] = $I18N->msg('be_extensions');
 	$REX['ADDON']['perm']['be_extensions'] = 'be_extensions[]';
