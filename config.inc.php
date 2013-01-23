@@ -14,7 +14,7 @@ if ($REX['REDAXO']) {
 
 	// sub pages
 	$REX['ADDON']['be_extensions']['SUBPAGES'] = array();
-	$REX['ADDON']['be_extensions']['SUBPAGES'][] = array('' , $I18N->msg('plugin_overview'));
+	$REX['ADDON']['be_extensions']['SUBPAGES'][] = array('' , $I18N->msg('be_extensions_overview'));
 
 	// includes
 	include($REX['INCLUDE_PATH'] . '/addons/be_extensions/classes/class.rex_plugin_factory.inc.php');

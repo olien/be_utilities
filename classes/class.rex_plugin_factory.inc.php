@@ -47,11 +47,9 @@ class rex_plugin_factory {
 		}
 	}
 
-	static function printPluginList($addon) {
-		global $I18N;
-		
+	static function printPluginList($addon, $headline) {
 		echo '<table class="rex-table">';
-		echo '<tr><th>' . $I18N->msg('plugin_overview') . '</th></tr>';
+		echo '<tr><th>' . $headline . '</th></tr>';
 
 		$plugins = self::getAvailablePlugins($addon);
 

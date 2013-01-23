@@ -1,6 +1,5 @@
-plugin_overview = Übersicht
-
 be_extensions = Backend Erweiterungen
+be_extensions_overview = Übersicht
 
 be_extensions_configfile_update = Konfiguration wurde aktualisiert!
 be_extensions_configfile_nosave = Konfiguration konnte nicht gespeichert werden!
