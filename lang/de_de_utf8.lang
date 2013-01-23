@@ -8,3 +8,5 @@ be_extensions_configfile_nowrite = Konfigurationsdatei "{0}" ist nicht beschreib
 
 be_extensions_settings = Einstellungen
 be_extensions_settings_save = Einstellungen speichern
+
+be_extensions_help = Dieses REDAXO-AddOn dient als Container für Plugins die das Backend erweitern/ergänzen.

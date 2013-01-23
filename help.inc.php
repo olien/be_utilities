@@ -1,2 +1,2 @@
-Dieses REDAXO-AddOn dient als Container für Plugins die das Backend erweitern/ergänzen.
+<?php echo $I18N->msg('be_extensions_help');?>
 <br />
