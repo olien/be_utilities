@@ -21,7 +21,7 @@ class rex_plugin_factory {
 		for ($i = 0; $i < count($REX['ADDON'][$addon]['SUBPAGES']); $i++) {
 			if ($REX['ADDON'][$addon]['SUBPAGES'][$i][0] == 'plugin.' . $plugin) {
 				$hasSubpage = true;
-				continue;
+				break;
 			}
 		}
 
