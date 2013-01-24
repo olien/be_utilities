@@ -1,22 +1,13 @@
 <?php
 $include_template_id = trim(rex_request('include_template_id', 'int'));
-$pre_include_file1 = trim(rex_request('pre_include_file1', 'string'));
-$pre_include_file2 = trim(rex_request('pre_include_file2', 'string'));
-$pre_include_file3 = trim(rex_request('pre_include_file3', 'string'));
 
 $config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_module/config.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
 	$REX['ADDON']['rex_module']['include_template_id'] = $include_template_id;
-	$REX['ADDON']['rex_module']['pre_include_file'][0] = $pre_include_file1;
-	$REX['ADDON']['rex_module']['pre_include_file'][1] = $pre_include_file2;
-	$REX['ADDON']['rex_module']['pre_include_file'][2] = $pre_include_file3;
 
 	$content = '
 		$REX[\'ADDON\'][\'rex_module\'][\'include_template_id\'] = ' . $include_template_id . ';
-		$REX[\'ADDON\'][\'rex_module\'][\'pre_include_file\'][0] = "' . $pre_include_file1 . '";
-		$REX[\'ADDON\'][\'rex_module\'][\'pre_include_file\'][1] = "' . $pre_include_file2 . '";
-		$REX[\'ADDON\'][\'rex_module\'][\'pre_include_file\'][2] = "' . $pre_include_file3 . '";
 	';
 
 	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
@@ -60,13 +51,6 @@ $selectTemplates->setSelected($REX['ADDON']['rex_module']['include_template_id']
 					<input type="hidden" name="subpage" value="plugin.rex_module" />
 					<input type="hidden" name="func" value="update" />
 
-					<div class="rex-form-row rex-form-element-v1">
-						<p class="rex-form-col-a rex-form-read">
-							<label for="css_file"><?php echo $I18N->msg('rex_module_css_file'); ?></label>
-							<span class="rex-form-read" id="css_file"><code>/files/addons/be_extensions/plugins/rex_module/rex_module.css</code></span>
-						</p>
-					</div>
-
 					<div class="rex-form-row">
 						<p class="rex-form-col-a rex-form-select">
 							<label for="include_template_id"><?php echo $I18N->msg('rex_module_template'); ?></label>
@@ -75,23 +59,9 @@ $selectTemplates->setSelected($REX['ADDON']['rex_module']['include_template_id']
 					</div>
 
 					<div class="rex-form-row rex-form-element-v1">
-						<p class="rex-form-text">
-							<label for="pre_include_file1"><?php echo $I18N->msg('rex_module_pre_include', '1'); ?></label>
-							<input class="rex-form-text" type="text" id="pre_include_file1" name="pre_include_file1" value="<?php echo $REX['ADDON']['rex_module']['pre_include_file'][0]; ?>" />
-						</p>
-					</div>
-
-					<div class="rex-form-row rex-form-element-v1">
-						<p class="rex-form-text">
-							<label for="pre_include_file2"><?php echo $I18N->msg('rex_module_pre_include', '2'); ?></label>
-							<input class="rex-form-text" type="text" id="pre_include_file2" name="pre_include_file2" value="<?php echo $REX['ADDON']['rex_module']['pre_include_file'][1]; ?>" />
-						</p>
-					</div>
-
-					<div class="rex-form-row rex-form-element-v1">
-						<p class="rex-form-text">
-							<label for="pre_include_file3"><?php echo $I18N->msg('rex_module_pre_include', '3'); ?></label>
-							<input class="rex-form-text" type="text" id="pre_include_file3" name="pre_include_file3" value="<?php echo $REX['ADDON']['rex_module']['pre_include_file'][2]; ?>" />
+						<p class="rex-form-col-a rex-form-read">
+							<label for="css_file"><?php echo $I18N->msg('rex_module_css_file'); ?></label>
+							<span class="rex-form-read" id="css_file"><code>/files/addons/be_extensions/plugins/rex_module/rex_module.css</code></span>
 						</p>
 					</div>
 
