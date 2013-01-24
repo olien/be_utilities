@@ -1,4 +1,4 @@
-Backend Erweiterungen [be_extensions] Addon für REDAXO 4
+Backend Erweiterungen [be_extensions] AddOn für REDAXO 4
 ========================================================
 
 Dieses REDAXO-AddOn dient als Container für PlugIns die das Backend erweitern/ergänzen.
@@ -43,7 +43,7 @@ Ein PlugIn kann ganz einfach in der `config.inc.php` des PlugIns eingebunden wer
 rex_plugin_factory::registerPlugin('be_extensions', 'my_plugin', 'Mein Plugin', 'Eine kurze Beschreibung.', '1.0.0', 'Der Autor', 'forum.redaxo.de', /* $hasBackendPage = */ true, /* $permission = '' */);
 ```
 
-In der `help.inc.php` des PlugIns lässt sich der Beschreibungstext so angezeigen:
+In der `help.inc.php` des PlugIns lässt sich der Beschreibungstext so anzeigen:
 
 ```php
 // show plugin description
@@ -84,6 +84,6 @@ Ein herzliches Dankeschön geht an:
 ----------------------------------
 
 * [gharlan](https://github.com/gharlan) für die Inspiration und den Code ;) für das `cat_art_name_sync` PlugIns
-* [jdlx](https://github.com/jdlx) für das `rex_codemirror` Plugin, dass nun hier beigelegt wurde
-* [joachimdoerr](https://github.com/joachimdoerr) für das `jquery_ui` Plugin, das hier (in einer modifizierten Version) beigelegt wurde
+* [jdlx](https://github.com/jdlx) für das `rex_codemirror` PlugIn, dass für den Anfang hier beigelegt wurde
+* [joachimdoerr](https://github.com/joachimdoerr) für das `jquery_ui` PlugIn, das ebenfalls für den Anfang hier (in einer modifizierten Version) beigelegt wurde
 
