@@ -2,7 +2,7 @@
 $link_text_mode = trim(rex_request('link_text_mode', 'string'));
 $link_text = trim(rex_request('link_text', 'string'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/frontend_link/config.inc.php';
+$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/frontend_link/settings.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
 	$REX['ADDON']['frontend_link']['link_text_mode'] = $link_text_mode;

@@ -1,16 +1,13 @@
 <?php
-
 if ($REX['REDAXO']) {
-
-// --- DYN
-$REX['ADDON']['rex_module']['include_template_id'] = 0;
-// --- /DYN
-
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_module/lang/');
 
 	// register plugin
 	rex_plugin_factory::registerPlugin('be_extensions', 'rex_module', 'Rex Module', $I18N->msg('rex_module_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
+
+	// includes
+	include($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_module/settings.inc.php');
 
 	// include template
 	if ($REX['ADDON']['rex_module']['include_template_id'] > 0) {

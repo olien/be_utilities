@@ -2,7 +2,7 @@
 $ajax_mode = trim(rex_request('ajax_mode', 'string'));
 $menuitem_position = trim(rex_request('menuitem_position', 'string'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/slice_status/config.inc.php';
+$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/slice_status/settings.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
 	$REX['ADDON']['slice_status']['ajax_mode'] = $ajax_mode;

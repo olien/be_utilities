@@ -1,7 +1,7 @@
 <?php
 $include_template_id = trim(rex_request('include_template_id', 'int'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_module/config.inc.php';
+$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_module/settings.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
 	$REX['ADDON']['rex_module']['include_template_id'] = $include_template_id;

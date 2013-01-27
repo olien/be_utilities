@@ -2,7 +2,7 @@
 $cat_to_art = trim(rex_request('cat_to_art', 'int'));
 $art_to_cat = trim(rex_request('art_to_cat', 'int'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/cat_art_name_sync/config.inc.php';
+$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/cat_art_name_sync/settings.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
 	$REX['ADDON']['cat_art_name_sync']['sync_cat_to_art'] = $cat_to_art;
