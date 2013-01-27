@@ -10,7 +10,7 @@ if ($REX['REDAXO']) {
 	include($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_module/settings.inc.php');
 
 	// include template
-	if ($REX['ADDON']['rex_module']['include_template_id'] > 0) {
+	if (!$REX['SETUP'] && $REX['ADDON']['rex_module']['include_template_id'] > 0) {
 		rex_register_extension('ADDONS_INCLUDED','includeGlobalTemplate');
 
 		function includeGlobalTemplate() { 
