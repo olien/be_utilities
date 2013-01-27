@@ -7,6 +7,27 @@
  * @package redaxo 4.3.x/4.4.x
  */
 
+/* ----------------------------------------------------------------------- */
+
+/* avoids flickering of normal textareas */
+.rex-form-module-editmode #eingabe,
+.rex-form-module-editmode #ausgabe,
+.rex-form-template-editmode #content,
+#previewaction,
+#presaveaction,
+#postsaveaction,
+.codemirror {
+	visibility: hidden;
+}
+
+/* avoids flickering of ctype/category sections of template page */
+#rex-form-template-ctype,
+#rex-form-template-categories {
+	display: none;
+}
+
+/* ----------------------------------------------------------------------- */
+
 .CodeMirror {
   /*border-radius: 2px;*/
   /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); */

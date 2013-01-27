@@ -199,6 +199,21 @@ if ($REX['REDAXO']) {
 	})(jQuery); // END NOCONFLICT ONLOAD ///////////////////////////////////////////
 
 	</script>
+	<script type="text/javascript">
+	////////////////////////////////////////////////////////////////////////////////
+	// by RexDude! see also rex_codemirror_backend.css for styles set for this flicker fix
+	////////////////////////////////////////////////////////////////////////////////
+	jQuery(function($) {
+		if($("#active").is(":not(:checked)")) {
+			// hiding gets done in template.inc.php
+		} else {
+			$("#rex-form-template-ctype").show();
+			$("#rex-form-template-categories").show();
+		}
+
+	});
+	////////////////////////////////////////////////////////////////////////////////
+	</script>
 	<!-- end rex_codemirror -->
 	';
 
