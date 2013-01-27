@@ -6,7 +6,7 @@ $subpage = rex_request('subpage', 'string', '');
 include($REX['INCLUDE_PATH'] . '/layout/top.php');
 
 // title and menu
-rex_title($I18N->msg('be_extensions') . ' <span style="font-size:14px; color:silver;">' . $REX['ADDON']['version'][$addon] . '</span>', $REX['ADDON'][$addon]['SUBPAGES']);
+rex_title($I18N->msg('be_extensions') . ' <span class="version">' . $REX['ADDON']['version'][$addon] . '</span>', $REX['ADDON'][$addon]['SUBPAGES']);
 
 if ($subpage != '') {
 	// include plugin page

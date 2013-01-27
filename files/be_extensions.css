@@ -1,15 +1,6 @@
-table.rex-table th {
-	font-size: 1.2em;
-}
-
-table.rex-table td p {
-	margin-top: 6px;
-	color: grey;
-}
-
-table.rex-table td a,
-table.rex-table td span {
-	font-weight: bold;
+div#rex-title div.rex-title-row span.version {
+	font-size: 14px; 
+	color: silver;
 }
 
 div#rex-navi-page ul {
@@ -26,4 +17,18 @@ div#rex-navi-page ul li {
 
 div#rex-navi-page ul li a {
     white-space: nowrap;
+}
+
+table.rex-table th {
+	font-size: 1.2em;
+}
+
+table.rex-table td p {
+	margin-top: 6px;
+	color: grey;
+}
+
+table.rex-table td a,
+table.rex-table td span {
+	font-weight: bold;
 }
