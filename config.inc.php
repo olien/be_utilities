@@ -18,5 +18,9 @@ if ($REX['REDAXO']) {
 
 	// includes
 	include($REX['INCLUDE_PATH'] . '/addons/be_extensions/classes/class.rex_plugin_factory.inc.php');
+	include($REX['INCLUDE_PATH'] . '/addons/be_extensions/classes/class.rex_be_extensions.inc.php');
+
+	// add css/js files to page header
+	rex_register_extension('PAGE_HEADER', 'rex_be_extensions::appendToPageHeader');
 }
 ?>

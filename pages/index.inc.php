@@ -20,35 +20,3 @@ if ($subpage != '') {
 // layout bottom
 include($REX['INCLUDE_PATH'] . '/layout/bottom.php');
 ?>
-
-<style type="text/css">
-table.rex-table th {
-	font-size: 1.2em;
-}
-
-table.rex-table td p {
-	margin-top: 6px;
-	color: grey;
-}
-
-table.rex-table td a,
-table.rex-table td span {
-	font-weight: bold;
-}
-
-div#rex-navi-page ul {
-    line-height: 1.7;
-	padding-top: 9px;
-	padding-bottom: 8px;
-	overflow: hidden;
-}
-
-div#rex-navi-page ul li {
-	display: inline-block;
-    float: left;
-}
-
-div#rex-navi-page ul li a {
-    white-space: nowrap;
-}
-</style>
