@@ -24,7 +24,7 @@ class rex_frontend_link {
 			return $content;
 		} else {
 			$posEndUL = strpos($content, '</ul>', $posBeginUL);	
-			$content = substr($content, 0, $posEndUL) . '<li><a style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';" href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
+			$content = substr($content, 0, $posEndUL) . '<li><a id="frontend-link" style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';" href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
 			
 			return $content;
 		}

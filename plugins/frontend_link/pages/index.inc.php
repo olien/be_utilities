@@ -104,6 +104,9 @@ jQuery(document).ready( function() {
 		},
 		onBeforeShow: function () {
 			jQuery(this).ColorPickerSetColor(this.value);
+		},
+		onChange: function (hsb, hex, rgb) {
+			jQuery('#frontend-link').css('color', '#' + hex);
 		}
 	})
 	.bind('keyup', function(){
