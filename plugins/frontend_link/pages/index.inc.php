@@ -2,6 +2,7 @@
 $link_text_mode = trim(rex_request('link_text_mode', 'string'));
 $link_text = trim(rex_request('link_text', 'string'));
 $color = trim(rex_request('color', 'string'));
+$colorize_link = trim(rex_request('colorize_link', 'string'));
 
 $config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/frontend_link/settings.inc.php';
 
@@ -9,11 +10,13 @@ if (rex_request('func', 'string') == 'update') {
 	$REX['ADDON']['frontend_link']['link_text_mode'] = $link_text_mode;
 	$REX['ADDON']['frontend_link']['link_text'] = $link_text;
 	$REX['ADDON']['frontend_link']['color'] = $color;
+	$REX['ADDON']['frontend_link']['colorize_link'] = $colorize_link;
 
 	$content = '
 		$REX[\'ADDON\'][\'frontend_link\'][\'link_text_mode\'] = "' . $link_text_mode . '";
 		$REX[\'ADDON\'][\'frontend_link\'][\'link_text\'] = "' . $link_text . '";
 		$REX[\'ADDON\'][\'frontend_link\'][\'color\'] = "' . $color . '";
+		$REX[\'ADDON\'][\'frontend_link\'][\'colorize_link\'] = "' . $colorize_link . '";
 	';
 
 	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
@@ -61,8 +64,15 @@ if (!is_writable($config_file)) {
 
 					<div class="rex-form-row rex-form-element-v1">
 						<p class="rex-form-text">
-							<label for="color">Farbe</label>
+							<label for="color"><?php echo $I18N->msg('frontend_link_color'); ?></label>
 							<input class="rex-form-text" type="text" id="color" name="color" value="<?php echo $REX['ADDON']['frontend_link']['color']; ?>" />
+						</p>
+					</div>
+
+					<div class="rex-form-row rex-form-element-v1">
+						<p class="rex-form-checkbox">
+							<label for="colorize_link"><?php echo $I18N->msg('frontend_link_colorize'); ?></label>
+							<input type="checkbox" name="colorize_link" id="colorize_link" value="1" <?php if ($REX['ADDON']['frontend_link']['colorize_link'] == 1) { echo 'checked="checked"'; } ?>>
 						</p>
 					</div>
 

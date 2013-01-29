@@ -23,8 +23,13 @@ class rex_frontend_link {
 		if ($posBeginUL === false) {
 			return $content;
 		} else {
+			if ($REX['ADDON']['frontend_link']['colorize_link'] == '1') {
+				$style = ' style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';"';
+			} else {
+				$style = '';
+			}
 			$posEndUL = strpos($content, '</ul>', $posBeginUL);	
-			$content = substr($content, 0, $posEndUL) . '<li><a id="frontend-link" style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';" href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
+			$content = substr($content, 0, $posEndUL) . '<li><a id="frontend-link"' . $style . ' href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
 			
 			return $content;
 		}

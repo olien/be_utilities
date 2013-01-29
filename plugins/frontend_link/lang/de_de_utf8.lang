@@ -2,3 +2,5 @@ frontend_link_description = Fügt ins Menü rechts oben einen Link zum Frontend 
 frontend_link_goto_website = zur Website
 frontend_link_link_text = Link-Text
 frontend_link_userdef_link_text = Benutzerdefiniert
+frontend_link_color = Farbe
+frontend_link_colorize = Link einfärben
