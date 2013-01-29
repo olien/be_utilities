@@ -12,4 +12,7 @@ if ($REX['REDAXO']) {
 
 	// add link to backend
 	rex_register_extension('OUTPUT_FILTER', 'rex_frontend_link::addFrontendLink');
+
+	// add css/js files to page header
+	rex_register_extension('PAGE_HEADER', 'rex_frontend_link::appendToPageHeader');
 }

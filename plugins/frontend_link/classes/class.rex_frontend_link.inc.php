@@ -24,7 +24,7 @@ class rex_frontend_link {
 			return $content;
 		} else {
 			$posEndUL = strpos($content, '</ul>', $posBeginUL);	
-			$content = substr($content, 0, $posEndUL) . '<li><a href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
+			$content = substr($content, 0, $posEndUL) . '<li><a style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';" href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
 			
 			return $content;
 		}
@@ -37,5 +37,14 @@ class rex_frontend_link {
 		$frontendUrl = rtrim($frontendUrl, '/');
 
 		return $frontendUrl;
+	}
+
+	static function appendToPageHeader($params) {
+		$insert = '<!-- BEGIN frontend_link -->' . PHP_EOL;
+		$insert .= '<link rel="stylesheet" type="text/css" href="../files/addons/be_extensions/plugins/frontend_link/colorpicker.css" />' . PHP_EOL;
+		$insert .= '<script type="text/javascript" src="../files/addons/be_extensions/plugins/frontend_link/colorpicker.js"></script>' . PHP_EOL;
+		$insert .= '<!-- END frontend_link -->';
+	
+		return $params['subject'] . PHP_EOL . $insert;
 	}
 }
