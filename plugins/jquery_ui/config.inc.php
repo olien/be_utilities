@@ -16,8 +16,15 @@ if ($REX['REDAXO']) {
 	// register plugin
 	rex_plugin_factory::registerPlugin('be_utilities', 'jquery_ui', 'jQuery UI', $I18N->msg('jquery_ui_description'), '1.3.0', 'Joachim Doerr', 'forum.redaxo.de', false);
 
+	// check for media addon dir var introduced in REX 4.5
+	if (isset($REX['MEDIA_ADDON_DIR'])) {
+		$mediaAddonDir = $REX['MEDIA_ADDON_DIR'];
+	} else {
+		$mediaAddonDir = 'files/addons';
+	}
+
 	//	include jquery ui
-	$arrJQueryUi['path'] = '../files/addons/be_utilities/plugins/jquery_ui';
+	$arrJQueryUi['path'] = '../' . $mediaAddonDir . '/be_utilities/plugins/jquery_ui';
 	unset($arrJQueryUi['insert']);
 
 	$arrJQueryUi['insert'] = <<<EOD

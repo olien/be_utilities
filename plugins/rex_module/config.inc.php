@@ -26,10 +26,17 @@ if ($REX['REDAXO']) {
 		}
 	}
 
+	// check for media addon dir var introduced in REX 4.5
+	if (isset($REX['MEDIA_ADDON_DIR'])) {
+		$mediaAddonDir = $REX['MEDIA_ADDON_DIR'];
+	} else {
+		$mediaAddonDir = 'files/addons';
+	}
+
 	// include css
 	$insert = PHP_EOL;
 	$insert .= '<!-- BEGIN rex_module -->' . PHP_EOL;
-	$insert .= '<link rel="stylesheet" type="text/css" href="../files/addons/be_utilities/plugins/rex_module/rex_module.css" />' . PHP_EOL;
+	$insert .= '<link rel="stylesheet" type="text/css" href="../' . $mediaAddonDir . '/be_utilities/plugins/rex_module/rex_module.css" />' . PHP_EOL;
 	$insert .= '<!-- END rex_module -->';
 	
 	rex_register_extension('PAGE_HEADER', create_function('$params', 'return $params[\'subject\'] . \''. $insert . '\';'));

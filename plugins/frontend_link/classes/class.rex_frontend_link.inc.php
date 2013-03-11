@@ -46,10 +46,21 @@ class rex_frontend_link {
 
 	static function appendToPageHeader($params) {
 		$insert = '<!-- BEGIN frontend_link -->' . PHP_EOL;
-		$insert .= '<link rel="stylesheet" type="text/css" href="../files/addons/be_utilities/plugins/frontend_link/colorpicker.css" />' . PHP_EOL;
-		$insert .= '<script type="text/javascript" src="../files/addons/be_utilities/plugins/frontend_link/colorpicker.js"></script>' . PHP_EOL;
+		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/frontend_link/colorpicker.css" />' . PHP_EOL;
+		$insert .= '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/frontend_link/colorpicker.js"></script>' . PHP_EOL;
 		$insert .= '<!-- END frontend_link -->';
 	
 		return $params['subject'] . PHP_EOL . $insert;
+	}
+
+	static function getMediaAddonDir() {
+		global $REX;
+
+		// check for media addon dir var introduced in REX 4.5
+		if (isset($REX['MEDIA_ADDON_DIR'])) {
+			return $REX['MEDIA_ADDON_DIR'];
+		} else {
+			return 'files/addons';
+		}
 	}
 }
