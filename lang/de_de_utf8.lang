@@ -1,11 +1,11 @@
-be_extensions = Backend Erweiterungen
-be_extensions_overview = Übersicht
+be_utilities = Backend Utilities
+be_utilities_overview = Übersicht
 
-be_extensions_configfile_update = Konfiguration wurde aktualisiert!
-be_extensions_configfile_nosave = Konfiguration konnte nicht gespeichert werden!
-be_extensions_configfile_nowrite = Konfigurationsdatei "{0}" ist nicht beschreibbar!
+be_utilities_configfile_update = Konfiguration wurde aktualisiert!
+be_utilities_configfile_nosave = Konfiguration konnte nicht gespeichert werden!
+be_utilities_configfile_nowrite = Konfigurationsdatei "{0}" ist nicht beschreibbar!
 
-be_extensions_settings = Einstellungen
-be_extensions_settings_save = Einstellungen speichern
+be_utilities_settings = Einstellungen
+be_utilities_settings_save = Einstellungen speichern
 
-be_extensions_help = Dieses REDAXO-AddOn dient als Container für Plugins die das Backend erweitern/ergänzen.
+be_utilities_help = Dieses REDAXO-AddOn dient als Container für Plugins die das Backend erweitern/ergänzen.

@@ -46,8 +46,8 @@ class rex_frontend_link {
 
 	static function appendToPageHeader($params) {
 		$insert = '<!-- BEGIN frontend_link -->' . PHP_EOL;
-		$insert .= '<link rel="stylesheet" type="text/css" href="../files/addons/be_extensions/plugins/frontend_link/colorpicker.css" />' . PHP_EOL;
-		$insert .= '<script type="text/javascript" src="../files/addons/be_extensions/plugins/frontend_link/colorpicker.js"></script>' . PHP_EOL;
+		$insert .= '<link rel="stylesheet" type="text/css" href="../files/addons/be_utilities/plugins/frontend_link/colorpicker.css" />' . PHP_EOL;
+		$insert .= '<script type="text/javascript" src="../files/addons/be_utilities/plugins/frontend_link/colorpicker.js"></script>' . PHP_EOL;
 		$insert .= '<!-- END frontend_link -->';
 	
 		return $params['subject'] . PHP_EOL . $insert;

@@ -1,2 +1,2 @@
-<?php echo $I18N->msg('be_extensions_help');?>
+<?php echo $I18N->msg('be_utilities_help');?>
 <br />

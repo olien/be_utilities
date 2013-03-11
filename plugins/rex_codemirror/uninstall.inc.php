@@ -1,10 +1,10 @@
 <?php
 /**
- * Codemirror2 be_extensions Plugin for Redaxo
+ * Codemirror2 be_utilities Plugin for Redaxo
  *
  * @version 1.0.8
  * @link https://github.com/marijnh/CodeMirror2
- * @author Redaxo be_extensions plugin: rexdev.de
+ * @author Redaxo be_utilities plugin: rexdev.de
  * @package redaxo 4.3.x/4.4.x
  */
 

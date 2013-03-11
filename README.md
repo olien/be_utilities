@@ -1,5 +1,5 @@
-Backend Erweiterungen [be_extensions] AddOn für REDAXO 4
-========================================================
+Backend Utilities [be_utilities] AddOn für REDAXO 4
+===================================================
 
 Dieses REDAXO-AddOn dient als Container für PlugIns die das Backend erweitern/ergänzen.
 Es bietet eine Übersichtseite und für die PlugIns die Möglichkeit eigene Seiten, z.B. für
@@ -15,7 +15,7 @@ Features
 Screenshots
 -----------
 
-Übersichtseite: https://www.dropbox.com/s/4i47xxmu8gyokk4/be_extensions.png
+Übersichtseite: https://www.dropbox.com/s/4i47xxmu8gyokk4/be_utilities.png
 
 Mitgelieferte PlugIns
 ---------------------
@@ -40,14 +40,14 @@ Ein PlugIn kann ganz einfach in der `config.inc.php` des PlugIns eingebunden wer
 
 ```php
 // register plugin
-rex_plugin_factory::registerPlugin('be_extensions', 'my_plugin', 'Mein Plugin', 'Eine kurze Beschreibung.', '1.0.0', 'Der Autor', 'forum.redaxo.de', /* $hasBackendPage = */ true, /* $permission = '' */);
+rex_plugin_factory::registerPlugin('be_utilities', 'my_plugin', 'Mein Plugin', 'Eine kurze Beschreibung.', '1.0.0', 'Der Autor', 'forum.redaxo.de', /* $hasBackendPage = */ true, /* $permission = '' */);
 ```
 
 In der `help.inc.php` des PlugIns lässt sich der Beschreibungstext so anzeigen:
 
 ```php
 // show plugin description
-echo rex_plugin_factory::getPluginDescription('be_extensions', 'my_plugin');
+echo rex_plugin_factory::getPluginDescription('be_utilities', 'my_plugin');
 ```
 
 Klassische Einbindung eines PlugIns
@@ -64,21 +64,21 @@ $REX['ADDON']['supportpage']['my_plugin'] = 'forum.redaxo.de';
 $REX['ADDON']['description']['my_plugin'] = 'Eine kurze Beschreibung.';
 
 // add sub page (if needed)
-$REX['ADDON']['be_extensions']['SUBPAGES'][] = array('plugin.my_plugin', $REX['ADDON']['page']['my_plugin']);
+$REX['ADDON']['be_utilities']['SUBPAGES'][] = array('plugin.my_plugin', $REX['ADDON']['page']['my_plugin']);
 ```
 
 Und hier die Anzeige des Beschreibungstext für die `help.inc.php`:
 
 ```php
 // show plugin description
-echo OOPlugin::getProperty('be_extensions', 'my_plugin', 'description');
+echo OOPlugin::getProperty('be_utilities', 'my_plugin', 'description');
 ```
 
 Hinweise
 --------
 
 * Getestet mit REDAXO 4.4.1
-* AddOn-Ordner lautet: `be_extensions`
+* AddOn-Ordner lautet: `be_utilities`
 
 Ein herzliches Dankeschön geht an:
 ----------------------------------

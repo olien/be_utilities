@@ -4,7 +4,7 @@ $link_text = trim(rex_request('link_text', 'string'));
 $color = trim(rex_request('color', 'string'));
 $colorize_link = trim(rex_request('colorize_link', 'string'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/frontend_link/settings.inc.php';
+$config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/frontend_link/settings.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
 	$REX['ADDON']['frontend_link']['link_text_mode'] = $link_text_mode;
@@ -20,27 +20,27 @@ if (rex_request('func', 'string') == 'update') {
 	';
 
 	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
-		echo rex_info($I18N->msg('be_extensions_configfile_update'));
+		echo rex_info($I18N->msg('be_utilities_configfile_update'));
 	} else {
-		echo rex_warning($I18N->msg('be_extensions_configfile_nosave'));
+		echo rex_warning($I18N->msg('be_utilities_configfile_nosave'));
 	}
 }
 
 if (!is_writable($config_file)) {
-	echo rex_warning($I18N->msg('be_extensions_configfile_nowrite'), $config_file);
+	echo rex_warning($I18N->msg('be_utilities_configfile_nowrite'), $config_file);
 }
 ?>
 
 <div class="rex-addon-output">
 	<div class="rex-form">
 
-		<h2 class="rex-hl2"><?php echo $I18N->msg('be_extensions_settings'); ?></h2>
+		<h2 class="rex-hl2"><?php echo $I18N->msg('be_utilities_settings'); ?></h2>
 
 		<form action="index.php" method="post">
 
 			<fieldset class="rex-form-col-1">
 				<div class="rex-form-wrapper">
-					<input type="hidden" name="page" value="be_extensions" />
+					<input type="hidden" name="page" value="be_utilities" />
 					<input type="hidden" name="subpage" value="plugin.frontend_link" />
 					<input type="hidden" name="func" value="update" />
 
@@ -78,7 +78,7 @@ if (!is_writable($config_file)) {
 
 					<div class="rex-form-row rex-form-element-v2">
 						<p class="rex-form-submit">
-							<input type="submit" class="rex-form-submit" name="sendit" value="<?php echo $I18N->msg('be_extensions_settings_save'); ?>" />
+							<input type="submit" class="rex-form-submit" name="sendit" value="<?php echo $I18N->msg('be_utilities_settings_save'); ?>" />
 						</p>
 					</div>
 				</div>

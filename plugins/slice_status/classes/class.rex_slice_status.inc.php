@@ -94,8 +94,8 @@ class rex_slice_status {
 
 	static function appendToPageHeader($params) {
 		$insert = '<!-- BEGIN slice_status -->' . PHP_EOL;
-		$insert .= '<link rel="stylesheet" type="text/css" href="../files/addons/be_extensions/plugins/slice_status/slice_status.css" />' . PHP_EOL;
-		$insert .= '<script type="text/javascript" src="../files/addons/be_extensions/plugins/slice_status/slice_status.js"></script>' . PHP_EOL;
+		$insert .= '<link rel="stylesheet" type="text/css" href="../files/addons/be_utilities/plugins/slice_status/slice_status.css" />' . PHP_EOL;
+		$insert .= '<script type="text/javascript" src="../files/addons/be_utilities/plugins/slice_status/slice_status.js"></script>' . PHP_EOL;
 		$insert .= '<!-- END slice_status -->';
 	
 		return $params['subject'] . PHP_EOL . $insert;

@@ -1,14 +1,14 @@
 <?php
 if ($REX['REDAXO']) {
 	// add lang file
-	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/cat_art_name_sync/lang/');
+	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/cat_art_name_sync/lang/');
 
 	// register plugin
-	rex_plugin_factory::registerPlugin('be_extensions', 'cat_art_name_sync', 'Cat-Art Name Sync', $I18N->msg('cat_art_name_sync_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
+	rex_plugin_factory::registerPlugin('be_utilities', 'cat_art_name_sync', 'Cat-Art Name Sync', $I18N->msg('cat_art_name_sync_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
 
 	// includes
-	include($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/cat_art_name_sync/settings.inc.php');
-	include($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/cat_art_name_sync/classes/class.rex_cat_art_name_sync.inc.php');
+	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/cat_art_name_sync/settings.inc.php');
+	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/cat_art_name_sync/classes/class.rex_cat_art_name_sync.inc.php');
 	
 	// sync cat to art
 	if ($REX['ADDON']['cat_art_name_sync']['sync_cat_to_art'] == 1) {

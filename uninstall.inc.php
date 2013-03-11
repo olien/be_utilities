@@ -1,3 +1,3 @@
 <?php
-$REX['ADDON']['install']['be_extensions'] = 0;
+$REX['ADDON']['install']['be_utilities'] = 0;
 ?>

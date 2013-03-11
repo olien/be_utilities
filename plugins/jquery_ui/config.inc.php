@@ -11,13 +11,13 @@
 
 if ($REX['REDAXO']) {
 	// add lang file
-	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/jquery_ui/lang/');
+	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/jquery_ui/lang/');
 
 	// register plugin
-	rex_plugin_factory::registerPlugin('be_extensions', 'jquery_ui', 'jQuery UI', $I18N->msg('jquery_ui_description'), '1.3.0', 'Joachim Doerr', 'forum.redaxo.de', false);
+	rex_plugin_factory::registerPlugin('be_utilities', 'jquery_ui', 'jQuery UI', $I18N->msg('jquery_ui_description'), '1.3.0', 'Joachim Doerr', 'forum.redaxo.de', false);
 
 	//	include jquery ui
-	$arrJQueryUi['path'] = '../files/addons/be_extensions/plugins/jquery_ui';
+	$arrJQueryUi['path'] = '../files/addons/be_utilities/plugins/jquery_ui';
 	unset($arrJQueryUi['insert']);
 
 	$arrJQueryUi['insert'] = <<<EOD

@@ -1,10 +1,10 @@
 <?php
 /**
- * Codemirror2 be_extensions Plugin for Redaxo
+ * Codemirror2 be_utilities Plugin for Redaxo
  *
  * @version 1.0.8
  * @link https://github.com/marijnh/CodeMirror2
- * @author Redaxo be_extensions plugin: rexdev.de
+ * @author Redaxo be_utilities plugin: rexdev.de
  * @package redaxo 4.3.x/4.4.x
  */
 
@@ -12,10 +12,10 @@ if ($REX['REDAXO']) {
 	$mypage = 'rex_codemirror';
 
 	// add lang file
-	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/rex_codemirror/lang/');
+	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/rex_codemirror/lang/');
 
 	// register plugin
-	rex_plugin_factory::registerPlugin('be_extensions', $mypage, 'Rex Codemirror', $I18N->msg('rex_codemirror_description'), '1.0.8', 'jdlx', 'forum.redaxo.de', false);	
+	rex_plugin_factory::registerPlugin('be_utilities', $mypage, 'Rex Codemirror', $I18N->msg('rex_codemirror_description'), '1.0.8', 'jdlx', 'forum.redaxo.de', false);	
 
 	// SETTINGS
 	////////////////////////////////////////////////////////////////////////////////
@@ -67,16 +67,16 @@ if ($REX['REDAXO']) {
 	  $header = '
 
 	  <!-- '.$mypage.' -->
-		<link rel="stylesheet" href="../files/addons/be_extensions/plugins/'.$mypage.'/vendor/lib/codemirror.css">
-		<link rel="stylesheet" href="../files/addons/be_extensions/plugins/'.$mypage.'/vendor/theme/'.$theme.'.css">
-		<link rel="stylesheet" href="../files/addons/be_extensions/plugins/'.$mypage.'/rex_codemirror_backend.css">
-		<script src="../files/addons/be_extensions/plugins/'.$mypage.'/vendor/lib/codemirror.js"></script>
-		<script src="../files/addons/be_extensions/plugins/'.$mypage.'/custom/lib/util/foldcode.js"></script>
-		<script src="../files/addons/be_extensions/plugins/'.$mypage.'/vendor/mode/xml/xml.js"></script>
-		<script src="../files/addons/be_extensions/plugins/'.$mypage.'/vendor/mode/javascript/javascript.js"></script>
-		<script src="../files/addons/be_extensions/plugins/'.$mypage.'/vendor/mode/css/css.js"></script>
-		<script src="../files/addons/be_extensions/plugins/'.$mypage.'/vendor/mode/clike/clike.js"></script>
-		<script src="../files/addons/be_extensions/plugins/'.$mypage.'/vendor/mode/php/php.js"></script>
+		<link rel="stylesheet" href="../files/addons/be_utilities/plugins/'.$mypage.'/vendor/lib/codemirror.css">
+		<link rel="stylesheet" href="../files/addons/be_utilities/plugins/'.$mypage.'/vendor/theme/'.$theme.'.css">
+		<link rel="stylesheet" href="../files/addons/be_utilities/plugins/'.$mypage.'/rex_codemirror_backend.css">
+		<script src="../files/addons/be_utilities/plugins/'.$mypage.'/vendor/lib/codemirror.js"></script>
+		<script src="../files/addons/be_utilities/plugins/'.$mypage.'/custom/lib/util/foldcode.js"></script>
+		<script src="../files/addons/be_utilities/plugins/'.$mypage.'/vendor/mode/xml/xml.js"></script>
+		<script src="../files/addons/be_utilities/plugins/'.$mypage.'/vendor/mode/javascript/javascript.js"></script>
+		<script src="../files/addons/be_utilities/plugins/'.$mypage.'/vendor/mode/css/css.js"></script>
+		<script src="../files/addons/be_utilities/plugins/'.$mypage.'/vendor/mode/clike/clike.js"></script>
+		<script src="../files/addons/be_utilities/plugins/'.$mypage.'/vendor/mode/php/php.js"></script>
 	  <!-- end '.$mypage.' -->
 	  ';
 	  $header_include = 'return $params["subject"].\''.$header.'\';';

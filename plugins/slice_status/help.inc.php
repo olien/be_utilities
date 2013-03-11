@@ -1,5 +1,5 @@
 <?php
 // show plugin description
-echo rex_plugin_factory::getPluginDescription('be_extensions', 'slice_status');
+echo rex_plugin_factory::getPluginDescription('be_utilities', 'slice_status');
 ?>
 <br />

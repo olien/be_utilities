@@ -15,7 +15,7 @@ if ($sql->getRows() > 0) {
 	// import message
 	if (!$I18N->hasMsg('import_msg')) {
 		// this is for redaxo < 4.4
-		$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_extensions/plugins/slice_status/lang/');
+		$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/slice_status/lang/');
 	}
 	
 	echo rex_info($I18N->msg('import_msg'));
