@@ -1,6 +1,6 @@
 <?php
 class rex_frontend_link {
-	static function addFrontendLink($params) {
+	static function addFrontendLinkByOutputFilterEP($params) {
 		global $REX;
 		global $I18N;
 
@@ -33,6 +33,33 @@ class rex_frontend_link {
 			
 			return $content;
 		}
+	}
+
+	static function addFrontendLinkByMetaNaviEP($params) {
+		global $REX;
+		global $I18N;
+
+		switch ($REX['ADDON']['frontend_link']['link_text_mode']) {
+			case 'default': 
+				$linkText = $I18N->msg('frontend_link_goto_website');
+				break;
+			case 'rex_server':
+				$linkText = self::getFrontendUrl();
+				break;
+			case 'userdef':
+				$linkText = $REX['ADDON']['frontend_link']['link_text'];
+				break;
+		}
+
+		if ($REX['ADDON']['frontend_link']['colorize_link'] == '1') {
+			$style = ' style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';"';
+		} else {
+			$style = '';
+		}
+
+		$params['subject'][] = '<a id="frontend-link"' . $style . ' href="../" target="_blank">' . $linkText . '</a>';
+
+		return $params['subject'];
 	}
 
 	static function getFrontendUrl() {
