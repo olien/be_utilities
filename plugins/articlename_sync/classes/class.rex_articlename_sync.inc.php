@@ -1,8 +1,9 @@
 <?php
 
 class rex_articlename_sync {
-	function syncArtname2Catname($params) {
-		global $REX;
+	static function syncArtname2Catname($params) {
+		global $REX, $I18N;
+
 		$id = $params['id'];
 		$clang = $params['clang'];
 		$sql = new rex_sql();
@@ -11,13 +12,16 @@ class rex_articlename_sync {
 		$sql->setWhere("(id=$id OR (re_id=$id AND startpage=0)) AND clang=$clang");
 		$sql->setValue('catname', $params['data']['name']);
 		$sql->addGlobalUpdateFields();
-		$sql->update();  
+		$sql->update();
 
 		rex_deleteCacheArticle($id, $clang);
+
+		echo rex_info($I18N->msg('articlename_sync_cat_art_msg'));
 	}
 
-	function syncCatname2Artname($params) {
-		global $REX;
+	static function syncCatname2Artname($params) {
+		global $REX, $I18N;
+
 		$id = $params['id'];
 		$clang = $params['clang'];
 		$sql = new rex_sql();
@@ -29,5 +33,7 @@ class rex_articlename_sync {
 		$sql->update();
 
 		rex_deleteCacheArticle($id, $clang);
+
+		echo rex_info($I18N->msg('articlename_sync_art_cat_msg'));
 	}
 }

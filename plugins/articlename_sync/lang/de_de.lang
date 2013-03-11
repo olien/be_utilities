@@ -1,4 +1,5 @@
 articlename_sync_description = Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
-
 articlename_sync_cat_art = Sync. Kategoriename mit Artikelname
 articlename_sync_art_cat = Sync. Artikelname mit Kategoriename
+articlename_sync_cat_art_msg = Kategoriename wurde mit Artikelname synchronisiert.
+articlename_sync_art_cat_msg = Artikelname wurde mit Kategoriename synchronisiert.
