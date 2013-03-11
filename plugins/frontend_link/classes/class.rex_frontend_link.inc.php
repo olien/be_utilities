@@ -29,7 +29,7 @@ class rex_frontend_link {
 				$style = '';
 			}
 			$posEndUL = strpos($content, '</ul>', $posBeginUL);	
-			$content = substr($content, 0, $posEndUL) . '<li><a id="frontend-link"' . $style . ' href="' . $REX['SERVER'] . '" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
+			$content = substr($content, 0, $posEndUL) . '<li><a id="frontend-link"' . $style . ' href="../" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
 			
 			return $content;
 		}
