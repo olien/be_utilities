@@ -1,44 +1,30 @@
 <?php
 class rex_frontend_link {
 	static function addFrontendLinkByOutputFilterEP($params) {
-		global $REX;
-		global $I18N;
-
 		$content = $params['subject'];
-
-		switch ($REX['ADDON']['frontend_link']['link_text_mode']) {
-			case 'default': 
-				$linkText = $I18N->msg('frontend_link_goto_website');
-				break;
-			case 'rex_server':
-				$linkText = self::getFrontendUrl();
-				break;
-			case 'userdef':
-				$linkText = $REX['ADDON']['frontend_link']['link_text'];
-				break;
-		}
 
 		$posBeginUL = strpos($content, 'rex_logout');
 		
 		if ($posBeginUL === false) {
 			return $content;
 		} else {
-			if ($REX['ADDON']['frontend_link']['colorize_link'] == '1') {
-				$style = ' style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';"';
-			} else {
-				$style = '';
-			}
 			$posEndUL = strpos($content, '</ul>', $posBeginUL);	
-			$content = substr($content, 0, $posEndUL) . '<li><a id="frontend-link"' . $style . ' href="../" target="_blank">' . $linkText . '</a></li>' . substr($content, $posEndUL);
+			$content = substr($content, 0, $posEndUL) . self::getMetaMenuListItem() . substr($content, $posEndUL);
 			
 			return $content;
 		}
 	}
 
 	static function addFrontendLinkByMetaNaviEP($params) {
-		global $REX;
-		global $I18N;
+		$params['subject']['frontend_link'] = self::getMetaMenuListItem();
 
+		return $params['subject'];
+	}
+
+	static function getMetaMenuListItem() {
+		global $REX, $I18N;
+
+		// link text
 		switch ($REX['ADDON']['frontend_link']['link_text_mode']) {
 			case 'default': 
 				$linkText = $I18N->msg('frontend_link_goto_website');
@@ -51,15 +37,14 @@ class rex_frontend_link {
 				break;
 		}
 
+		// link style
 		if ($REX['ADDON']['frontend_link']['colorize_link'] == '1') {
-			$style = ' style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';"';
+			$linkStyle = ' style="color: ' . $REX['ADDON']['frontend_link']['color'] . ';"';
 		} else {
-			$style = '';
+			$linkStyle = '';
 		}
 
-		$params['subject'][] = '<a id="frontend-link"' . $style . ' href="../" target="_blank">' . $linkText . '</a>';
-
-		return $params['subject'];
+		return '<li><a id="frontend-link"' . $linkStyle . ' href="../" target="_blank">' . $linkText . '</a></li>';
 	}
 
 	static function getFrontendUrl() {
