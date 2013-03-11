@@ -96,6 +96,8 @@ div.rex-form-row label {
 
 <script type="text/javascript">
 jQuery(document).ready( function() {
+	jQuery('<img src="../<?php echo rex_frontend_link::getMediaAddonDir(); ?>/be_utilities/plugins/frontend_link/images/colorpicker_background.png" />');
+
 	jQuery('#link_text_mode').change(function() {
   		if (jQuery(this).val() == "userdef") {
 			jQuery('#row_userdef').show();
