@@ -1,6 +1,6 @@
 <?php
 
-class rex_cat_art_name_sync {
+class rex_articlename_sync {
 	function syncArtname2Catname($params) {
 		global $REX;
 		$id = $params['id'];
