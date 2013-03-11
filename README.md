@@ -1,5 +1,5 @@
-Backend Utilities [be_utilities] AddOn für REDAXO 4
-===================================================
+Backend Utilities AddOn für REDAXO 4
+====================================
 
 Dieses REDAXO-AddOn dient als Container für PlugIns die das Backend erweitern/ergänzen.
 Es bietet eine Übersichtseite und für die PlugIns die Möglichkeit eigene Seiten, z.B. für
@@ -21,12 +21,9 @@ Mitgelieferte PlugIns
 ---------------------
 
 * `Cat-Art Name Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
-* `Favicon` Ein Favicon fürs Backend.
 * `Frontend Link` Fügt ins Menü rechts oben einen Link zum Frontend hinzu.
 * `jQuery UI` jQuery UI inkl. jQuery Cookie Plugin und Aristo Skin.
-* `Rex Codemirror` Syntax Highlighting für TextAreas (Templates, Module, etc.).
 * `Rex Module` Einige Tools damit Module auf globale Variablen, Methoden und Styles zugreifen können.
-* `Slice Status` Fügt einen On/Offline-Schalter für Blöcke (Slices) hinzu.
 
 Weitere PlugIns
 ---------------
@@ -77,13 +74,22 @@ echo OOPlugin::getProperty('be_utilities', 'my_plugin', 'description');
 Hinweise
 --------
 
-* Getestet mit REDAXO 4.4.1
+* Getestet mit REDAXO 4.4, 4.5
 * AddOn-Ordner lautet: `be_utilities`
 
-Ein herzliches Dankeschön geht an:
-----------------------------------
+Changelog
+---------
+
+siehe [CHANGELOG.md](CHANGELOG.md)
+
+Lizenz
+------
+
+siehe [LICENSE.md](LICENSE.md)
+
+Credits
+-------
 
 * [gharlan](https://github.com/gharlan) für die Inspiration und den Code ;) für das `cat_art_name_sync` PlugIns
-* [jdlx](https://github.com/jdlx) für das `rex_codemirror` PlugIn, dass für den Anfang hier beigelegt wurde
 * [joachimdoerr](https://github.com/joachimdoerr) für das `jquery_ui` PlugIn, das ebenfalls für den Anfang hier (in einer modifizierten Version) beigelegt wurde
 
