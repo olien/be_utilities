@@ -14,7 +14,7 @@ if ($REX['REDAXO']) {
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/jquery_ui/lang/');
 
 	// register plugin
-	rex_plugin_factory::registerPlugin('be_utilities', 'jquery_ui', 'jQuery UI', $I18N->msg('jquery_ui_description'), '1.3.0', 'Joachim Doerr', 'forum.redaxo.de', false);
+	rex_plugin_factory::registerPlugin('be_utilities', 'jquery_ui', 'jQuery UI', $I18N->msg('jquery_ui_description'), '1.3.1', 'Joachim Doerr, RexDude', 'forum.redaxo.de', false);
 
 	// check for media addon dir var introduced in REX 4.5
 	if (isset($REX['MEDIA_ADDON_DIR'])) {
