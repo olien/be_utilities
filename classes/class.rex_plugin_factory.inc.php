@@ -47,33 +47,37 @@ class rex_plugin_factory {
 		}
 	}
 
-	static function printPluginList($addon, $headline) {
-		echo '<table class="rex-table">';
-		echo '<tr><th>' . $headline . '</th></tr>';
-
+	static function printPluginList($addon, $headline, $noPluginsAvailabeMsg) {
 		$plugins = self::getAvailablePlugins($addon);
 
-		foreach ($plugins as $plugin) {
-			// description
-			$htmlDescription = '';
-			$description = self::getPluginDescription($addon, $plugin);
+		if (count($plugins) < 1) {
+			echo rex_info($noPluginsAvailabeMsg);
+		} else {
+			echo '<table class="rex-table">';
+			echo '<tr><th>' . $headline . '</th></tr>';
 
-			if ($description != '') {
-				$htmlDescription = '<p>&nbsp;&nbsp;&nbsp;' . $description . '</p>';
+			foreach ($plugins as $plugin) {
+				// description
+				$htmlDescription = '';
+				$description = self::getPluginDescription($addon, $plugin);
+
+				if ($description != '') {
+					$htmlDescription = '<p>&nbsp;&nbsp;&nbsp;' . $description . '</p>';
+				}
+
+				echo '<tr><td>&raquo; ';
+
+				// link
+				if (self::hasPluginSubpage($addon, $plugin)) {
+					echo '<a href="index.php?page=' . $addon . '&amp;subpage=plugin.' . $plugin . '">' .  self::getPluginTitle($addon, $plugin) . '</a>' . $htmlDescription;
+				} else {
+					echo '<span>' .  self::getPluginTitle($addon, $plugin) . '</span>' . $htmlDescription;
+				}
+
+				echo '</td></tr>';
 			}
 
-			echo '<tr><td>&raquo; ';
-
-			// link
-			if (self::hasPluginSubpage($addon, $plugin)) {
-				echo '<a href="index.php?page=' . $addon . '&amp;subpage=plugin.' . $plugin . '">' .  self::getPluginTitle($addon, $plugin) . '</a>' . $htmlDescription;
-			} else {
-				echo '<span>' .  self::getPluginTitle($addon, $plugin) . '</span>' . $htmlDescription;
-			}
-
-			echo '</td></tr>';
+			echo '</table>';
 		}
-	
-		echo '</table>';
 	}
 }
