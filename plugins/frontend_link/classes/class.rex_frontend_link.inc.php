@@ -44,7 +44,13 @@ class rex_frontend_link {
 			$linkStyle = '';
 		}
 
-		return '<li><a id="frontend-link"' . $linkStyle . ' href="../" target="_blank">' . $linkText . '</a></li>';
+		// frontend link
+		$server = $REX['SERVER'];
+		if (substr($REX['SERVER'], 0, 4) != 'http') {
+			$server = 'http://' . $REX['SERVER'];
+		}
+
+		return '<li><a id="frontend-link"' . $linkStyle . ' href="' . $server . '" target="_blank">' . $linkText . '</a></li>';
 	}
 
 	static function getFrontendUrl() {
