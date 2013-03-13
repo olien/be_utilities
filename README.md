@@ -20,10 +20,13 @@ Screenshots
 Mitgelieferte PlugIns
 ---------------------
 
-* `Cat-Art Name Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
+* `Articlename Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
+* `Customizer` Das Customizer PlugIn aus REDAXO 4.5 mit dem RexDude Skin für Codemirror.
 * `Frontend Link` Fügt ins Menü rechts oben einen Link zum Frontend hinzu.
+* `Hide Startarticle` Unbenutzte Startartikel können mit diesem Tool versteckt werden.
 * `jQuery UI` jQuery UI inkl. jQuery Cookie Plugin und Aristo Skin.
 * `Rex Module` Einige Tools damit Module auf globale Variablen, Methoden und Styles zugreifen können.
+* `Update Date` Mini Toolkit um das Update Datum der Website zu ermitteln.
 
 Weitere PlugIns
 ---------------
@@ -90,6 +93,6 @@ siehe [LICENSE.md](LICENSE.md)
 Credits
 -------
 
-* [gharlan](https://github.com/gharlan) für die Inspiration und den Code ;) für das `cat_art_name_sync` PlugIns
-* [joachimdoerr](https://github.com/joachimdoerr) für das `jquery_ui` PlugIn, das ebenfalls für den Anfang hier (in einer modifizierten Version) beigelegt wurde
+* [gharlan](https://github.com/gharlan) für die Inspiration und den Code ;) für das `articlename_sync` PlugIns
+* [joachimdoerr](https://github.com/joachimdoerr) für das `jquery_ui` PlugIn, das hier (in einer modifizierten Version) beigelegt wurde
 
