@@ -1,1 +1,5 @@
-update_date_description = Mini Tootlkit um das Update Datum der Website zu ermitteln.
+update_date_description = Mini Toolkit um das Update Datum der Website zu ermitteln.
+update_date_comment1 = Standardausgabe des aktuellen Update Datums
+update_date_comment2 = Benutzerdefinierte Ausgabe des aktuellen Update Datums
+update_date_intro = Codebeispiele:
+update_date_php_docs_info = Das Datum kann über die PHP üblichen Formatierungsoptionen formatiert werden
