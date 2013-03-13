@@ -22,4 +22,4 @@ customizer_projectname = Projektname
 customizer_textarea = breite Textarea unter Template und Module
 customizer_liquid = Liquid Layout
 
-customizer_description = Das Customizer PlugIn aus REDAXO 4.5 mit dem RexDude Skin für Codemirror :)
+customizer_description = Das Customizer PlugIn aus REDAXO 4.5 mit dem RexDude Skin für Codemirror
