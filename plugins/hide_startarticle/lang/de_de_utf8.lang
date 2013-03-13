@@ -1,0 +1,15 @@
+hide_startarticle_description = Unbenutzte Startartikel können mit diesem Tool versteckt werden.
+hide_startarticle_deleted = Verweis auf Startartikel wurde gelöscht.
+hide_startarticle_list_rowmsg = Keine Verweise auf Startartikel vorhanden
+hide_startarticle_list_caption = Liste der angelegten Verweise auf Startartikel
+hide_startarticle_list_table_attr = Auflistung aller Verweise auf Startartikel
+hide_startarticle_article_id = Artikel-ID
+hide_startarticle_article_name = Artikel-Name
+hide_startarticle_functions = Funktionen
+hide_startarticle_edit = bearbeiten
+hide_startarticle_delete = löschen
+hide_startarticle_formlabel_edit = Startartikel-Verweise bearbeiten
+hide_startarticle_formlabel_add = Verweis auf Startartikel erstellen, der versteckt werden soll
+hide_startarticle_article_exists = Ein Startartikel-Verweis mit dieser ID existiert bereits!
+hide_startarticle_select = Startartikel auswählen
+

@@ -28,8 +28,8 @@ table.rex-table td p {
 	color: grey;
 }
 
-table.rex-table td a,
-table.rex-table td span {
+#be-utilities-overview.rex-table td a,
+#be-utilities-overview.rex-table td span {
 	font-weight: bold;
 }
 

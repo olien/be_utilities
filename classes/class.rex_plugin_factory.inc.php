@@ -53,7 +53,7 @@ class rex_plugin_factory {
 		if (count($plugins) < 1) {
 			echo rex_info($noPluginsAvailabeMsg);
 		} else {
-			echo '<table class="rex-table">';
+			echo '<table id="be-utilities-overview" class="rex-table">';
 			echo '<tr><th>' . $headline . '</th></tr>';
 
 			foreach ($plugins as $plugin) {
