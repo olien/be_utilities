@@ -12,11 +12,6 @@ Features
 * Jedes PlugIn kann eine eigene Seite haben
 * Vereinfachte Einbindung der PlugIns möglich
 
-Screenshots
------------
-
-Übersichtseite: https://www.dropbox.com/s/4i47xxmu8gyokk4/be_utilities.png
-
 Mitgelieferte PlugIns
 ---------------------
 
@@ -25,7 +20,7 @@ Mitgelieferte PlugIns
 * `Frontend Link` Fügt ins Menü rechts oben einen Link zum Frontend hinzu.
 * `Hide Startarticle` Unbenutzte Startartikel können mit diesem Tool versteckt werden.
 * `jQuery UI` jQuery UI inkl. jQuery Cookie Plugin und Aristo Skin.
-* `Rex Module` Einige Tools damit Module auf globale Variablen, Methoden und Styles zugreifen können.
+* `Rex Globals` Einige Tools damit Module und Templates auf globale PHP-Klassen und CSS-Styles zugreifen können.
 * `Update Date` Mini Toolkit um das Update Datum der Website zu ermitteln.
 
 Weitere PlugIns
