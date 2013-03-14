@@ -1,13 +1,13 @@
 <?php
 $include_template_id = trim(rex_request('include_template_id', 'int'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/rex_module/settings.inc.php';
+$config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/rex_globals/settings.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
-	$REX['ADDON']['rex_module']['include_template_id'] = $include_template_id;
+	$REX['ADDON']['rex_globals']['include_template_id'] = $include_template_id;
 
 	$content = '
-		$REX[\'ADDON\'][\'rex_module\'][\'include_template_id\'] = ' . $include_template_id . ';
+		$REX[\'ADDON\'][\'rex_globals\'][\'include_template_id\'] = ' . $include_template_id . ';
 	';
 
 	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
@@ -29,13 +29,13 @@ $templates = $sql->getArray();
 $selectTemplates = new rex_select();
 $selectTemplates->setName('include_template_id');
 $selectTemplates->setSize(1);
-$selectTemplates->addOption('<' . $I18N->msg('rex_module_none') . '>', '0');
+$selectTemplates->addOption('<' . $I18N->msg('rex_globals_none') . '>', '0');
 
 foreach ($templates as $template) {
 	$selectTemplates->addOption($template['name'], $template['id']);
 }
 
-$selectTemplates->setSelected($REX['ADDON']['rex_module']['include_template_id']);
+$selectTemplates->setSelected($REX['ADDON']['rex_globals']['include_template_id']);
 ?>
 
 <div class="rex-addon-output">
@@ -48,20 +48,20 @@ $selectTemplates->setSelected($REX['ADDON']['rex_module']['include_template_id']
 			<fieldset class="rex-form-col-1">
 				<div class="rex-form-wrapper">
 					<input type="hidden" name="page" value="be_utilities" />
-					<input type="hidden" name="subpage" value="plugin.rex_module" />
+					<input type="hidden" name="subpage" value="plugin.rex_globals" />
 					<input type="hidden" name="func" value="update" />
 
 					<div class="rex-form-row">
 						<p class="rex-form-col-a rex-form-select">
-							<label for="include_template_id"><?php echo $I18N->msg('rex_module_template'); ?></label>
+							<label for="include_template_id"><?php echo $I18N->msg('rex_globals_template'); ?></label>
 							<?php echo $selectTemplates->get(); ?>
 						</p>
 					</div>
 
 					<div class="rex-form-row rex-form-element-v1">
 						<p class="rex-form-col-a rex-form-read">
-							<label for="css_file"><?php echo $I18N->msg('rex_module_css_file'); ?></label>
-							<span class="rex-form-read" id="css_file"><code>/files/addons/be_utilities/plugins/rex_module/rex_module.css</code></span>
+							<label for="css_file"><?php echo $I18N->msg('rex_globals_css_file'); ?></label>
+							<span class="rex-form-read" id="css_file"><code>/files/addons/be_utilities/plugins/rex_globals/rex_module.css</code></span>
 						</p>
 					</div>
 

@@ -1,5 +1,0 @@
-rex_module_description = Einige Tools damit Module auf globale Variablen, Methoden und Styles zugreifen können.
-rex_module_css_file = CSS-Datei für Modul-Styles
-rex_module_template = Template für Backend-Einbindung
-rex_module_pre_include = Pre-Include {0} für Template
-rex_module_none = keins
