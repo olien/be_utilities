@@ -15,7 +15,7 @@ jQuery(document).ready(function()
     }
 
     var mode = "application/x-httpd-php";
-    var theme = customizer_codemirror_defaulttheme;
+    var theme = codemirror_defaulttheme;
 
     var new_mode = t.attr("data-codemirror-mode");
     var new_theme = t.attr("data-codemirror-theme");
@@ -28,7 +28,7 @@ jQuery(document).ready(function()
       theme = new_theme;
     }
   
-    jQuery("head").append('<link rel="stylesheet" type="text/css" href="../files/addons/be_utilities/plugins/customizer/codemirror/theme/'+theme+'.css" media="screen" />');
+    jQuery("head").append('<link rel="stylesheet" type="text/css" href="../files/addons/be_utilities/plugins/codemirror/vendor/theme/'+theme+'.css" media="screen" />');
     
     cm_editor[cm] = CodeMirror.fromTextArea(document.getElementById(id), {
       lineNumbers: true,

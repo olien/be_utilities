@@ -3,7 +3,6 @@
 /**
  * REDAXO customizer
  *
- * Codemirror by : http://codemirror.net/
  * Marijn Haverbeke <marijnh@gmail.com>
  * @package redaxo4
  * @version svn:$Id$
@@ -16,7 +15,7 @@ if ($REX['REDAXO']) {
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/customizer/lang/');
 
 	// register plugin
-	rex_plugin_factory::registerPlugin('be_utilities', $mypage, 'Customizer', $I18N->msg('customizer_description'), '1.3.1', 'Jan Kristinus, RexDude', 'www.redaxo.org/de/forum', true);
+	rex_plugin_factory::registerPlugin('be_utilities', $mypage, 'Customizer', $I18N->msg('customizer_description'), '1.3.1', 'Jan Kristinus', 'www.redaxo.org/de/forum', true);
 
 	// includes
 	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/customizer/settings.inc.php');
@@ -33,14 +32,9 @@ if ($REX['REDAXO']) {
 	}
 
     $add = "\n" . '<link rel="stylesheet" type="text/css" href="../' . $mediaAddonDir . '/be_utilities/plugins/customizer/customizer.css" media="screen" />';
-    if ($REX['ADDON']['be_utilities']['plugin_customizer']['codemirror']) {
-      $add .= "\n" . '<link rel="stylesheet" type="text/css" href="../' . $mediaAddonDir . '/be_utilities/plugins/customizer/codemirror/codemirror.css" media="screen" />';
-      $add .= "\n" . '<script type="text/javascript">var customizer_codemirror_defaulttheme="' . $REX['ADDON']['be_utilities']['plugin_customizer']['codemirror_theme'] . '";</script>';
-      $add .= "\n" . '<script type="text/javascript" src="../' . $mediaAddonDir . '/be_utilities/plugins/customizer/codemirror/codemirror-compressed.js"></script>';
-      $add .= "\n" . '<script type="text/javascript" src="../' . $mediaAddonDir . '/be_utilities/plugins/customizer/codemirror/rex-init.js"></script>';
-    }
-    if ($REX['ADDON']['be_utilities']['plugin_customizer']['labelcolor'] != '') {
-      $add .= "\n" . '<style>#rex-navi-logout {  border-bottom: 10px solid ' . htmlspecialchars($REX['ADDON']['be_utilities']['plugin_customizer']['labelcolor']) . '; }</style>';
+    
+    if ($REX['ADDON']['customizer']['labelcolor'] != '') {
+      $add .= "\n" . '<style>#rex-navi-logout {  border-bottom: 10px solid ' . htmlspecialchars($REX['ADDON']['customizer']['labelcolor']) . '; }</style>';
     }
     return str_replace('</body>', $add . '</body>', $params['subject']);
   }
@@ -60,7 +54,7 @@ if ($REX['REDAXO']) {
       $params['subject']);
     return $params['subject'];
   }
-  if ($REX['ADDON']['be_utilities']['plugin_customizer']['showlink']) {
+  if ($REX['ADDON']['customizer']['showlink']) {
     rex_register_extension('OUTPUT_FILTER', 'rex_be_utilities_customizer_extra');
   }
 
@@ -68,13 +62,13 @@ if ($REX['REDAXO']) {
   function rex_be_utilities_customizer_body($params)
   {
     global $REX;
-    if ($REX['ADDON']['be_utilities']['plugin_customizer']['textarea'])
+    if ($REX['ADDON']['customizer']['textarea'])
       $params['subject']['class'][] = 'be-style-customizer-textarea-big';
-    if ($REX['ADDON']['be_utilities']['plugin_customizer']['liquid'])
+    if ($REX['ADDON']['customizer']['liquid'])
       $params['subject']['class'][] = 'rex-layout-liquid';
     return $params['subject'];
   }
-  if ($REX['ADDON']['be_utilities']['plugin_customizer']['textarea'] || $REX['ADDON']['be_utilities']['plugin_customizer']['liquid']) {
+  if ($REX['ADDON']['customizer']['textarea'] || $REX['ADDON']['customizer']['liquid']) {
     rex_register_extension('PAGE_BODY_ATTR', 'rex_be_utilities_customizer_body');
   }
 
