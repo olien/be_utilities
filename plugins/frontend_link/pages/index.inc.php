@@ -1,22 +1,16 @@
 <?php
 $link_text_mode = trim(rex_request('link_text_mode', 'string'));
 $link_text = trim(rex_request('link_text', 'string'));
-$color = trim(rex_request('color', 'string'));
-$colorize_link = trim(rex_request('colorize_link', 'string'));
 
 $config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/frontend_link/settings.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
 	$REX['ADDON']['frontend_link']['link_text_mode'] = $link_text_mode;
 	$REX['ADDON']['frontend_link']['link_text'] = $link_text;
-	$REX['ADDON']['frontend_link']['color'] = $color;
-	$REX['ADDON']['frontend_link']['colorize_link'] = $colorize_link;
 
 	$content = '
 		$REX[\'ADDON\'][\'frontend_link\'][\'link_text_mode\'] = "' . $link_text_mode . '";
 		$REX[\'ADDON\'][\'frontend_link\'][\'link_text\'] = "' . $link_text . '";
-		$REX[\'ADDON\'][\'frontend_link\'][\'color\'] = "' . $color . '";
-		$REX[\'ADDON\'][\'frontend_link\'][\'colorize_link\'] = "' . $colorize_link . '";
 	';
 
 	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
@@ -62,20 +56,6 @@ if (!is_writable($config_file)) {
 						</p>
 					</div>
 
-					<div class="rex-form-row rex-form-element-v1">
-						<p class="rex-form-text">
-							<label for="color"><?php echo $I18N->msg('frontend_link_color'); ?></label>
-							<input class="rex-form-text" type="text" id="color" name="color" value="<?php echo $REX['ADDON']['frontend_link']['color']; ?>" />
-						</p>
-					</div>
-
-					<div class="rex-form-row rex-form-element-v1">
-						<p class="rex-form-checkbox">
-							<label for="colorize_link"><?php echo $I18N->msg('frontend_link_colorize'); ?></label>
-							<input type="checkbox" name="colorize_link" id="colorize_link" value="1" <?php if ($REX['ADDON']['frontend_link']['colorize_link'] == 1) { echo 'checked="checked"'; } ?>>
-						</p>
-					</div>
-
 					<div class="rex-form-row rex-form-element-v2">
 						<p class="rex-form-submit">
 							<input type="submit" class="rex-form-submit" name="sendit" value="<?php echo $I18N->msg('be_utilities_settings_save'); ?>" />
@@ -87,17 +67,8 @@ if (!is_writable($config_file)) {
 	</div>
 </div>
 
-<style type="text/css">
-div.rex-form-row label {
-	width: 100px !important; 
-}
-
-</style>
-
 <script type="text/javascript">
 jQuery(document).ready( function() {
-	jQuery('<img src="../<?php echo rex_frontend_link::getMediaAddonDir(); ?>/be_utilities/plugins/frontend_link/images/colorpicker_background.png" />');
-
 	jQuery('#link_text_mode').change(function() {
   		if (jQuery(this).val() == "userdef") {
 			jQuery('#row_userdef').show();
@@ -108,21 +79,5 @@ jQuery(document).ready( function() {
 	});
 
 	jQuery('#link_text_mode').change();
-
-	jQuery('#color').ColorPicker({
-		onSubmit: function(hsb, hex, rgb, el) {
-			jQuery(el).val('#' + hex.toUpperCase());
-			jQuery(el).ColorPickerHide();
-		},
-		onBeforeShow: function () {
-			jQuery(this).ColorPickerSetColor(this.value);
-		},
-		onChange: function (hsb, hex, rgb) {
-			jQuery('#frontend-link').css('color', '#' + hex);
-		}
-	})
-	.bind('keyup', function(){
-		jQuery(this).ColorPickerSetColor(this.value);
-	});
 });
 </script>

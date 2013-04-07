@@ -15,12 +15,7 @@ if ($REX['REDAXO']) {
 
 	if (version_compare($thisRexVersion, '4.5.0', '<')) {
 		rex_register_extension('OUTPUT_FILTER', 'rex_frontend_link::addFrontendLinkByOutputFilterEP');
-	} else {
+	} else { 
 		rex_register_extension('META_NAVI', 'rex_frontend_link::addFrontendLinkByMetaNaviEP');
-	}
-
-	// add css/js files to page header
-	if (rex_request('subpage') == 'plugin.frontend_link') {
-		rex_register_extension('PAGE_HEADER', 'rex_frontend_link::appendToPageHeader');
 	}
 }
