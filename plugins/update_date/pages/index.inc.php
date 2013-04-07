@@ -1,10 +1,10 @@
 <?php
 $codeExample = '<?php 
-// ' . $I18N->msg('update_date_comment1') . ': ' . rex_update_date::getDate() . '
-echo rex_update_date::getDate();
+// ' . $I18N->msg('update_date_comment1') . ': ' . rex_update_date::getUpdateDate() . '
+echo rex_update_date::getUpdateDate();
 
-// ' . $I18N->msg('update_date_comment2') . ': ' . rex_update_date::getDate('m-d-Y') . '  
-echo rex_update_date::getDate(\'m-d-Y\'); 
+// ' . $I18N->msg('update_date_comment2') . ': ' . rex_update_date::getUpdateDate('m-d-Y') . '  
+echo rex_update_date::getUpdateDate(\'m-d-Y\'); 
 ?>';
 ?>
 

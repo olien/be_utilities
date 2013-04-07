@@ -9,7 +9,7 @@ Features
 --------
 
 * Übersichtsseite mit allen installierten PlugIns
-* Jedes PlugIn kann eine eigene Seite haben
+* Jedes PlugIn kann eine eigene Einstellungsseite haben
 * Vereinfachte Einbindung der PlugIns möglich
 
 Mitgelieferte PlugIns
