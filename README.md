@@ -16,7 +16,7 @@ Mitgelieferte PlugIns
 ---------------------
 
 * `Articlename Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
-* `Category Seperator` Erzeugt einen Trenner nach einer angegebenen Kategorie.
+* `Category Separator` Erzeugt einen Trenner nach einer angegebenen Kategorie.
 * `CodeMirror` Syntax Highlighting für TextAreas (Templates, Module, etc.).
 * `Customizer` Das Customizer PlugIn aus REDAXO 4.5.
 * `Frontend Link` Fügt ins Menü rechts oben einen Link zum Frontend hinzu.
@@ -28,8 +28,8 @@ Mitgelieferte PlugIns
 Weitere PlugIns
 ---------------
 
-* `Favicon` Nachzurüsten eines Favicons für ältere REDAXO Versionen.
-* `Phpinfo` Zeigt detalierte Informationen über den Webserver inkl. PHP, MySQL Variablen usw. an.
+* `Favicon` Nachrüsten eines Favicons für ältere REDAXO Versionen.
+* `Phpinfo` Zeigt detaillierte Informationen über den Webserver inkl. PHP, MySQL Variablen usw. an.
 
 Vereinfachte Einbindung eines PlugIns
 -------------------------------------

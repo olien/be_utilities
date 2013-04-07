@@ -6,7 +6,7 @@ Backend Utilities - Changelog
 Erste ofizielle Version mit diesen mitgelieferten Plugins
 
 * `Articlename Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
-* `Category Seperator` Erzeugt einen Trenner nach einer angegebenen Kategorie.
+* `Category Separator` Erzeugt einen Trenner nach einer angegebenen Kategorie.
 * `CodeMirror` Syntax Highlighting für TextAreas (Templates, Module, etc.).
 * `Customizer` Das Customizer PlugIn aus REDAXO 4.5.
 * `Frontend Link` Fügt ins Menü rechts oben einen Link zum Frontend hinzu.
