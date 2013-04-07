@@ -1,13 +1,13 @@
 <?php
 $hide_cat_id = trim(rex_request('hide_cat_id', 'string'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/category_seperator/settings.inc.php';
+$config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/category_separator/settings.inc.php';
 
 if (rex_request('func', 'string') == 'update') {
-	$REX['ADDON']['category_seperator']['hide_cat_id'] = $hide_cat_id;
+	$REX['ADDON']['category_separator']['hide_cat_id'] = $hide_cat_id;
 
 	$content = '
-		$REX[\'ADDON\'][\'category_seperator\'][\'hide_cat_id\'] = "' . $hide_cat_id . '";
+		$REX[\'ADDON\'][\'category_separator\'][\'hide_cat_id\'] = "' . $hide_cat_id . '";
 	';
 
 	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
@@ -23,7 +23,7 @@ if (!is_writable($config_file)) {
 
 $linkButton = rex_input::factory('linkbutton');
 $linkButton->setButtonId(1);
-$linkButton->setValue($REX['ADDON']['category_seperator']['hide_cat_id']);
+$linkButton->setValue($REX['ADDON']['category_separator']['hide_cat_id']);
 $linkButton->setAttribute('name', 'hide_cat_id');
 ?>
 
@@ -37,12 +37,12 @@ $linkButton->setAttribute('name', 'hide_cat_id');
 			<fieldset class="rex-form-col-1">
 				<div class="rex-form-wrapper">
 					<input type="hidden" name="page" value="be_utilities" />
-					<input type="hidden" name="subpage" value="plugin.category_seperator" />
+					<input type="hidden" name="subpage" value="plugin.category_separator" />
 					<input type="hidden" name="func" value="update" />
 
 					<div class="rex-form-row">
 						<div class="rex-form-col-a">
-							<label for="hide_cat_id"><?php echo $I18N->msg('category_seperator_divide_after'); ?></label>
+							<label for="hide_cat_id"><?php echo $I18N->msg('category_separator_divide_after'); ?></label>
 							<?php echo $linkButton->getHtml(); ?>
 						</div>
 					</div>

@@ -29,7 +29,7 @@ Weitere PlugIns
 ---------------
 
 * `Favicon` Nachzurüsten eines Favicons für ältere REDAXO Versionen.
-* 'Phpinfo' Zeigt detalierte Informationen über den Webserver inkl. PHP, MySQL Variablen usw. an.
+* `Phpinfo` Zeigt detalierte Informationen über den Webserver inkl. PHP, MySQL Variablen usw. an.
 
 Vereinfachte Einbindung eines PlugIns
 -------------------------------------
