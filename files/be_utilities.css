@@ -19,11 +19,11 @@ div#rex-navi-page ul li a {
     white-space: nowrap;
 }
 
-table.rex-table th {
+#be-utilities-overview th {
 	font-size: 1.2em;
 }
 
-table.rex-table td p {
+#be-utilities-overview td p {
 	margin-top: 6px;
 	color: grey;
 }

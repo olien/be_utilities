@@ -41,7 +41,7 @@ if ($func == '') {
 	$list->setNoRowsMessage($I18N->msg('hide_startarticle_list_rowmsg'));
 	$list->setCaption($I18N->msg('hide_startarticle_list_caption'));
 	$list->addTableAttribute('summary',$I18N->msg('hide_startarticle_list_table_attr'));
-	$list->addTableColumnGroup(array(40, 100, '*', 90, 90));
+	$list->addTableColumnGroup(array(40, 80, '*', 90, 90));
 
 	$list->removeColumn('id');
 	$list->setColumnLabel('article_id',$I18N->msg('hide_startarticle_article_id'));
@@ -86,7 +86,7 @@ if ($func == '') {
 	$form->addErrorMessage(REX_FORM_ERROR_VIOLATE_UNIQUE_KEY, $I18N->msg('hide_startarticle_article_exists'));
 
 	$field = &$form->addLinkmapField('article_id');
-	$field->setLabel($I18N->msg('hide_startarticle_select') . ':');
+	$field->setLabel($I18N->msg('hide_startarticle_select'));
 
 	if($func == 'edit') {
 		$form->addParam('article_id', $article_id);
