@@ -12,6 +12,7 @@ if ($REX['REDAXO']) {
 
 	// check if there is a startarticle to hide
 	$sqlStatement = 'SELECT article_id FROM ' . $REX['TABLE_PREFIX'] . 'hidden_startarticles';
+
 	$sql = rex_sql::factory();
 	$sql->setQuery($sqlStatement);
 
@@ -22,6 +23,7 @@ if ($REX['REDAXO']) {
 			if (rex_request('category_id', 'int') == $sql->getValue('article_id')) {
 				// hide this stararticle
 				rex_register_extension('OUTPUT_FILTER', 'rex_hide_startarticle::appendToBody');
+				break;
 			}
 
 			$sql->next();
