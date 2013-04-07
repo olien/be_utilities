@@ -5,7 +5,7 @@ if ($REX['REDAXO']) {
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/hide_startarticle/lang/');
 
 	// register plugin
-	rex_plugin_factory::registerPlugin('be_utilities', 'hide_startarticle', 'Hide Startarticle', $I18N->msg('hide_startarticle_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
+	rex_plugin_factory::registerPlugin('be_utilities', 'hide_startarticle', 'Hide Startarticle', $I18N->msg('hide_startarticle_description'), '1.0.0', 'RexDude', 'forum.redaxo.de', true);
 
 	// includes
 	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/hide_startarticle/classes/class.rex_hide_startarticle.inc.php');

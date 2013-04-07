@@ -4,7 +4,7 @@ if ($REX['REDAXO']) {
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/articlename_sync/lang/');
 
 	// register plugin
-	rex_plugin_factory::registerPlugin('be_utilities', 'articlename_sync', 'Articlename Sync', $I18N->msg('articlename_sync_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
+	rex_plugin_factory::registerPlugin('be_utilities', 'articlename_sync', 'Articlename Sync', $I18N->msg('articlename_sync_description'), '1.0.0', 'RexDude', 'forum.redaxo.de', true);
 
 	// includes
 	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/articlename_sync/settings.inc.php');

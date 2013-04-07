@@ -4,7 +4,7 @@ if ($REX['REDAXO']) {
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/frontend_link/lang/');
 
 	/// register plugin
-	rex_plugin_factory::registerPlugin('be_utilities', 'frontend_link', 'Frontend Link', $I18N->msg('frontend_link_description'), '1.0.0', 'WebDevOne', 'forum.redaxo.de', true);
+	rex_plugin_factory::registerPlugin('be_utilities', 'frontend_link', 'Frontend Link', $I18N->msg('frontend_link_description'), '1.0.0', 'RexDude', 'forum.redaxo.de', true);
 
 	// includes
 	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/frontend_link/settings.inc.php');
