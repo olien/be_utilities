@@ -13,7 +13,11 @@
 
 #rex-module h2 span {
 	font-weight: normal;
-	/* font-size: 11px; */
+}
+
+#rex-module h2.optional:after {
+	content: " (optional)";
+	font-weight: normal;
 }
 
 #rex-module .spacer {
