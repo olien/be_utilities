@@ -5,7 +5,7 @@ if ($REX['REDAXO']) {
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/category_separator/lang/');
 
 	// register plugin
-	rex_plugin_factory::registerPlugin('be_utilities', 'category_separator', 'Category Seperator', $I18N->msg('category_separator_description'), '1.0.0', 'RexDude', 'forum.redaxo.de', true);
+	rex_plugin_factory::registerPlugin('be_utilities', 'category_separator', 'Category Separator', $I18N->msg('category_separator_description'), '1.0.0', 'RexDude', 'forum.redaxo.de', true);
 
 	// includes
 	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/category_separator/classes/class.rex_category_separator.inc.php');

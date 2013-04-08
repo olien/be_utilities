@@ -13,7 +13,7 @@ div#rex-navi-page ul {
 div#rex-navi-page ul li {
 	display: inline-block;
     float: left;
-    padding-right: 8px;
+    padding-right: 7px;
 }
 
 div#rex-navi-page ul li.rex-navi-first a {
@@ -27,7 +27,7 @@ div#rex-navi-page ul li:last-child a {
 div#rex-navi-page ul li a {
     white-space: nowrap;
 	background-position: right 3px;
-	padding: 0 8px 0 0;
+	padding: 0 7px 0 0;
 }
 
 #be-utilities-overview th {
