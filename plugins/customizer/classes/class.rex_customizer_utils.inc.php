@@ -6,11 +6,17 @@ class rex_customizer_utils {
 		$insert = '<!-- BEGIN customizer -->' . PHP_EOL;
 
 		// css file
-		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/customizer/customizer.css" media="screen" />';
+		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/customizer/customizer.css" media="screen" />' . PHP_EOL;
 
 		// color bar
 		if ($REX['ADDON']['customizer']['labelcolor'] != '') { 
 			$insert .= '<style>#rex-navi-logout { border-bottom: 10px solid ' . htmlspecialchars($REX['ADDON']['customizer']['labelcolor']) . '; }</style>' . PHP_EOL;
+		}
+
+		// colorpicker
+		if (rex_request('page') == 'be_utilities' && rex_request('subpage') == 'plugin.customizer') {
+			$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/customizer/colorpicker/colorpicker.css" />' . PHP_EOL;
+			$insert .= '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/customizer/colorpicker/colorpicker.js"></script>' . PHP_EOL;
 		}
 
 		$insert .= '<!-- END customizer -->';
@@ -47,7 +53,7 @@ class rex_customizer_utils {
 		return $params['subject'];
 	}
 
-	protected static function getMediaAddonDir() {
+	public static function getMediaAddonDir() {
 		global $REX;
 
 		// check for media addon dir var introduced in REX 4.5

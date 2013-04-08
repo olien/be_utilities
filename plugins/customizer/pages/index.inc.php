@@ -73,8 +73,8 @@ echo '
 
                 <div class="rex-form-row">
                   <p class="rex-form-col-a rex-form-text">
-                    <label for="rex-form-agk-labelcolor">'.$I18N->msg("customizer_labelcolor").'</label>
-                    <input class="rex-form-text" type="text" id="rex-form-agk-labelcolor" name="customizer-labelcolor" value="'. $REX['ADDON']['customizer']['labelcolor'].'" />
+                    <label for="customizer-labelcolor">'.$I18N->msg("customizer_labelcolor").'</label>
+                    <input class="rex-form-text" type="text" id="customizer-labelcolor" name="customizer-labelcolor" value="'. $REX['ADDON']['customizer']['labelcolor'].'" />
                   </p>
                 </div>
 
@@ -120,3 +120,26 @@ echo '
   </div>
   </div>
   ';
+?>
+
+<script type="text/javascript">
+jQuery(document).ready( function() {
+	jQuery('<img src="../<?php echo rex_customizer_utils::getMediaAddonDir(); ?>/be_utilities/plugins/customizer/colorpicker/images/colorpicker_background.png" />');
+
+	jQuery('#customizer-labelcolor').ColorPicker({
+		onSubmit: function(hsb, hex, rgb, el) {
+			jQuery(el).val('#' + hex);
+			jQuery(el).ColorPickerHide();
+		},
+		onBeforeShow: function () {
+			jQuery(this).ColorPickerSetColor(this.value);
+		},
+		onChange: function (hsb, hex, rgb) {
+			jQuery('#rex-navi-logout').css('border-color', '#' + hex);
+		}
+	})
+	.bind('keyup', function(){
+		jQuery(this).ColorPickerSetColor(this.value);
+	});
+});
+</script>
