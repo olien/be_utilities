@@ -1,0 +1,20 @@
+colorizer = Colorizer
+colorizer_features = Funktionen
+
+colorizer_labeling = Ergänzungen
+colorizer_labelcolor = Erkennungsfarbe (z.B. #47a1ce)
+colorizer_colorize_favicon = Favicon einfärben
+colorizer_labelcolor_error = Keine gültiger Farbcode (z.B. #0af oder #00aaff)
+colorizer_showlink = Link zur Website anzeigen
+
+colorizer_config_updated = Eingaben wurden gespeichert
+colorizer_config_update_failed = Eingaben wurden nicht gespeichert
+
+colorizer_update = Einstellungen speichern
+
+
+colorizer_projectname = Projektname
+colorizer_textarea = breite Textarea unter Template und Module
+colorizer_liquid = Liquid Layout
+
+colorizer_description =  Einfärben von REDAXO-Installationen inkl. Colorpicker und cooler automatisch generierter Favicons. 

@@ -8,7 +8,7 @@ Erste ofizielle Version mit diesen mitgelieferten Plugins
 * `Articlename Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
 * `Category Separator` Erzeugt einen Trenner nach einer angegebenen Kategorie.
 * `CodeMirror` Syntax Highlighting für TextAreas (Templates, Module, etc.).
-* `Customizer` Das Customizer PlugIn aus REDAXO 4.5.
+* `Colorizer` Einfärben von REDAXO-Installationen inkl. Colorpicker und cooler automatisch generierter Favicons. 
 * `Frontend Link` Fügt ins Menü rechts oben einen Link zum Frontend hinzu.
 * `Hide Startarticle` Unbenutzte Startartikel können mit diesem Tool versteckt werden.
 * `jQuery UI` jQuery UI inkl. jQuery Cookie Plugin und Aristo Skin.

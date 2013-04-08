@@ -1,11 +1,14 @@
 <?php
-class rex_customizer_utils {
+class rex_colorizer_utils {
 	public static function addToPageHeader($params) {
 		global $REX;
 
-		$color = htmlspecialchars($REX['ADDON']['customizer']['labelcolor']);
+		$color = htmlspecialchars($REX['ADDON']['colorizer']['labelcolor']);
 
-		$insert = '<!-- BEGIN customizer -->' . PHP_EOL;
+		$insert = '<!-- BEGIN colorizer -->' . PHP_EOL;
+
+		// css file
+		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/colorizer.css" media="screen" />' . PHP_EOL;
 
 		// color bar
 		if ($color != '') { 
@@ -13,20 +16,17 @@ class rex_customizer_utils {
 		}
 
 		// colorized favicon
-		if ($REX['ADDON']['customizer']['colorize_favicon'] && $color != '') { 
-			$insert .= '<link rel="shortcut icon" href="../' . $REX['MEDIA_ADDON_DIR'] . '/be_utilities/plugins/customizer/' . self::getColorizedFavIconName($color) . '" />' . PHP_EOL;
+		if ($REX['ADDON']['colorizer']['colorize_favicon'] && $color != '') { 
+			$insert .= '<link rel="shortcut icon" href="../' . $REX['MEDIA_ADDON_DIR'] . '/be_utilities/plugins/colorizer/' . self::getColorizedFavIconName($color) . '" />' . PHP_EOL;
 		}
-
-		// css file
-		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/customizer/customizer.css" media="screen" />' . PHP_EOL;
 
 		// colorpicker only for plugin page
-		if (rex_request('page') == 'be_utilities' && rex_request('subpage') == 'plugin.customizer') {
-			$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/customizer/colorpicker/colorpicker.css" />' . PHP_EOL;
-			$insert .= '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/customizer/colorpicker/colorpicker.js"></script>' . PHP_EOL;
+		if (rex_request('page') == 'be_utilities' && rex_request('subpage') == 'plugin.colorizer') {
+			$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/colorpicker/colorpicker.css" />' . PHP_EOL;
+			$insert .= '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/colorpicker/colorpicker.js"></script>' . PHP_EOL;
 		}
 
-		$insert .= '<!-- END customizer -->';
+		$insert .= '<!-- END colorizer -->';
 	
 		return $params['subject'] . PHP_EOL . $insert;
 	}
@@ -40,22 +40,8 @@ class rex_customizer_utils {
 			$server = 'http://' . $REX['SERVER'];
 		}
 
-		$class = (strlen($REX['SERVERNAME']) > 50) ? ' be-utilities-customizer-small' : '';
-		$params['subject'] = str_replace('<div id="rex-extra">', '<div id="rex-extra"><h1 class="be-utilities-customizer-title' . $class . '"><a href="' . $server . '" onclick="window.open(this.href); return false">' . $REX['SERVERNAME'] . '</a></h1>', $params['subject']);
-
-		return $params['subject'];
-	}
-
-	public static function addToPageBodyAttribute($params) {
-		global $REX;
-
-		if ($REX['ADDON']['customizer']['textarea']) {
-			$params['subject']['class'][] = 'be-utilities-customizer-textarea-big';
-		}
-
-		if ($REX['ADDON']['customizer']['liquid']) {
-			$params['subject']['class'][] = 'rex-layout-liquid';
-		}
+		$class = (strlen($REX['SERVERNAME']) > 50) ? ' be-utilities-colorizer-small' : '';
+		$params['subject'] = str_replace('<div id="rex-extra">', '<div id="rex-extra"><h1 class="be-utilities-colorizer-title' . $class . '"><a href="' . $server . '" onclick="window.open(this.href); return false">' . $REX['SERVERNAME'] . '</a></h1>', $params['subject']);
 
 		return $params['subject'];
 	}
@@ -98,7 +84,7 @@ class rex_customizer_utils {
 	}
 
 	public static function makeFavIcon($hexColor, $path) {
-		$rgbColor = rex_customizer_utils::hex2rgb($hexColor);
+		$rgbColor = rex_colorizer_utils::hex2rgb($hexColor);
 		$favIconOriginal = $path . 'favicon.png';
 		$favIconNew = $path . self::getColorizedFavIconName($hexColor);
 

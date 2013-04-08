@@ -1,0 +1,18 @@
+
+h1.be-utilities-colorizer-title {
+    position: absolute;
+    top: 32px;
+    left: 202px;
+    width: 420px;
+    overflow: hidden;
+    color: #2C8EC0;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 26px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+h1.be-utilities-colorizer-title.be-utilities-colorizer-small {
+    font-size: 13px;
+}
