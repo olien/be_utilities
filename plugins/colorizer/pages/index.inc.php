@@ -7,8 +7,6 @@ $func = rex_request("func","string");
 if ($func == 'update')
 {
 
-	$REX['ADDON']['colorizer']['projectname'] = htmlspecialchars(rex_request('colorizer-projectname', 'string'));
-
 	$labelcolor = rex_request("colorizer-labelcolor","string");
 
 	if ($labelcolor == '') {
@@ -33,24 +31,10 @@ if ($func == 'update')
 		$REX['ADDON']['colorizer']['showlink'] = 1;
 	}
 
-	$REX['ADDON']['colorizer']['textarea'] = 0;
-
-	if(rex_request("colorizer-textarea") == 1) {
-		$REX['ADDON']['colorizer']['textarea'] = 1;
-	}
-
-	$REX['ADDON']['colorizer']['liquid'] = 0;
-
-	if(rex_request("colorizer-liquid") == 1) {
-		$REX['ADDON']['colorizer']['liquid'] = 1;
-	}
-
 	$content = '
 $REX[\'ADDON\'][\'colorizer\'][\'labelcolor\'] = "'.$REX['ADDON']['colorizer']['labelcolor'].'";
 $REX[\'ADDON\'][\'colorizer\'][\'colorize_favicon\'] = '.$REX['ADDON']['colorizer']['colorize_favicon'].';
 $REX[\'ADDON\'][\'colorizer\'][\'showlink\'] = '.$REX['ADDON']['colorizer']['showlink'].';
-$REX[\'ADDON\'][\'colorizer\'][\'textarea\'] = '.$REX['ADDON']['colorizer']['textarea'].';
-$REX[\'ADDON\'][\'colorizer\'][\'liquid\'] = '.$REX['ADDON']['colorizer']['liquid'].';
 	';
 
 	$config_file = $REX['INCLUDE_PATH'] .'/addons/be_utilities/plugins/colorizer/settings.inc.php';
@@ -114,24 +98,6 @@ echo '
                     if($REX['ADDON']['colorizer']['showlink']) echo 'checked="checked"';
                     echo ' />
                     <label for="rex-form-agk-showlink">'.$I18N->msg("colorizer_showlink").'</label>
-                  </p>
-                </div>
-
-                <div class="rex-form-row">
-                  <p class="rex-form-col-a rex-form-checkbox">
-                    <input class="rex-form-checkbox" type="checkbox" id="rex-form-agk-textarea" name="colorizer-textarea" value="1" ';
-                    if($REX['ADDON']['colorizer']['textarea']) echo 'checked="checked"';
-                    echo ' />
-                    <label for="rex-form-agk-textarea">'.$I18N->msg("colorizer_textarea").'</label>
-                  </p>
-                </div>
-
-                <div class="rex-form-row">
-                  <p class="rex-form-col-a rex-form-checkbox">
-                    <input class="rex-form-checkbox" type="checkbox" id="rex-form-agk-liquid" name="colorizer-liquid" value="1" ';
-                    if($REX['ADDON']['colorizer']['liquid']) echo 'checked="checked"';
-                    echo ' />
-                    <label for="rex-form-agk-liquid">'.$I18N->msg("colorizer_liquid").'</label>
                   </p>
                 </div>
 
