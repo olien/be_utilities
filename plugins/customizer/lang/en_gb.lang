@@ -2,7 +2,8 @@ customizer = customizer
 customizer_features = function
 
 customizer_labeling = Additions
-customizer_labelcolor = color (#47a0ce)
+customizer_labelcolor = color (#47a1ce)
+customizer_colorize_favicon = Colorize Favicon
 customizer_labelcolor_error = No valid color code (#0af oder #00aaff)
 customizer_showlink = activate link
 
