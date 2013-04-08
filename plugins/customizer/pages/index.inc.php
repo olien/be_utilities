@@ -56,7 +56,8 @@ if ($warning != '') {
 }
 
 echo '
-  <div class="rex-form" id="rex-form-system-setup">
+  <div class="rex-addon-output">
+  <div class="rex-form">
     <form action="index.php" method="post">
       <input type="hidden" name="page" value="be_utilities" />
       <input type="hidden" name="subpage" value="plugin.customizer" />
@@ -64,7 +65,7 @@ echo '
 
           <h2 class="rex-hl2">' . $I18N->msg('be_utilities_settings') . '</h2>
 
-          <div class="rex-area-content">
+          
 
             <fieldset class="rex-form-col-1">
 
@@ -113,8 +114,9 @@ echo '
                </div>
 
             </fieldset>
-          </div> <!-- Ende rex-area-content //-->
+         
 
     </form>
+  </div>
   </div>
   ';
