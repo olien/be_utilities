@@ -13,10 +13,21 @@ div#rex-navi-page ul {
 div#rex-navi-page ul li {
 	display: inline-block;
     float: left;
+    padding-right: 8px;
+}
+
+div#rex-navi-page ul li.rex-navi-first a {
+	background: transparent url("../../../redaxo/media/pipe_c2.gif") no-repeat right 3px;
+}
+
+div#rex-navi-page ul li:last-child a {
+	background: 0;
 }
 
 div#rex-navi-page ul li a {
     white-space: nowrap;
+	background-position: right 3px;
+	padding: 0 8px 0 0;
 }
 
 #be-utilities-overview th {
