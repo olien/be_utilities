@@ -62,22 +62,39 @@ class rex_plugin_factory {
 				$description = self::getPluginDescription($addon, $plugin);
 
 				if ($description != '') {
-					$htmlDescription = '<p>&nbsp;&nbsp;&nbsp;' . $description . '</p>';
+					$htmlDescription = '<p>' . $description . '</p>';
 				}
-
-				echo '<tr><td>&raquo; ';
 
 				// link
+				$htmlLink = 'index.php?page=' . $addon . '&amp;subpage=plugin.' . $plugin;
+
+				// title and css class
 				if (self::hasPluginSubpage($addon, $plugin)) {
-					echo '<a href="index.php?page=' . $addon . '&amp;subpage=plugin.' . $plugin . '">' .  self::getPluginTitle($addon, $plugin) . '</a>' . $htmlDescription;
+					$htmlTitle = '<a href="' . $htmlLink . '">' .  self::getPluginTitle($addon, $plugin) . '</a>' . $htmlDescription;
+					$htmlIcon = '<a href="' . $htmlLink . '"><div class="plugin-icon"></div></a>';
 				} else {
-					echo '<span>' .  self::getPluginTitle($addon, $plugin) . '</span>' . $htmlDescription;
+					$htmlTitle = '<span>' .  self::getPluginTitle($addon, $plugin) . '</span>' . $htmlDescription;
+					$htmlIcon = '<div class="plugin-icon grey"></div>';
 				}
 
-				echo '</td></tr>';
+				// table row
+				echo '<tr><td>' . $htmlIcon . '<div class="right">';
+				echo $htmlTitle;
+				echo '</div></td></tr>';
 			}
 
 			echo '</table>';
+		}
+	}
+
+	static function getMediaAddonDir() {
+		global $REX;
+
+		// check for media addon dir var introduced in REX 4.5
+		if (isset($REX['MEDIA_ADDON_DIR'])) {
+			return $REX['MEDIA_ADDON_DIR'];
+		} else {
+			return 'files/addons';
 		}
 	}
 }

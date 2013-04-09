@@ -9,8 +9,12 @@ include($REX['INCLUDE_PATH'] . '/layout/top.php');
 rex_title($REX['ADDON']['name']['be_utilities'] . ' <span class="version">' . $REX['ADDON']['version'][$addon] . '</span>', $REX['ADDON'][$addon]['SUBPAGES']);
 
 if ($subpage != '') {
-	// include plugin page
 	$plugin = str_replace('plugin.', '', $subpage);
+
+	// plugin headline
+	echo '<h2 class="plugin">' . rex_plugin_factory::getPluginTitle('be_utilities', $plugin) . '</h2>';
+
+	// include plugin page
 	include($REX['INCLUDE_PATH'] . '/addons/' . $addon . '/plugins/' . $plugin . '/pages/index.inc.php');
 } else {
 	// show plugin list

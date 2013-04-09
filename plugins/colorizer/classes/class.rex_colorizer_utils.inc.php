@@ -17,7 +17,7 @@ class rex_colorizer_utils {
 
 		// colorized favicon
 		if ($REX['ADDON']['colorizer']['colorize_favicon'] && $color != '') { 
-			$insert .= '<link rel="shortcut icon" href="../' . $REX['MEDIA_ADDON_DIR'] . '/be_utilities/plugins/colorizer/' . self::getColorizedFavIconName($color) . '" />' . PHP_EOL;
+			$insert .= '<link rel="shortcut icon" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/' . self::getColorizedFavIconName($color) . '" />' . PHP_EOL;
 		}
 
 		// colorpicker only for plugin page
