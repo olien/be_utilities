@@ -13,9 +13,15 @@ if ($REX['REDAXO']) {
 	// add link to backend
 	$thisRexVersion = $REX['VERSION']. '.' . $REX['SUBVERSION'] . '.' . $REX['MINORVERSION'];
 
-	if (version_compare($thisRexVersion, '4.5.0', '<')) {
-		rex_register_extension('OUTPUT_FILTER', 'rex_frontend_link::addFrontendLinkByOutputFilterEP');
-	} else { 
-		rex_register_extension('META_NAVI', 'rex_frontend_link::addFrontendLinkByMetaNaviEP');
+	if ($REX['ADDON']['frontend_link']['metamenu_link'] != 'none') {
+		if (version_compare($thisRexVersion, '4.5.0', '<')) {
+			rex_register_extension('OUTPUT_FILTER', 'rex_frontend_link::addFrontendLinkByOutputFilterEP');
+		} else { 
+			rex_register_extension('META_NAVI', 'rex_frontend_link::addFrontendLinkByMetaNaviEP');
+		}
+	}
+
+	if ($REX['ADDON']['frontend_link']['metamenu_header_link'] && OOPlugin::isActivated('be_utilities', 'frontend_link')) {
+		rex_register_extension('OUTPUT_FILTER', 'rex_frontend_link::addToOutputFilter');
 	}
 }

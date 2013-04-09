@@ -27,19 +27,28 @@ class rex_frontend_link {
 		$sanitizedUrl = self::getFrontendUrl();
 
 		// link text
-		switch ($REX['ADDON']['frontend_link']['link_text_mode']) {
+		switch ($REX['ADDON']['frontend_link']['metamenu_link']) {
 			case 'default': 
-				$linkText = $I18N->msg('frontend_link_goto_website');
+				$linkText = $I18N->msg('frontend_link_metamenu_link_default');
 				break;
 			case 'rex_server':
 				$linkText = $sanitizedUrl;
 				break;
 			case 'userdef':
-				$linkText = $REX['ADDON']['frontend_link']['link_text'];
+				$linkText = $REX['ADDON']['frontend_link']['metamenu_link_text'];
 				break;
 		}
 
 		return '<li><a id="frontend-link" href="http://' . $sanitizedUrl . '" target="_blank">' . $linkText . '</a></li>';
+	}
+
+	public static function addToOutputFilter($params)	{
+		global $REX;
+
+		$class = (strlen($REX['SERVERNAME']) > 50) ? ' be-utilities-colorizer-small' : '';
+		$params['subject'] = str_replace('<div id="rex-extra">', '<div id="rex-extra"><h1 class="be-utilities-colorizer-title' . $class . '"><a href="http://' . self::getFrontendUrl() . '" onclick="window.open(this.href); return false">' . $REX['SERVERNAME'] . '</a></h1>', $params['subject']);
+
+		return $params['subject'];
 	}
 
 	static function getFrontendUrl() {
