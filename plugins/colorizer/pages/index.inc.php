@@ -123,13 +123,13 @@ jQuery(document).ready( function() {
 
 	jQuery('#colorizer-labelcolor').ColorPicker({
 		onSubmit: function(hsb, hex, rgb, el) {
-			jQuery(el).val('#' + hex);
 			jQuery(el).ColorPickerHide();
 		},
 		onBeforeShow: function () {
 			jQuery(this).ColorPickerSetColor(this.value);
 		},
 		onChange: function (hsb, hex, rgb) {
+			jQuery('#colorizer-labelcolor').val('#' + hex);
 			jQuery('#rex-navi-logout').css('border-color', '#' + hex);
 		}
 	})
