@@ -13,8 +13,4 @@ if ($REX['REDAXO']) {
 
 	// add stuff to ep's
 	rex_register_extension('PAGE_HEADER', 'rex_colorizer_utils::addToPageHeader');
-
-	if ($REX['ADDON']['colorizer']['showlink'] && OOPlugin::isActivated('be_utilities', 'colorizer')) {
-		rex_register_extension('OUTPUT_FILTER', 'rex_colorizer_utils::addToOutputFilter');
-	}
 }

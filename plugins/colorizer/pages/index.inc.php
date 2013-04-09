@@ -25,16 +25,9 @@ if ($func == 'update')
 		$REX['ADDON']['colorizer']['colorize_favicon'] = 1;
 	}
 
-	$REX['ADDON']['colorizer']['showlink'] = 0;
-	
-	if(rex_request("colorizer-showlink") == 1) {
-		$REX['ADDON']['colorizer']['showlink'] = 1;
-	}
-
 	$content = '
 $REX[\'ADDON\'][\'colorizer\'][\'labelcolor\'] = "'.$REX['ADDON']['colorizer']['labelcolor'].'";
 $REX[\'ADDON\'][\'colorizer\'][\'colorize_favicon\'] = '.$REX['ADDON']['colorizer']['colorize_favicon'].';
-$REX[\'ADDON\'][\'colorizer\'][\'showlink\'] = '.$REX['ADDON']['colorizer']['showlink'].';
 	';
 
 	$config_file = $REX['INCLUDE_PATH'] .'/addons/be_utilities/plugins/colorizer/settings.inc.php';
@@ -93,15 +86,6 @@ echo '
                 </div>
 
                 <div class="rex-form-row">
-                  <p class="rex-form-col-a rex-form-checkbox">
-                    <input class="rex-form-checkbox" type="checkbox" id="rex-form-agk-showlink" name="colorizer-showlink" value="1" ';
-                    if($REX['ADDON']['colorizer']['showlink']) echo 'checked="checked"';
-                    echo ' />
-                    <label for="rex-form-agk-showlink">'.$I18N->msg("colorizer_showlink").'</label>
-                  </p>
-                </div>
-
-                <div class="rex-form-row">
                   <p class="rex-form-col-a rex-form-submit">
                     <input type="submit" class="rex-form-submit" name="sendit" value="'.$I18N->msg("colorizer_update").'" />
                   </p>
@@ -121,6 +105,10 @@ echo '
 jQuery(document).ready( function() {
 	jQuery('<img src="../<?php echo rex_colorizer_utils::getMediaAddonDir(); ?>/be_utilities/plugins/colorizer/colorpicker/images/colorpicker_background.png" />');
 
+	jQuery('#colorizer-labelcolor').keyup(function() {
+		updateColorPreview();
+	});
+
 	jQuery('#colorizer-labelcolor').ColorPicker({
 		onSubmit: function(hsb, hex, rgb, el) {
 			jQuery(el).ColorPickerHide();
@@ -137,4 +125,8 @@ jQuery(document).ready( function() {
 		jQuery(this).ColorPickerSetColor(this.value);
 	});
 });
+
+function updateColorPreview() {
+	jQuery('#rex-navi-logout').css('border-color', jQuery('#colorizer-labelcolor').val());
+}
 </script>
