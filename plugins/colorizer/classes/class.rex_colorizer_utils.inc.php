@@ -7,9 +7,6 @@ class rex_colorizer_utils {
 
 		$insert = '<!-- BEGIN colorizer -->' . PHP_EOL;
 
-		// css file
-		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/colorizer.css" media="screen" />' . PHP_EOL;
-
 		// color bar
 		if ($color != '') { 
 			$insert .= '<style>#rex-navi-logout { border-bottom: 10px solid ' . $color . '; }</style>' . PHP_EOL;

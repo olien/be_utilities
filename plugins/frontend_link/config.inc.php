@@ -23,5 +23,6 @@ if ($REX['REDAXO']) {
 
 	if ($REX['ADDON']['frontend_link']['metamenu_header_link'] && OOPlugin::isActivated('be_utilities', 'frontend_link')) {
 		rex_register_extension('OUTPUT_FILTER', 'rex_frontend_link::addToOutputFilter');
+		rex_register_extension('PAGE_HEADER', 'rex_frontend_link::addToPageHeader');
 	}
 }

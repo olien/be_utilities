@@ -42,13 +42,21 @@ class rex_frontend_link {
 		return '<li><a id="frontend-link" href="http://' . $sanitizedUrl . '" target="_blank">' . $linkText . '</a></li>';
 	}
 
-	public static function addToOutputFilter($params)	{
+	static function addToOutputFilter($params)	{
 		global $REX;
 
-		$class = (strlen($REX['SERVERNAME']) > 50) ? ' be-utilities-colorizer-small' : '';
-		$params['subject'] = str_replace('<div id="rex-extra">', '<div id="rex-extra"><h1 class="be-utilities-colorizer-title' . $class . '"><a href="http://' . self::getFrontendUrl() . '" onclick="window.open(this.href); return false">' . $REX['SERVERNAME'] . '</a></h1>', $params['subject']);
+		$class = (strlen($REX['SERVERNAME']) > 50) ? ' be-utilities-frontend_link-small' : '';
+		$params['subject'] = str_replace('<div id="rex-extra">', '<div id="rex-extra"><h1 class="be-utilities-frontend_link-title' . $class . '"><a href="http://' . self::getFrontendUrl() . '" onclick="window.open(this.href); return false">' . $REX['SERVERNAME'] . '</a></h1>', $params['subject']);
 
 		return $params['subject'];
+	}
+
+	static function addToPageHeader($params)	{
+		$insert = '<!-- BEGIN frontend_link -->' . PHP_EOL;
+		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/frontend_link/frontend_link.css" />' . PHP_EOL;
+		$insert .= '<!-- END frontend_link -->' . PHP_EOL;
+
+		return $params['subject'] . PHP_EOL . $insert;
 	}
 
 	static function getFrontendUrl() {
@@ -59,5 +67,16 @@ class rex_frontend_link {
 
 	static function sanitizeUrl($url) {
 		return preg_replace('@^https?://|/.*|[^\w.-]@', '', $url);
+	}
+
+	static function getMediaAddonDir() {
+		global $REX;
+
+		// check for media addon dir var introduced in REX 4.5
+		if (isset($REX['MEDIA_ADDON_DIR'])) {
+			return $REX['MEDIA_ADDON_DIR'];
+		} else {
+			return 'files/addons';
+		}
 	}
 }

@@ -1,5 +1,5 @@
 
-h1.be-utilities-colorizer-title {
+h1.be-utilities-frontend_link-title {
     position: absolute;
     top: 32px;
     left: 202px;
@@ -13,6 +13,6 @@ h1.be-utilities-colorizer-title {
     white-space: nowrap;
 }
 
-h1.be-utilities-colorizer-title.be-utilities-colorizer-small {
+h1.be-utilities-frontend_link-title.be-utilities-frontend_link-small {
     font-size: 13px;
 }
