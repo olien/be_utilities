@@ -92,6 +92,7 @@ Credits
 -------
 
 * [dergel](https://github.com/dergel) für den META_NAVI EP und das Customizer Plugin
-* [gharlan](https://github.com/gharlan) für die Inspiration und den Code ;) für das `articlename_sync` PlugIns
+* [gharlan](https://github.com/gharlan) für die Inspiration und den Code für das `articlename_sync` PlugIns
 * [joachimdoerr](https://github.com/joachimdoerr) für das `jquery_ui` PlugIn, das hier (in einer modifizierten Version) beigelegt wurde
+* [jdlx](https://github.com/jdlx) und die REDAXO-Community für die Hilfe bei der Namensfindung
 
