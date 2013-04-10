@@ -62,7 +62,7 @@ div#rex-navi-page ul li a {
 } 
 
 #be-utilities-overview div.plugin-icon.grey {
-	background-image: url("plugin_grey.png");
+	background-position: left -60px;
 }
 
 #be-utilities-overview div.right {
