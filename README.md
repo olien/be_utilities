@@ -37,8 +37,12 @@ Vereinfachte Einbindung eines PlugIns
 Ein PlugIn kann ganz einfach in der `config.inc.php` des PlugIns eingebunden werden:
 
 ```php
-// register plugin
-rex_plugin_factory::registerPlugin('be_utilities', 'my_plugin', 'Mein Plugin', 'Eine kurze Beschreibung.', '1.0.0', 'Der Autor', 'forum.redaxo.de', /* $hasBackendPage = */ true, /* $permission = '' */);
+if ($REX['REDAXO']) { // only backend
+	// register plugin
+	rex_plugin_factory::registerPlugin('be_utilities', 'my_plugin', 'Mein Plugin', 'Eine kurze Beschreibung.', '1.0.0', 'Der Autor', 'forum.redaxo.de', /* $hasBackendPage = */ true, /* $permission = '' */);
+
+	// ...
+}
 ```
 
 In der `help.inc.php` des PlugIns lässt sich der Beschreibungstext so anzeigen:
@@ -54,15 +58,19 @@ Klassische Einbindung eines PlugIns
 Alternativ lässt sich ein PlugIn auch wie gewohnt einbinden:
 
 ```php
-// register plugin
-$REX['ADDON']['page']['my_plugin'] = 'Mein Plugin';
-$REX['ADDON']['version']['my_plugin'] = '1.0.0';
-$REX['ADDON']['author']['my_plugin'] = 'Der Autor';
-$REX['ADDON']['supportpage']['my_plugin'] = 'forum.redaxo.de';
-$REX['ADDON']['description']['my_plugin'] = 'Eine kurze Beschreibung.';
+if ($REX['REDAXO']) { // only backend
+	// register plugin
+	$REX['ADDON']['page']['my_plugin'] = 'Mein Plugin';
+	$REX['ADDON']['version']['my_plugin'] = '1.0.0';
+	$REX['ADDON']['author']['my_plugin'] = 'Der Autor';
+	$REX['ADDON']['supportpage']['my_plugin'] = 'forum.redaxo.de';
+	$REX['ADDON']['description']['my_plugin'] = 'Eine kurze Beschreibung.';
 
-// add sub page (if needed)
-$REX['ADDON']['be_utilities']['SUBPAGES'][] = array('plugin.my_plugin', $REX['ADDON']['page']['my_plugin']);
+	// add sub page (if needed)
+	$REX['ADDON']['be_utilities']['SUBPAGES'][] = array('plugin.my_plugin', $REX['ADDON']['page']['my_plugin']);
+
+	// ...
+}
 ```
 
 Und hier die Anzeige des Beschreibungstext für die `help.inc.php`:

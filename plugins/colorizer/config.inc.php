@@ -12,5 +12,7 @@ if ($REX['REDAXO']) {
 	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/colorizer/settings.inc.php');
 
 	// add stuff to ep's
-	rex_register_extension('PAGE_HEADER', 'rex_colorizer_utils::addToPageHeader');
+	if (rex_request('page') != 'mediapool' && rex_request('page') != 'linkmap') {
+		rex_register_extension('PAGE_HEADER', 'rex_colorizer_utils::addToPageHeader');
+	}
 }

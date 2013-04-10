@@ -35,11 +35,11 @@ div#rex-navi-page ul li a {
 }
 
 #be-utilities-overview td {
-	padding: 11px 5px;
+	padding: 13px 5px;
 }
 
 #be-utilities-overview td p {
-	margin-top: 6px;
+	margin-top: 5px;
 	color: grey;
 }
 
@@ -70,16 +70,19 @@ div#rex-navi-page ul li a {
 	margin-left: 13px;
 }
 
-#rex-page-be-utilities h2.plugin {
-	background: transparent url("plugin.png") no-repeat left top;
+#rex-page-be-utilities h2.main {
 	color: #14568A;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
-	margin-bottom: 15px;
+	margin-bottom: 17px;
 	margin-left: 1px;
-	padding-left: 40px;
 	height: 30px;
 	line-height: 30px;
+}
+
+#rex-page-be-utilities h2.main.plugin {
+	background: transparent url("plugin.png") no-repeat left top;
+	padding-left: 40px;
 }
 
 #rex-page-be-utilities div#rex-output {
