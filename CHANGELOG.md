@@ -1,9 +1,9 @@
 Backend Utilities - Changelog
 =============================
 
-### Version 1.0.0
+### Version 1.0.0 - 10. April 2013
 
-Erste ofizielle Version mit diesen mitgelieferten Plugins
+Erste ofizielle Version mit diesen mitgelieferten Plugins:
 
 * `Articlename Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
 * `Category Separator` Erzeugt einen Trenner nach einer angegebenen Kategorie.
@@ -14,3 +14,8 @@ Erste ofizielle Version mit diesen mitgelieferten Plugins
 * `jQuery UI` jQuery UI inkl. jQuery Cookie Plugin und Aristo Skin.
 * `Rex Globals` Einige Tools damit Module und Templates auf globale PHP-Klassen und CSS-Styles zugreifen können.
 * `Update Date` Mini Toolkit um das Update Datum der Website zu ermitteln.
+
+Und diesen Plugins im Archiv-Ordner:
+
+* `Favicon` Nachrüsten eines Favicons für ältere REDAXO Versionen.
+* `Phpinfo` Zeigt detaillierte Informationen über den Webserver inkl. PHP, MySQL Variablen usw. an.
