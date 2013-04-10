@@ -1,5 +1,5 @@
 <?php
 // show plugin description
-echo rex_plugin_factory::getPluginDescription('be_extensions', 'phpinfo');
+echo rex_plugin_factory::getPluginDescription('be_utilities', 'phpinfo');
 ?>
 <br />
