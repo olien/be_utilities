@@ -46,7 +46,7 @@ class rex_frontend_link {
 		global $REX;
 
 		$class = (strlen($REX['SERVERNAME']) > 50) ? ' be-utilities-frontend_link-small' : '';
-		$params['subject'] = str_replace('<div id="rex-extra">', '<div id="rex-extra"><h1 class="be-utilities-frontend_link-title' . $class . '"><a href="http://' . self::getFrontendUrl() . '" onclick="window.open(this.href); return false">' . $REX['SERVERNAME'] . '</a></h1>', $params['subject']);
+		$params['subject'] = str_replace('<div id="rex-website">', '<div id="rex-website"><h1 class="be-utilities-frontend_link-title' . $class . '"><a href="http://' . self::getFrontendUrl() . '" onclick="window.open(this.href); return false">' . $REX['SERVERNAME'] . '</a></h1>', $params['subject']);
 
 		return $params['subject'];
 	}
