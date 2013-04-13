@@ -47,14 +47,14 @@ class rex_plugin_factory {
 		}
 	}
 
-	static function printPluginList($addon, $noPluginsAvailabeMsg) {
+	static function printPluginList($addon, $headline, $noPluginsAvailabeMsg) {
 		$plugins = self::getAvailablePlugins($addon);
 
 		if (count($plugins) < 1) {
 			echo rex_info($noPluginsAvailabeMsg);
 		} else {
 			echo '<table id="be-utilities-overview" class="rex-table">';
-			//echo '<tr><th>' . $headline . '</th></tr>';
+			echo '<tr><th>' . $headline . '</th></tr>';
 
 			foreach ($plugins as $plugin) {
 				// description

@@ -1,5 +1,6 @@
 be_utilities = Backend Utilities
 be_utilities_overview = Übersicht
+be_utilities_available_plugins = Verfügbare Plugins
 be_utilities_configfile_update = Konfiguration wurde aktualisiert!
 be_utilities_configfile_nosave = Konfiguration konnte nicht gespeichert werden!
 be_utilities_configfile_nowrite = Konfigurationsdatei "{0}" ist nicht beschreibbar!
