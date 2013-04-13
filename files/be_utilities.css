@@ -30,6 +30,10 @@ div#rex-navi-page ul li a {
 	padding: 0 7px 0 0;
 }
 
+#be-utilities-overview {
+	margin-top: 9px;
+}
+
 #be-utilities-overview th {
 	font-size: 1.2em;
 }
