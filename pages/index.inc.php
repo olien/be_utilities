@@ -18,7 +18,7 @@ if ($subpage != '') {
 	include($REX['INCLUDE_PATH'] . '/addons/' . $addon . '/plugins/' . $plugin . '/pages/index.inc.php');
 } else {
 	// show plugin list
-	rex_plugin_factory::printPluginList($addon, $I18N->msg('be_utilities_overview'), $I18N->msg('be_utilities_no_plugins_installed'));
+	rex_plugin_factory::printPluginList($addon, $I18N->msg('be_utilities_available_plugins'), $I18N->msg('be_utilities_no_plugins_installed'));
 }
 
 // layout bottom
