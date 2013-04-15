@@ -1,5 +1,5 @@
-rex_globals_description = Einige Tools damit Module auf globale Variablen, Methoden und Styles zugreifen können.
-rex_globals_css_file = CSS-Datei für Modul-Styles
+rex_globals_description = Einige Tools damit Module und Templates auf globale PHP-Klassen und CSS-Styles zugreifen können.
+rex_globals_css_file = CSS-Datei für Backend
 rex_globals_template = Template für Backend-Einbindung
 rex_globals_pre_include = Pre-Include {0} für Template
 rex_globals_none = keins

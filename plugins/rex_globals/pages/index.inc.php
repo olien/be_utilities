@@ -61,7 +61,7 @@ $selectTemplates->setSelected($REX['ADDON']['rex_globals']['include_template_id'
 					<div class="rex-form-row rex-form-element-v1">
 						<p class="rex-form-col-a rex-form-read">
 							<label for="css_file"><?php echo $I18N->msg('rex_globals_css_file'); ?></label>
-							<span class="rex-form-read" id="css_file"><code>/files/addons/be_utilities/plugins/rex_globals/rex_module.css</code></span>
+							<span class="rex-form-read" id="css_file"><code>/files/addons/be_utilities/plugins/rex_globals/rex_globals.css</code></span>
 						</p>
 					</div>
 

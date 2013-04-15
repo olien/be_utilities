@@ -36,7 +36,7 @@ if ($REX['REDAXO']) {
 	// include css
 	$insert = PHP_EOL;
 	$insert .= '<!-- BEGIN rex_globals -->' . PHP_EOL;
-	$insert .= '<link rel="stylesheet" type="text/css" href="../' . $mediaAddonDir . '/be_utilities/plugins/rex_globals/rex_module.css" />' . PHP_EOL;
+	$insert .= '<link rel="stylesheet" type="text/css" href="../' . $mediaAddonDir . '/be_utilities/plugins/rex_globals/rex_globals.css" />' . PHP_EOL;
 	$insert .= '<!-- END rex_globals -->';
 	
 	rex_register_extension('PAGE_HEADER', create_function('$params', 'return $params[\'subject\'] . \''. $insert . '\';'));
