@@ -1,8 +1,19 @@
-#rex-module input[type="checkbox"],
-#rex-module input[type="radio"],
-#rex-module .margin-fix {
-	position: relative;
-    top: 3px;
+#rex-module label {
+	display: block;
+	float: left;
+	padding-right: 10px;
+	white-space: nowrap;
+	/*padding-left: 22px;
+	text-indent: -22px;*/
+}
+
+#rex-module label span {
+	vertical-align: middle;
+}
+
+#rex-module label input[type="checkbox"],
+#rex-module label input[type="radio"] {
+	vertical-align: middle;
 }
 
 #rex-module h2 {
@@ -30,6 +41,10 @@
 	height: 6px;
 }
 
+#rex-module .spacer.medium {
+	height: 10px;
+}
+
 #rex-module ul,
 #rex-module ol {
 	margin-top: 0;
@@ -38,5 +53,9 @@
 
 #rex-module .markItUpEditor {
 	padding: 7px !important;
+}
+
+#rex-module div.clearer {
+	clear: both;
 }
 
