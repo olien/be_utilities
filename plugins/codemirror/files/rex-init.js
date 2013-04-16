@@ -2,8 +2,16 @@ jQuery(document).ready(function()
 {
   var cm_editor = {};
   var cm = 0;
+  var firstRun = true;
 
   jQuery("#rex-rex_cronjob_phpcode textarea, #rex-page-module #rex-wrapper textarea, #rex-page-template #rex-wrapper textarea, textarea.codemirror").each(function(){
+
+    if (firstRun) {
+      jQuery("head").append('<link rel="stylesheet" type="text/css" href="../files/addons/be_utilities/plugins/codemirror/vendor/codemirror.css" media="screen" />');
+      jQuery("head").append('<script type="text/javascript" src="../files/addons/be_utilities/plugins/codemirror/vendor/codemirror-compressed.js" />');
+
+      firstRun = false;
+    }
 
     var t = jQuery(this);
     var id = t.attr("id");
