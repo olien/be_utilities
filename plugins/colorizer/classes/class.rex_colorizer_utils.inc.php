@@ -3,18 +3,11 @@ class rex_colorizer_utils {
 	public static function addToPageHeader($params) {
 		global $REX;
 
-		$color = htmlspecialchars($REX['ADDON']['colorizer']['labelcolor']);
-
 		$insert = '<!-- BEGIN colorizer -->' . PHP_EOL;
 
 		// color bar
-		if ($color != '') { 
-			$insert .= '<style>#rex-navi-logout { border-bottom: 10px solid ' . $color . '; }</style>' . PHP_EOL;
-		}
-
-		// colorized favicon
-		if ($REX['ADDON']['colorizer']['colorize_favicon'] && $color != '') { 
-			$insert .= '<link rel="shortcut icon" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/' . self::getColorizedFavIconName($color) . '" />' . PHP_EOL;
+		if ($REX['ADDON']['colorizer']['labelcolor'] != '') { 
+			$insert .= '<style>#rex-navi-logout { border-bottom: 10px solid ' . $REX['ADDON']['colorizer']['labelcolor'] . '; }</style>' . PHP_EOL;
 		}
 
 		// colorpicker only for plugin page
@@ -31,15 +24,11 @@ class rex_colorizer_utils {
 	public static function addToOutputFilter($params)	{
 		global $REX;
 
-		$server = $REX['SERVER'];
+		// the colorized favicon
+		$replace = '<link rel="shortcut icon" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/' . self::getColorizedFavIconName($REX['ADDON']['colorizer']['labelcolor']) . '" />' . PHP_EOL;
 
-		if (substr($REX['SERVER'], 0, 4) != 'http') {
-			$server = 'http://' . $REX['SERVER'];
-		}
-
-		$class = (strlen($REX['SERVERNAME']) > 50) ? ' be-utilities-colorizer-small' : '';
-		$params['subject'] = str_replace('<div id="rex-extra">', '<div id="rex-extra"><h1 class="be-utilities-colorizer-title' . $class . '"><a href="' . $server . '" onclick="window.open(this.href); return false">' . $REX['SERVERNAME'] . '</a></h1>', $params['subject']);
-
+		$params['subject']  = str_replace('<link rel="shortcut icon" href="media/favicon.ico" />', $replace, $params['subject']);
+		
 		return $params['subject'];
 	}
 
@@ -97,6 +86,6 @@ class rex_colorizer_utils {
 	}
 
 	public static function getColorizedFavIconName($hexColor) {
-		return 'favicon_' . ltrim($hexColor, '#') . '.png';
+		return 'favicon-' . ltrim($hexColor, '#') . '.png';
 	}
 }

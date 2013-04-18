@@ -15,4 +15,8 @@ if ($REX['REDAXO']) {
 	if (rex_request('page') != 'mediapool' && rex_request('page') != 'linkmap') {
 		rex_register_extension('PAGE_HEADER', 'rex_colorizer_utils::addToPageHeader');
 	}
+
+	if ($REX['ADDON']['colorizer']['colorize_favicon'] == 1 && $REX['ADDON']['colorizer']['labelcolor'] != '') {
+		rex_register_extension('OUTPUT_FILTER', 'rex_colorizer_utils::addToOutputFilter');
+	}
 }
