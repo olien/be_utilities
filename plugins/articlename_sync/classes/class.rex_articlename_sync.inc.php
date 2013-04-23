@@ -15,8 +15,6 @@ class rex_articlename_sync {
 		$sql->update();
 
 		rex_deleteCacheArticle($id, $clang);
-
-		echo rex_info($I18N->msg('articlename_sync_cat_art_msg'));
 	}
 
 	static function syncCatname2Artname($params) {
@@ -33,7 +31,5 @@ class rex_articlename_sync {
 		$sql->update();
 
 		rex_deleteCacheArticle($id, $clang);
-
-		echo rex_info($I18N->msg('articlename_sync_art_cat_msg'));
 	}
 }
