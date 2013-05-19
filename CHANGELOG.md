@@ -1,7 +1,7 @@
 Backend Utilities - Changelog
 =============================
 
-### Version 1.0.0 - 10. April 2013
+### Version 1.0.0 - 19. Mai 2013
 
 Erste ofizielle Version mit diesen mitgelieferten Plugins:
 
