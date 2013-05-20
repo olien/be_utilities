@@ -1,6 +1,6 @@
 <?php
 
-if ($REX['REDAXO']) {
+if ($REX['REDAXO'] && !$REX['SETUP']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/hide_startarticle/lang/');
 
