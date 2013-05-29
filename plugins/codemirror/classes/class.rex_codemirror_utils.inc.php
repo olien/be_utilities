@@ -3,12 +3,17 @@
 class rex_codemirror_utils {
 	public static function addToOutputFilter($params) {
 		global $REX;
-
+	
+		// head stuff
 		$code = "\n" . '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/codemirror/vendor/codemirror.css" media="screen" />';
-		$code .= "\n" . '<script type="text/javascript">var codemirror_defaulttheme="' . $REX['ADDON']['codemirror']['theme'] . '";</script>';
-		$code .= "\n" . '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/codemirror/rex-init.js"></script>';
+		$params['subject'] = str_replace('</head>', $code . '</head>', $params['subject']);
 
-		return str_replace('</body>', $code . '</body>', $params['subject']);
+		// body stuff
+		$code = "\n" . '<script type="text/javascript">var codemirror_defaulttheme="' . $REX['ADDON']['codemirror']['theme'] . '";</script>';
+		$code .= "\n" . '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/codemirror/rex-init.js"></script>';
+		$params['subject'] = str_replace('</body>', $code . '</body>', $params['subject']);
+
+		return $params['subject'];
 	}
 
 	protected static function getMediaAddonDir() {

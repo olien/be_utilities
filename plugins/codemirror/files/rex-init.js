@@ -1,4 +1,14 @@
 
+// this is to avoid flickering of ctype/category stuff in template-page
+jQuery(function($) {
+	if($("#active").is(":not(:checked)")) {
+		// hiding gets done in template.inc.php
+	} else {
+		$("#rex-form-template-ctype").show();
+		$("#rex-form-template-categories").show();
+	}
+});
+
 var initCodeMirror = false;
 
 if (jQuery("#rex-rex_cronjob_phpcode textarea, #rex-page-module #rex-wrapper textarea, #rex-page-template #rex-wrapper textarea, textarea.codemirror").length > 0) {
@@ -75,7 +85,7 @@ jQuery(document).ready(function()
 		  width = 300;
 		}
 
-		cm_editor[cm].setSize(width, height);
+		cm_editor[cm].setSize(width, height + 5);
 		cm_editor[cm].refresh();
 
 	  });

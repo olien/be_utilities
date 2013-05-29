@@ -1,3 +1,27 @@
+/* ------------------------------------------------------------------ */
+/* voids flickering of normal textareas before codemirror is visible  */
+/* ------------------------------------------------------------------ */
+
+.rex-form-module-editmode #eingabe,
+.rex-form-module-editmode #ausgabe,
+.rex-form-template-editmode #content,
+#previewaction,
+#presaveaction,
+#postsaveaction,
+textarea.codemirror {
+	visibility: hidden;
+}
+
+/* ------------------------------------------------------------------ */
+/* Avoids flickering of ctype/category sections of template page      */
+/* ------------------------------------------------------------------ */
+
+#rex-form-template-ctype,
+#rex-form-template-categories {
+	display: none;
+}
+
+
 /* BASICS */
 
 .CodeMirror {
