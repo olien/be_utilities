@@ -1,6 +1,6 @@
-/* ------------------------------------------------------------------ */
-/* voids flickering of normal textareas before codemirror is visible  */
-/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------- */
+/* Avoids flickering of normal textareas before codemirror is visible  */
+/* ------------------------------------------------------------------- */
 
 .rex-form-module-editmode #eingabe,
 .rex-form-module-editmode #ausgabe,
