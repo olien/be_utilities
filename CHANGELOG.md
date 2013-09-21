@@ -1,6 +1,10 @@
 Backend Utilities - Changelog
 =============================
 
+### Version 1.0.1
+
+* Codemirror: Vollbildmodus hinzugefügt, CodeMirror auf neuste Version aktualisiert, Feineinstellungen
+
 ### Version 1.0.0 - 19. Mai 2013
 
 Erste ofizielle Version mit diesen mitgelieferten Plugins:

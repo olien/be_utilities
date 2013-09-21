@@ -20,9 +20,11 @@
 .cm-s-rexdude span.cm-link {color: #219;}
 
 .cm-s-rexdude .CodeMirror-matchingbracket {
-	/* border:1px solid grey; */
-	color:black !important;;
+	/* border: 1px solid grey; */
+	background: #ccc !important;
+	color: #000 !important;
 }
 
 div.CodeMirror-selected { background: #ddd !important; }
 .CodeMirror-focused div.CodeMirror-selected { background: #ddd !important; }
+.CodeMirror-activeline-background {background: #eee;}

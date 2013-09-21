@@ -14,6 +14,6 @@ if ($REX['REDAXO']) {
 	if (($REX['ADDON']['category_separator']['hide_cat_id'] != '') && (rex_request('page') == 'structure' && rex_request('category_id') == '' || rex_request('category_id') == '0')) { // only for root cats
 		rex_register_extension('OUTPUT_FILTER', 'rex_category_separator::appendToBody');
 	}
-}
 
+}
 

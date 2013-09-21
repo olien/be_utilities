@@ -26,6 +26,8 @@ jQuery(document).ready(function()
 	  var cm = 0;
 	  var themeCssAdded = false;
 
+      
+
 	  jQuery("#rex-rex_cronjob_phpcode textarea, #rex-page-module #rex-wrapper textarea, #rex-page-template #rex-wrapper textarea, textarea.codemirror").each(function(){
 		var t = jQuery(this);
 		var id = t.attr("id");
@@ -57,16 +59,25 @@ jQuery(document).ready(function()
 		}
 		
 		cm_editor[cm] = CodeMirror.fromTextArea(document.getElementById(id), {
-		  lineNumbers: true,
-		  lineWrapping: false,
-		  styleActiveLine: false,
-		  matchBrackets: false,
-		  mode: mode,
-		  indentUnit: 4,
-		  indentWithTabs: true,
-		  enterMode: "keep",
-		  tabMode: "shift",
-		  theme: theme
+			lineNumbers: true,
+			lineWrapping: false,
+			styleActiveLine: true,
+			matchBrackets: true,
+			mode: mode,
+			indentUnit: 4,
+			indentWithTabs: true,
+			smartIndent: false,
+			enterMode: "keep",
+			tabMode: "shift",
+			theme: theme,
+			extraKeys: {
+				"F11": function(cm) {
+					cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+				},
+				"Esc": function(cm) {
+					if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+				}
+			}
 		});
 	  
 		jQuery(cm_editor[cm].getWrapperElement())
@@ -89,6 +100,8 @@ jQuery(document).ready(function()
 		cm_editor[cm].refresh();
 
 	  });
+
+		jQuery('.CodeMirror').after( '<div class="fullscreen-hint">F11 = Fullscreen</div>' );
 
 	}
 
