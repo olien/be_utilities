@@ -3,6 +3,7 @@ Backend Utilities - Changelog
 
 ### Version 1.0.1
 
+* Hide Startarticle: Wenn Plugin aktiv und REDAXO Setup gestartet kam ein PHP-Fehler
 * Codemirror: Vollbildmodus hinzugefügt, CodeMirror auf neuste Version aktualisiert, Feineinstellungen
 
 ### Version 1.0.0 - 19. Mai 2013
