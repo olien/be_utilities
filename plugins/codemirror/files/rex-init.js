@@ -61,8 +61,8 @@ jQuery(document).ready(function()
 		cm_editor[cm] = CodeMirror.fromTextArea(document.getElementById(id), {
 			lineNumbers: true,
 			lineWrapping: false,
-			styleActiveLine: true,
-			matchBrackets: true,
+			styleActiveLine: false,
+			matchBrackets: false,
 			mode: mode,
 			indentUnit: 4,
 			indentWithTabs: true,
