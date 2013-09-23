@@ -1,12 +1,13 @@
 Backend Utilities - Changelog
 =============================
 
-### Version 1.0.1
+### Version 1.1.0 - 23. September 2013
 
 * Category Seperator: Trennung sollte jetzt zuverlässig laufen und kommt ohne JavaScript aus 
 * Hide Startarticle: Jetzt ohne JavaScript
 * Hide Startarticle: Wenn Plugin aktiv und REDAXO Setup gestartet kam ein PHP-Fehler
 * Codemirror: Vollbildmodus hinzugefügt, CodeMirror auf neuste Version aktualisiert, Neue Themes, Feineinstellungen
+* Es wird auf das Customizer Plugin geprüft bei Installation
 
 ### Version 1.0.0 - 19. Mai 2013
 

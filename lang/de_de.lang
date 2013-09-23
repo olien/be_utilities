@@ -9,4 +9,5 @@ be_utilities_help_caption = Hilfe
 be_utilities_settings_save = Einstellungen speichern
 be_utilities_help = Dieses REDAXO-AddOn dient als Container für Plugins die das Backend erweitern/ergänzen.
 be_utilities_no_plugins_installed = Es sind keine PlugIns verfügbar.
+be_utilities_uninstall_customizer = Bitte deinstallieren Sie das Customizer Plugin des Addons Be Style.
 
