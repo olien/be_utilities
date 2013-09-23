@@ -5,6 +5,11 @@ class rex_category_separator {
 		global $REX;
 
 		$linkPos = strpos($params['subject'], 'index.php?page=structure&amp;category_id=' . $REX['ADDON']['category_separator']['hide_cat_id'] . '&amp;clang=0');
+
+		if ($linkPos === false) {
+			return $params['subject'];
+		}
+
 		$trPos = strrpos(substr($params['subject'], 0, $linkPos), '<tr>');
 	
 		$startCode = substr($params['subject'], 0, $trPos);
