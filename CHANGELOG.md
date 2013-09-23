@@ -7,7 +7,7 @@ Backend Utilities - Changelog
 * Hide Startarticle: Jetzt ohne JavaScript
 * Hide Startarticle: Wenn Plugin aktiv und REDAXO Setup gestartet kam ein PHP-Fehler
 * Codemirror: Vollbildmodus hinzugefügt, CodeMirror auf neuste Version aktualisiert, Neue Themes, Feineinstellungen
-* Es wird auf das Customizer Plugin geprüft bei Installation
+* Es wird auf das Customizer Plugin geprüft bei Installation, sowie auf das Website Manager Addon beim Colorizer und Frontend Link Plugin
 
 ### Version 1.0.0 - 19. Mai 2013
 
