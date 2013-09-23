@@ -14,8 +14,13 @@ class rex_category_separator {
 							</table>
 							<table class="rex-table rex-table-mrgn">
 							<colgroup>
-								<col width="40">
-								<col width="*">
+								<col width="40">';
+
+		if (strpos($params['subject'], '<th class="rex-small">ID</th>') !== false) {
+			$inBetweenCode .= '		<col width="40">';
+		}
+
+		$inBetweenCode .= '		<col width="*">
 								<col width="40">
 								<col width="51">
 								<col width="50">
