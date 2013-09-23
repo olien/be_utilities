@@ -17,7 +17,7 @@ class rex_category_separator {
 								<col width="40">';
 
 		if (strpos($params['subject'], '<th class="rex-small">ID</th>') !== false) {
-			$inBetweenCode .= '		<col width="40">';
+			$inBetweenCode .= '	<col width="40">';
 		}
 
 		$inBetweenCode .= '		<col width="*">
