@@ -101,7 +101,9 @@ jQuery(document).ready(function()
 
 	  });
 
-		jQuery('.CodeMirror').after( '<div class="fullscreen-hint">F11 = Fullscreen</div>' );
+		if (jQuery('#rex-page-tracking-code').length == 0) {
+			jQuery('.CodeMirror').after( '<div class="fullscreen-hint">F11 = Fullscreen</div>' );
+		}
 
 	}
 

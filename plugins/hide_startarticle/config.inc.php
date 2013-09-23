@@ -22,7 +22,7 @@ if ($REX['REDAXO'] && !$REX['SETUP']) {
 		for ($i = 0; $i < $sql->getRows(); $i++) {
 			if (rex_request('category_id', 'int') == $sql->getValue('article_id')) {
 				// hide this stararticle
-				rex_register_extension('OUTPUT_FILTER', 'rex_hide_startarticle::appendToBody');
+				rex_register_extension('PAGE_HEADER', 'rex_hide_startarticle::hideStartArticle');
 				break;
 			}
 

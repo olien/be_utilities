@@ -1,25 +1,28 @@
 <?php
 
 class rex_category_separator {
-	static function appendToBody($params) {
+	static function splitTable($params) {
 		global $REX;
 
-		$catId = $REX['ADDON']['category_separator']['hide_cat_id'];
+		$linkPos = strpos($params['subject'], 'index.php?page=structure&amp;category_id=' . $REX['ADDON']['category_separator']['hide_cat_id'] . '&amp;clang=0');
+		$trPos = strrpos(substr($params['subject'], 0, $linkPos), '<tr>');
+	
+		$startCode = substr($params['subject'], 0, $trPos);
+		$endCode = substr($params['subject'], $trPos, strlen($params['subject']));
 
-		$script = '
-			<!-- category_separator -->
-			<script type="text/javascript">
-			jQuery(function($) {
-				var $tableOne = $("a[href^=\'index.php?page=structure&category_id=' . $catId . '\']").parents("table").attr("id", "newTable1");
-				var $tableTwo = $tableOne.clone().attr("id","newTable2").insertAfter("#newTable1");
-
-				$tableOne.find("tr:gt(' . $catId . ')").remove();
-				$tableTwo.find("tr:lt(' . ($catId + 1) . ')").remove();
-			});
-			</script>
-			<!-- end category_separator -->
-		';
+		$inBetweenCode = '</tbody>
+							</table>
+							<table class="rex-table rex-table-mrgn">
+							<colgroup>
+								<col width="40">
+								<col width="*">
+								<col width="40">
+								<col width="51">
+								<col width="50">
+								<col width="50">
+							</colgroup>
+							<tbody>';
 		
-		return str_replace('</body>', $script . '</body>', $params['subject']);
+		return $startCode . $inBetweenCode . $endCode;
 	}
 }

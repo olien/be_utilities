@@ -1,20 +1,18 @@
 <?php
 
 class rex_hide_startarticle {
-	static function appendToBody($params) {
+	static function hideStartArticle($params) {
 		global $REX;
 
-		$script = '
+		$insert = '
 			<!-- hide_startarticle -->
-			<script type="text/javascript">
-			jQuery(function($) {
-				$("a.rex-i-article-startpage").parents("tr").css("display", "none");
-				$("li.rex-linkmap-startpage").css("display", "none");
-			});
-			</script>
-			<!-- end hide_startarticle -->
+			<style type="text/css">
+				.rex-table:not(.rex-table-mrgn) tbody tr:first-child { display: none; }
+				li.rex-linkmap-startpage { display: none; }
+			</style>
+			<!-- hide_startarticle -->
 		';
 		
-		return str_replace('</body>', $script . '</body>', $params['subject']);
+		return $params['subject'] . PHP_EOL . $insert;
 	}
 }
