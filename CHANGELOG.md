@@ -1,6 +1,10 @@
 Backend Utilities - Changelog
 =============================
 
+### Version 1.2.0
+
+* Category Seperator: Geht jetzt für alle Sprachen
+
 ### Version 1.1.0 - 23. September 2013
 
 * Category Seperator: Trennung sollte jetzt zuverlässig laufen und kommt ohne JavaScript aus 
