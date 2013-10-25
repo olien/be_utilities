@@ -6,15 +6,26 @@ class rex_articlename_sync {
 
 		$id = $params['id'];
 		$clang = $params['clang'];
-		$sql = new rex_sql();
+		$name = '';
 
-		$sql->setTable($REX['TABLE_PREFIX'] . 'article');
-		$sql->setWhere("(id=$id OR (re_id=$id AND startpage=0)) AND clang=$clang");
-		$sql->setValue('catname', $params['data']['name']);
-		$sql->addGlobalUpdateFields();
-		$sql->update();
+		if (isset($params['data']['name']) && $params['data']['name'] != '') {
+			// ART_UPDATED
+			$name = $params['data']['name'];
+		} else {
+			// ART_META_UPDATED
+			$name = $params['name'];
+		}
 
-		rex_deleteCacheArticle($id, $clang);
+		if ($name != '') {
+			$sql = new rex_sql();
+			$sql->setTable($REX['TABLE_PREFIX'] . 'article');
+			$sql->setWhere("(id=$id OR (re_id=$id AND startpage=0)) AND clang=$clang");
+			$sql->setValue('catname', $name);
+			$sql->addGlobalUpdateFields();
+			$sql->update();
+
+			rex_deleteCacheArticle($id, $clang);
+		}
 	}
 
 	static function syncCatname2Artname($params) {
@@ -22,14 +33,17 @@ class rex_articlename_sync {
 
 		$id = $params['id'];
 		$clang = $params['clang'];
-		$sql = new rex_sql();
+		$name = $params['data']['catname'];
 
-		$sql->setTable($REX['TABLE_PREFIX'].'article');
-		$sql->setWhere('id=' . $id . ' AND clang=' . $clang);
-		$sql->setValue('name', $params['data']['catname']);
-		$sql->addGlobalUpdateFields();
-		$sql->update();
+		if ($name != '') {
+			$sql = new rex_sql();
+			$sql->setTable($REX['TABLE_PREFIX'].'article');
+			$sql->setWhere('id=' . $id . ' AND clang=' . $clang);
+			$sql->setValue('name', $name);
+			$sql->addGlobalUpdateFields();
+			$sql->update();
 
-		rex_deleteCacheArticle($id, $clang);
+			rex_deleteCacheArticle($id, $clang);
+		}
 	}
 }

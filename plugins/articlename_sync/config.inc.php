@@ -18,5 +18,6 @@ if ($REX['REDAXO']) {
 	// sync art to cat
 	if ($REX['ADDON']['articlename_sync']['sync_art_to_cat'] == 1) {
 		rex_register_extension('ART_UPDATED', 'rex_articlename_sync::syncArtname2Catname');
+		rex_register_extension('ART_META_UPDATED', 'rex_articlename_sync::syncArtname2Catname');
 	}
 }
