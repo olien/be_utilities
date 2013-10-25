@@ -1,4 +1,4 @@
 <?php
 // --- DYN
-$REX['ADDON']['category_separator']['hide_cat_id'] = "";
+$REX['ADDON']['category_separator']['cat_id'] = "";
 // --- /DYN
