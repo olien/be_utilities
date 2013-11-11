@@ -3,6 +3,7 @@ Backend Utilities - Changelog
 
 ### Version 1.2.0
 
+* Neues Plugin: AgkSkin Plus inkl. optionalem Liquid Layout
 * Category Seperator: Geht jetzt für alle Sprachen
 
 ### Version 1.1.0 - 23. September 2013

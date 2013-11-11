@@ -15,6 +15,7 @@ Features
 Mitgelieferte PlugIns
 ---------------------
 
+* `AgkSkin Plus` Style Erweiterungen für den AgkSin
 * `Articlename Sync` Synchronisiert bei Änderung Kategoriename mit Artikelname und umgekehrt.
 * `Category Separator` Erzeugt einen Trenner nach einer angegebenen Kategorie.
 * `CodeMirror` Syntax Highlighting für TextAreas (Templates, Module, etc.).
