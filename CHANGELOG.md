@@ -1,10 +1,12 @@
 Backend Utilities - Changelog
 =============================
 
-### Version 1.2.0
+### Version 1.2.0 - 13. November 2013
 
 * Neues Plugin: AgkSkin Plus (eheml. `agk_skin_mod`) inkl. optionalem Liquid Layout
 * Category Seperator: Geht jetzt für alle Sprachen
+* Category Seperator: Feste Font-Größe eingestellt
+* Article Name Sync reagiert nun auch auf ART_META_UPDATED (bei Änderung des Artikelnames über Metadaten/Sonstiges)
 
 ### Version 1.1.0 - 23. September 2013
 
