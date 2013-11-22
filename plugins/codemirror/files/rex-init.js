@@ -102,7 +102,7 @@ jQuery(document).ready(function()
 	  });
 
 		if (jQuery('#rex-page-tracking-code').length == 0) {
-			jQuery('.CodeMirror').after( '<div class="fullscreen-hint">F11 = Fullscreen</div>' );
+			jQuery('.CodeMirror').after( '<div class="fullscreen-hint">F11 = Vollbild</div>' );
 		}
 
 	}
