@@ -1,7 +1,7 @@
 Backend Utilities - Changelog
 =============================
 
-### Version 1.3.0
+### Version 1.3.0 DEV
 
 * Frontend Link: Name der Website ragt jetzt nicht mehr über das Metamenü rechts hinaus wenn zu lang.
 * Frontend Link: Hinweis auf Name und URL der Website unter REDAXO > System.
