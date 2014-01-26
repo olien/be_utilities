@@ -30,8 +30,6 @@ Weitere PlugIns
 ---------------
 
 * [Version Watch](http://www.redaxo.org/de/download/addons/?addon_id=1137) Zeigt die aktuelle REDAXO Version in Header und informiert über neue.
-* `Favicon` Nachrüsten eines Favicons für ältere REDAXO Versionen.
-* `Phpinfo` Zeigt detaillierte Informationen über den Webserver inkl. PHP, MySQL Variablen usw. an.
 
 Vereinfachte Einbindung eines PlugIns
 -------------------------------------
