@@ -3,5 +3,8 @@ codemirror_config_updated = Eingaben wurden gespeichert
 codemirror_config_update_failed = Eingaben wurden nicht gespeichert
 codemirror_theme = CodeMirror Theme
 codemirror_hint = Hinweis
-codemirror_info = Sobald CodeMirror aktiviert ist, werden diese bei Templates und Modulen automatisch verwendet. Sofern man selbst diese verwenden möchte, bitte folgende Form verwenden <code>&lt;textarea class="codemirror" codemirror-theme="themename" und codemirror-mode="php/htmlmixed"&gt;&lt;/textarea&gt;</code> verwenden. codemirror-theme und codemirror-mode sind optional.
+codemirror_info = CodeMirror wird bei Templates und Modulen automatisch verwendet.<br />In AddOns, PlugIns etc. kann CodeMirror so aktiviert werden:<br /><code>&lt;textarea class="codemirror" codemirror-mode="php/htmlmixed"&gt;&lt;/textarea&gt;</code>
+codemirror_version_info = CodeMirror Version
+codemirror_fullscreen_key = Fullscreen Key
+
 

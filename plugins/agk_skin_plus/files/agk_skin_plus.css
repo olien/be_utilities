@@ -36,7 +36,7 @@ textarea:focus {
 
 div.rex-form-template-editmode div.rex-form-row p.rex-form-textarea textarea,
 div.rex-form-module-editmode div.rex-form-row p.rex-form-textarea textarea {
-	height: 350px;
+	height: 400px;
 	margin-left: 14px;
 	width: 717px;
 }

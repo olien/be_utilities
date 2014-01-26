@@ -1,0 +1,30 @@
+.cm-s-simple-rex span.cm-meta {color: #FF1717;}
+.cm-s-simple-rex span.cm-keyword { line-height: 1em; font-weight: bold; color: #7F0055; }
+.cm-s-simple-rex span.cm-atom {color: #219;}
+.cm-s-simple-rex span.cm-number {color: #164;}
+.cm-s-simple-rex span.cm-def {color: #00f;}
+.cm-s-simple-rex span.cm-variable {color: black;}
+.cm-s-simple-rex span.cm-variable-2 {color: #000000;}
+.cm-s-simple-rex span.cm-variable-3 {color: #0000C0;}
+.cm-s-simple-rex span.cm-property {color: black;}
+.cm-s-simple-rex span.cm-operator {color: black;}
+.cm-s-simple-rex span.cm-comment {color: #888A85;}
+.cm-s-simple-rex span.cm-string {color: #0000C0;}
+.cm-s-simple-rex span.cm-string-2 {color: #f50;}
+.cm-s-simple-rex span.cm-error {color: #f00;}
+.cm-s-simple-rex span.cm-qualifier {color: #555;}
+.cm-s-simple-rex span.cm-builtin {color: #30a;}
+.cm-s-simple-rex span.cm-bracket {color: #cc7;}
+.cm-s-simple-rex span.cm-tag {color: #000;}
+.cm-s-simple-rex span.cm-attribute {color: #000;}
+.cm-s-simple-rex span.cm-link {color: #219;}
+
+.cm-s-simple-rex .CodeMirror-matchingbracket {
+	/* border: 1px solid grey; */
+	background: #ccc !important;
+	color: #000 !important;
+}
+
+div.CodeMirror-selected { background: #ddd !important; }
+.CodeMirror-focused div.CodeMirror-selected { background: #ddd !important; }
+.CodeMirror-activeline-background {background: #eee;}

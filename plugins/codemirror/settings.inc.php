@@ -1,5 +1,5 @@
 <?php
 // --- DYN
-$REX['ADDON']['codemirror']['theme'] = "rexdude";
+$REX['ADDON']['codemirror']['theme'] = "simple-rex";
 // --- /DYN
 

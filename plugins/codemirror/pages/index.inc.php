@@ -62,6 +62,18 @@ if ($warning != '') {
 							<?php echo $tselect->get(); ?>
 						</p>
 					</div>
+					<div class="rex-form-row rex-form-element-v1">
+						<p class="rex-form-col-a rex-form-read">
+							<label for="codemirror_fullscreen_key"><?php echo $I18N->msg("codemirror_fullscreen_key"); ?></label>
+							<span id="codemirror_fullscreen_key" class="rex-form-read">F11</span>
+						</p>
+					</div>
+					<div class="rex-form-row rex-form-element-v1">
+						<p class="rex-form-col-a rex-form-read">
+							<label for="codemirror_version_info"><?php echo $I18N->msg("codemirror_version_info"); ?></label>
+							<span id="codemirror_version_info" class="rex-form-read">3.21 (16-01-2014)</span>
+						</p>
+					</div>
 					<div class="rex-form-row hint">
 						<p class="rex-form-col-a rex-form-select codemirror_hint">
 							<label for="codemirror_hint"><?php echo $I18N->msg("codemirror_hint"); ?></label>
