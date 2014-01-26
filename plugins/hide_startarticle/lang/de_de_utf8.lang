@@ -12,4 +12,4 @@ hide_startarticle_formlabel_edit = Startartikel-Verweise bearbeiten
 hide_startarticle_formlabel_add = Diesen Startartikel verstecken:
 hide_startarticle_article_exists = Ein Startartikel-Verweis mit dieser ID existiert bereits!
 hide_startarticle_select = Startartikel
-
+hide_startarticle_article_not_found = Artikel nicht gefunden!

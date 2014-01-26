@@ -54,7 +54,13 @@ if ($func == '') {
 		'global $REX;
 		$list = $params["list"];
 		$article = OOArticle::getArticleById($list->getValue("article_id"));
-		return $article->getName();'
+
+		if (is_object($article)) {
+			return $article->getName();
+		} else {
+			return "' . $I18N->msg('hide_startarticle_article_not_found') . '";
+		}
+		'
 	));
 
 	// icon column
