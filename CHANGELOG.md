@@ -1,8 +1,9 @@
 Backend Utilities - Changelog
 =============================
 
-### Version 1.3.0 DEV
+### Version 1.3.0 - 26. Januar 2014
 
+* Codemirror: Update auf Version 3.21, Finetuning
 * Frontend Link: Name der Website ragt jetzt nicht mehr über das Metamenü rechts hinaus wenn zu lang.
 * Frontend Link: Hinweis auf Name und URL der Website unter REDAXO > System.
 * Hide Startarticle: PHP Fehler beseitigt wenn Artikel nicht mehr vorhanden
