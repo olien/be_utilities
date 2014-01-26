@@ -5,6 +5,6 @@ codemirror_theme = CodeMirror Theme
 codemirror_hint = Hinweis
 codemirror_info = CodeMirror wird bei Templates und Modulen automatisch verwendet.<br />In AddOns, PlugIns etc. kann CodeMirror so aktiviert werden:<br /><code>&lt;textarea class="codemirror" codemirror-mode="php/htmlmixed"&gt;&lt;/textarea&gt;</code>
 codemirror_version_info = CodeMirror Version
-codemirror_fullscreen_key = Fullscreen Key
+codemirror_fullscreen_key = Fullscreen Mode
 
 
