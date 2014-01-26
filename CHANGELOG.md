@@ -37,7 +37,3 @@ Erste ofizielle Version mit diesen mitgelieferten Plugins:
 * `Rex Globals` Einige Tools damit Module und Templates auf globale PHP-Klassen und CSS-Styles zugreifen können.
 * `Update Date` Mini Toolkit um das Update Datum der Website zu ermitteln.
 
-Und diesen Plugins im Archiv-Ordner:
-
-* `Favicon` Nachrüsten eines Favicons für ältere REDAXO Versionen.
-* `Phpinfo` Zeigt detaillierte Informationen über den Webserver inkl. PHP, MySQL Variablen usw. an.
