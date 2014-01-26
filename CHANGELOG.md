@@ -1,6 +1,11 @@
 Backend Utilities - Changelog
 =============================
 
+### Version 1.3.0
+
+* Frontend Link: Hinweis auf Name und URL der Website unter REDAXO > System.
+* Hide Startarticle: Es wird jetzt tatsächlich nur der Startartikel versteckt und nicht der erste Artikel in der Kategorie
+
 ### Version 1.2.0 - 13. November 2013
 
 * Neues Plugin: AgkSkin Plus (eheml. `agk_skin_mod`) inkl. optionalem Liquid Layout

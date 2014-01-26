@@ -4,4 +4,5 @@ frontend_link_metamenu_link_none = &lt;keiner&gt;
 frontend_link_metamenu_link_default = zur Website
 frontend_link_metamenu_link_userdef = Benutzerdefiniert
 frontend_link_header_link_label = Link im Header
-
+frontend_link_link_linktext = Link und Linktext
+frontend_link_link_linktext_hint = Name und URL der Website unter <a href="index.php?page=specials">System</a> einstellbar.

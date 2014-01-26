@@ -68,6 +68,13 @@ if (!is_writable($config_file)) {
 						</p>
 					</div>
 
+					<div class="rex-form-row rex-form-element-v1">
+						<p class="rex-form-col-a rex-form-read">
+							<label for="link_hint"><?php echo $I18N->msg("frontend_link_link_linktext"); ?></label>
+							<span class="rex-form-read" id="link_hint"><?php echo $I18N->msg("frontend_link_link_linktext_hint"); ?></span>
+						</p>
+					</div>
+
 					<div class="rex-form-row rex-form-element-v2">
 						<p class="rex-form-submit">
 							<input type="submit" class="rex-form-submit" name="sendit" value="<?php echo $I18N->msg('be_utilities_settings_save'); ?>" />
