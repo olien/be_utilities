@@ -3,6 +3,7 @@ Backend Utilities - Changelog
 
 ### Version 1.3.0
 
+* Frontend Link: Name der Website ragt jetzt nicht mehr über das Metamenü rechts hinaus wenn zu lang.
 * Frontend Link: Hinweis auf Name und URL der Website unter REDAXO > System.
 * Hide Startarticle: Es wird jetzt tatsächlich nur der Startartikel versteckt und nicht der erste Artikel in der Kategorie
 

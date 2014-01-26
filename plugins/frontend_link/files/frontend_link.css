@@ -1,18 +1,26 @@
 
 h1.be-utilities-frontend_link-title {
     position: absolute;
-    top: 32px;
+    top: 33px;
     left: 202px;
-    width: 420px;
+    width: 320px;
     overflow: hidden;
     color: #2C8EC0;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: normal;
     line-height: 26px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-h1.be-utilities-frontend_link-title.be-utilities-frontend_link-small {
-    font-size: 13px;
+div#rex-navi-logout ul {
+	padding-top: 39px;
+}
+
+/* --------------------------------------------------------------------- */
+
+@media print { 
+	h1.be-utilities-frontend_link-title {
+		display: none !important;
+	}
 }
