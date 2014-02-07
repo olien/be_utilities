@@ -32,6 +32,7 @@ if (!is_writable($config_file)) {
 				<li><?php echo $I18N->msg('agk_skin_plus_feature3'); ?></li>
 				<li><?php echo $I18N->msg('agk_skin_plus_feature4'); ?></li>
 				<li><?php echo $I18N->msg('agk_skin_plus_feature5'); ?></li>
+				<li><?php echo $I18N->msg('agk_skin_plus_feature7'); ?></li>
 				<li><?php echo $I18N->msg('agk_skin_plus_feature6'); ?></li>
 			</ul>
 		</div>

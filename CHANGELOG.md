@@ -1,6 +1,11 @@
 Backend Utilities - Changelog
 =============================
 
+### Version 1.3.1 DEV
+
+* AgkSkin Plus: Style `Kein Overflow bei den Slice-Inhalten` hinzugefügt
+* Einige CSS Updates
+
 ### Version 1.3.0 - 26. Januar 2014
 
 * Codemirror: Update auf Version 3.21, F11 = Fullscreen Mode, Finetuning
