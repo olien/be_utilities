@@ -20,7 +20,7 @@
 	right: 0 !important; 
 	bottom: 0 !important;
 	height: auto  !important;
-	z-index: 9  !important;
+	z-index: 9000  !important;
 	margin: 0 !important;
 	border: 0 !important;
 }
