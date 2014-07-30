@@ -1,9 +1,14 @@
 Backend Utilities - Changelog
 =============================
 
+### Version 1.3.2 - 30. Juli 2014
+
+* AgkSkin Plus: Zusätzlich `max-width: 100%` für Bilder bei den Slice-Inhalten hinzugefügt
+* Hide Startarticle: Anpassungen an REDAXO 4.6 vorgenommen
+
 ### Version 1.3.1 - 08. Februar 2014
 
-* AgkSkin Plus: Style `Kein Overflow bei den Slice-Inhalten` hinzugefügt
+* AgkSkin Plus: Style "Kein Overflow bei den Slice-Inhalten" hinzugefügt
 * Einige CSS Updates für Codemirror und Frontend Link
 
 ### Version 1.3.0 - 26. Januar 2014
