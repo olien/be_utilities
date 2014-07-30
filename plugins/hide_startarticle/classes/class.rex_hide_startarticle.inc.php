@@ -5,8 +5,8 @@ class rex_hide_startarticle {
 		global $REX;
 
 		$params['subject'] = str_replace('<tr>
-              <td class="rex-icon"><a class="rex-i-element rex-i-article-startpage"', '<tr id="rex-structure-startpage">
-              <td class="rex-icon"><a class="rex-i-element rex-i-article-startpage"', $params['subject']);
+                            <td class="rex-icon"><a class="rex-i-element rex-i-article-startpage"', '<tr id="rex-structure-startpage">
+                            <td class="rex-icon"><a class="rex-i-element rex-i-article-startpage"', $params['subject']);
 
 		$insert = '
 			<!-- hide_startarticle -->
