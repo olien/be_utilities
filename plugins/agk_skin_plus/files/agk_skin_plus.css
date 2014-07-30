@@ -83,7 +83,11 @@ div#rex-form-system-setup div.rex-form-row {
 /* Hidden overflow for slice content                                  */
 /* ------------------------------------------------------------------ */
 
-.rex-content-editmode-slice-output-2 {
+.rex-content-editmode-slice-output-2 { 	/* for tables */
 	overflow: hidden !important;
 }
 
+.rex-content-editmode-slice-output-2 img { /* for images */
+	max-width: 100% !important;
+	height: auto !important;
+}
