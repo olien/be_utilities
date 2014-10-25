@@ -1,6 +1,7 @@
 <?php
 $addon = 'be_utilities';
 $subpage = rex_request('subpage', 'string', '');
+$plugin = str_replace('plugin.', '', $subpage);
 
 // layout top
 include($REX['INCLUDE_PATH'] . '/layout/top.php');
@@ -9,8 +10,6 @@ include($REX['INCLUDE_PATH'] . '/layout/top.php');
 rex_title($REX['ADDON']['name']['be_utilities'] . ' <span class="version">' . $REX['ADDON']['version'][$addon] . '</span>', $REX['ADDON'][$addon]['SUBPAGES']);
 
 if ($subpage != '') {
-	$plugin = str_replace('plugin.', '', $subpage);
-
 	// plugin headline
 	echo '<h2 class="main plugin">' . rex_plugin_factory::getPluginTitle('be_utilities', $plugin) . '</h2>';
 

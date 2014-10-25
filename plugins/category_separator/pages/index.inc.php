@@ -1,30 +1,21 @@
 <?php
-$cat_id = trim(rex_request('cat_id', 'string'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/category_separator/settings.inc.php';
+$func = rex_request('func', 'string');
 
-if (rex_request('func', 'string') == 'update') {
-	$REX['ADDON']['category_separator']['cat_id'] = $cat_id;
+// save settings
+if ($func == 'update') {
+	$thisPlugin = 'category_separator';
+	$settings = (array) rex_post('settings', 'array', array());
 
-	$content = '
-		$REX[\'ADDON\'][\'category_separator\'][\'cat_id\'] = "' . $cat_id . '";
-	';
-
-	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
-		echo rex_info($I18N->msg('be_utilities_configfile_update'));
-	} else {
-		echo rex_warning($I18N->msg('be_utilities_configfile_nosave'));
-	}
-}
-
-if (!is_writable($config_file)) {
-	echo rex_warning($I18N->msg('be_utilities_configfile_nowrite'), $config_file);
+	rex_backend_utilities::replaceSettings($thisPlugin, $settings);
+	rex_backend_utilities::updateSettingsFile($thisPlugin);
 }
 
 $linkButton = rex_input::factory('linkbutton');
 $linkButton->setButtonId(1);
-$linkButton->setValue($REX['ADDON']['category_separator']['cat_id']);
-$linkButton->setAttribute('name', 'cat_id');
+$linkButton->setValue($REX['ADDON']['category_separator']['settings']['cat_id']);
+$linkButton->setAttribute('name', 'settings[cat_id]');
+$linkButton->setAttribute('id', 'cat_id');
 ?>
 
 <div class="rex-addon-output">

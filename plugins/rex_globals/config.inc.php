@@ -3,21 +3,26 @@ if ($REX['REDAXO']) {
 	// add lang file
 	$I18N->appendFile($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/rex_globals/lang/');
 
+	// default settings (user settings are saved in data dir!)
+	$REX['ADDON']['rex_globals']['settings'] = array(
+		'include_template_id' => 0
+	);
+
+	// overwrite default settings with user settings
+	rex_backend_utilities::includeSettingsFile('rex_globals');
+
 	// register plugin
 	rex_plugin_factory::registerPlugin('be_utilities', 'rex_globals', 'Rex Globals', $I18N->msg('rex_globals_description'), '1.0.0', 'RexDude', 'forum.redaxo.de', true);
 
-	// includes
-	include($REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/rex_globals/settings.inc.php');
-
 	// include template
-	if (!$REX['SETUP'] && $REX['ADDON']['rex_globals']['include_template_id'] > 0) {
+	if (!$REX['SETUP'] && $REX['ADDON']['rex_globals']['settings']['include_template_id'] > 0) {
 		rex_register_extension('ADDONS_INCLUDED','includeGlobalTemplate');
 
 		function includeGlobalTemplate() { 
 			global $REX;
 			
 			$sql = rex_sql::factory();
-			$qry = 'SELECT content FROM '. $REX['TABLE_PREFIX']  .'template WHERE id = ' . $REX['ADDON']['rex_globals']['include_template_id'] . '';
+			$qry = 'SELECT content FROM '. $REX['TABLE_PREFIX']  .'template WHERE id = ' . $REX['ADDON']['rex_globals']['settings']['include_template_id'] . '';
 			$sql->setQuery($qry);
 
 			if ($sql->getRows() == 1) {

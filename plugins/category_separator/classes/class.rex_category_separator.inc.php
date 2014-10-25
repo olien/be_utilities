@@ -4,7 +4,7 @@ class rex_category_separator {
 	static function splitTable($params) {
 		global $REX;
 
-		$linkPos = strpos($params['subject'], 'index.php?page=structure&amp;category_id=' . $REX['ADDON']['category_separator']['cat_id'] . '&amp;clang=' . $REX['CUR_CLANG']);
+		$linkPos = strpos($params['subject'], 'index.php?page=structure&amp;category_id=' . $REX['ADDON']['category_separator']['settings']['cat_id'] . '&amp;clang=' . $REX['CUR_CLANG']);
 
 		if ($linkPos === false) {
 			return $params['subject'];

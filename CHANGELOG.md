@@ -1,6 +1,10 @@
 Backend Utilities - Changelog
 =============================
 
+### Version 1.4.0 DEV
+
+* Updatefähigkeit für REDAXO 4.6 hergestellt. Einstellungen werden jetzt im Data-Ordner gespeichert.
+
 ### Version 1.3.2 - 30. Juli 2014
 
 * AgkSkin Plus: Zusätzlich `max-width: 100%` für Bilder bei den Slice-Inhalten hinzugefügt

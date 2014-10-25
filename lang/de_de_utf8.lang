@@ -1,9 +1,10 @@
 be_utilities = Backend Utilities
 be_utilities_overview = Übersicht
 be_utilities_available_plugins = Verfügbare Plugins
-be_utilities_configfile_update = Konfiguration wurde aktualisiert!
-be_utilities_configfile_nosave = Konfiguration konnte nicht gespeichert werden!
-be_utilities_configfile_nowrite = Konfigurationsdatei "{0}" ist nicht beschreibbar!
+be_utilities_config_ok = Einstellungen wurden aktualisiert.
+be_utilities_config_error = Einstellungen konnte nicht gespeichert werden!
+be_utilities_install_make_dir = Der Ordner "/redaxo/include/{0}/" kann nicht angelegt werden, überprüfen Sie die Schreibrechte oder legen Sie den Ordner von Hand an und geben ihm Schreibrechte.
+be_utilities_install_perm_dir = Der Ordner "/redaxo/include/{0}/" benötigt Schreibrechte!
 be_utilities_settings = Einstellungen
 be_utilities_help_caption = Hilfe
 be_utilities_settings_save = Einstellungen speichern

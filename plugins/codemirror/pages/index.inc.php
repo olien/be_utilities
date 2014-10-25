@@ -1,8 +1,15 @@
 <?php
 
-$info = '';
-$warning = '';
-$func = rex_request("func", "string");
+$func = rex_request('func', 'string');
+
+// save settings
+if ($func == 'update') {
+	$thisPlugin = 'codemirror';
+	$settings = (array) rex_post('settings', 'array', array());
+
+	rex_backend_utilities::replaceSettings($thisPlugin, $settings);
+	rex_backend_utilities::updateSettingsFile($thisPlugin);
+}
 
 $themes = array();
 
@@ -12,7 +19,7 @@ foreach (glob($REX["INCLUDE_PATH"]. "/addons/be_utilities/plugins/codemirror/fil
 
 $tselect = new rex_select;
 $tselect->setSize(1);
-$tselect->setName('theme');
+$tselect->setName('settings[theme]');
 $tselect->setStyle('class="rex-form-select"');
 $tselect->setId('theme');
 
@@ -20,27 +27,7 @@ foreach($themes as $theme) {
 	$tselect->addOption($theme,$theme);
 }
 
-if ($func == 'update') {
-	$REX['ADDON']['codemirror']['theme'] = htmlspecialchars(substr(rex_request("theme","string"), 0, 20));
- 	
-	$content = '
-$REX[\'ADDON\'][\'codemirror\'][\'theme\'] = "' . $REX['ADDON']['codemirror']['theme'] . '";
-  ';
-
-	$config_file = $REX['INCLUDE_PATH'] .'/addons/be_utilities/plugins/codemirror/settings.inc.php';
-
-	if ($warning == '' && rex_replace_dynamic_contents($config_file, $content) !== false) {
-		echo rex_info($I18N->msg("codemirror_config_updated"));
-	} else {
-		echo rex_warning($I18N->msg("codemirror_config_update_failed",$config_file));
-	}
-}
-
-$tselect->setSelected($REX['ADDON']['codemirror']['theme']);
-
-if ($warning != '') {
-	echo rex_warning($warning);
-}
+$tselect->setSelected($REX['ADDON']['codemirror']['settings']['theme']);
 ?>
 
 <div class="rex-addon-output">
@@ -58,7 +45,7 @@ if ($warning != '') {
 
 					<div class="rex-form-row">
 						<p class="rex-form-col-a rex-form-select">
-							<label for="include_template_id"><?php echo $I18N->msg("codemirror_theme"); ?></label>
+							<label for="theme"><?php echo $I18N->msg("codemirror_theme"); ?></label>
 							<?php echo $tselect->get(); ?>
 						</p>
 					</div>

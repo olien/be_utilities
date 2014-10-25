@@ -27,7 +27,7 @@ class rex_frontend_link {
 		$sanitizedUrl = self::getFrontendUrl();
 
 		// link text
-		switch ($REX['ADDON']['frontend_link']['metamenu_link']) {
+		switch ($REX['ADDON']['frontend_link']['settings']['metamenu_link']) {
 			case 'default': 
 				$linkText = $I18N->msg('frontend_link_metamenu_link_default');
 				break;
@@ -35,7 +35,7 @@ class rex_frontend_link {
 				$linkText = $sanitizedUrl;
 				break;
 			case 'userdef':
-				$linkText = $REX['ADDON']['frontend_link']['metamenu_link_text'];
+				$linkText = $REX['ADDON']['frontend_link']['settings']['metamenu_link_text'];
 				break;
 		}
 

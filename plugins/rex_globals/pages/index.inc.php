@@ -1,24 +1,14 @@
 <?php
-$include_template_id = trim(rex_request('include_template_id', 'int'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/rex_globals/settings.inc.php';
+$func = rex_request('func', 'string');
 
-if (rex_request('func', 'string') == 'update') {
-	$REX['ADDON']['rex_globals']['include_template_id'] = $include_template_id;
+// save settings
+if ($func == 'update') {
+	$thisPlugin = 'rex_globals';
+	$settings = (array) rex_post('settings', 'array', array());
 
-	$content = '
-		$REX[\'ADDON\'][\'rex_globals\'][\'include_template_id\'] = ' . $include_template_id . ';
-	';
-
-	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
-		echo rex_info($I18N->msg('be_utilities_configfile_update'));
-	} else {
-		echo rex_warning($I18N->msg('be_utilities_configfile_nosave'));
-	}
-}
-
-if (!is_writable($config_file)) {
-	echo rex_warning($I18N->msg('be_utilities_configfile_nowrite'), $config_file);
+	rex_backend_utilities::replaceSettings($thisPlugin, $settings);
+	rex_backend_utilities::updateSettingsFile($thisPlugin);
 }
 
 // templates
@@ -27,7 +17,8 @@ $sql->setQuery('select id, name from ' . $REX['TABLE_PREFIX'] . 'template order 
 $templates = $sql->getArray();
 
 $selectTemplates = new rex_select();
-$selectTemplates->setName('include_template_id');
+$selectTemplates->setName('settings[include_template_id]');
+$selectTemplates->setAttribute('id', 'include_template_id');
 $selectTemplates->setSize(1);
 $selectTemplates->addOption('<' . $I18N->msg('rex_globals_none') . '>', '0');
 
@@ -35,7 +26,7 @@ foreach ($templates as $template) {
 	$selectTemplates->addOption($template['name'], $template['id']);
 }
 
-$selectTemplates->setSelected($REX['ADDON']['rex_globals']['include_template_id']);
+$selectTemplates->setSelected($REX['ADDON']['rex_globals']['settings']['include_template_id']);
 ?>
 
 <div class="rex-addon-output">

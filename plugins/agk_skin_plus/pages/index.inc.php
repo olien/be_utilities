@@ -1,24 +1,14 @@
 <?php
-$liquidLayout = trim(rex_request('liquid_layout', 'int'));
 
-$config_file = $REX['INCLUDE_PATH'] . '/addons/be_utilities/plugins/agk_skin_plus/settings.inc.php';
+$func = rex_request('func', 'string');
 
-if (rex_request('func', 'string') == 'update') {
-	$REX['ADDON']['agk_skin_plus']['liquid_layout'] = $liquidLayout;
+// save settings
+if ($func == 'update') {
+	$thisPlugin = 'agk_skin_plus';
+	$settings = (array) rex_post('settings', 'array', array());
 
-	$content = '
-		$REX[\'ADDON\'][\'agk_skin_plus\'][\'liquid_layout\'] = ' . $liquidLayout . ';
-	';
-
-	if (rex_replace_dynamic_contents($config_file, str_replace("\t", "", $content)) !== false) {
-		echo rex_info($I18N->msg('be_utilities_configfile_update'));
-	} else {
-		echo rex_warning($I18N->msg('be_utilities_configfile_nosave'));
-	}
-}
-
-if (!is_writable($config_file)) {
-	echo rex_warning($I18N->msg('be_utilities_configfile_nowrite'), $config_file);
+	rex_backend_utilities::replaceSettings($thisPlugin, $settings);
+	rex_backend_utilities::updateSettingsFile($thisPlugin);
 }
 ?>
 
@@ -55,7 +45,8 @@ if (!is_writable($config_file)) {
 					<div class="rex-form-row rex-form-element-v1">
 						<p class="rex-form-checkbox">
 							<label for="liquid_layout"><?php echo $I18N->msg('agk_skin_plus_liquid_layout'); ?></label>
-							<input type="checkbox" name="liquid_layout" id="liquid_layout" value="1" <?php if ($REX['ADDON']['agk_skin_plus']['liquid_layout'] == 1) { echo 'checked="checked"'; } ?>>
+							<input type="hidden" name="settings[liquid_layout]" value="0" />
+							<input type="checkbox" name="settings[liquid_layout]" id="liquid_layout" value="1" <?php if ($REX['ADDON']['agk_skin_plus']['settings']['liquid_layout']) { echo 'checked="checked"'; } ?>>
 						</p>
 					</div>
 

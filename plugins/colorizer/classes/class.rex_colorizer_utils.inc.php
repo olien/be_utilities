@@ -6,8 +6,8 @@ class rex_colorizer_utils {
 		$insert = '<!-- BEGIN colorizer -->' . PHP_EOL;
 
 		// color bar
-		if ($REX['ADDON']['colorizer']['labelcolor'] != '') { 
-			$insert .= '<style>#rex-navi-logout { border-bottom: 10px solid ' . $REX['ADDON']['colorizer']['labelcolor'] . '; }</style>' . PHP_EOL;
+		if ($REX['ADDON']['colorizer']['settings']['labelcolor'] != '') { 
+			$insert .= '<style>#rex-navi-logout { border-bottom: 10px solid ' . $REX['ADDON']['colorizer']['settings']['labelcolor'] . '; }</style>' . PHP_EOL;
 		}
 
 		// colorpicker only for plugin page
@@ -25,7 +25,7 @@ class rex_colorizer_utils {
 		global $REX;
 
 		// the colorized favicon
-		$replace = '<link rel="shortcut icon" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/' . self::getColorizedFavIconName($REX['ADDON']['colorizer']['labelcolor']) . '" />' . PHP_EOL;
+		$replace = '<link rel="shortcut icon" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/' . self::getColorizedFavIconName($REX['ADDON']['colorizer']['settings']['labelcolor']) . '" />' . PHP_EOL;
 
 		$params['subject']  = str_replace('<link rel="shortcut icon" href="media/favicon.ico" />', $replace, $params['subject']);
 		

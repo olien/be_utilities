@@ -83,7 +83,7 @@ echo OOPlugin::getProperty('be_utilities', 'my_plugin', 'description');
 Hinweise
 --------
 
-* Getestet mit REDAXO 4.4, 4.5
+* Getestet mit REDAXO 4.4, 4.5, 4.6
 * AddOn-Ordner lautet: `be_utilities`
 
 Changelog

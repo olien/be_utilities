@@ -1,45 +1,16 @@
 <?php
 
-$info = '';
-$warning = '';
-$func = rex_request("func","string");
+$func = rex_request('func', 'string');
 
-if ($func == 'update')
-{
+if ($func == 'update') {
+	$thisPlugin = 'colorizer';
+	$settings = (array) rex_post('settings', 'array', array());
 
-	$labelcolor = rex_request("colorizer-labelcolor","string");
+	rex_backend_utilities::replaceSettings($thisPlugin, $settings);
+	rex_backend_utilities::updateSettingsFile($thisPlugin);
 
-	if ($labelcolor == '') {
-		$REX['ADDON']['colorizer']['labelcolor'] = '';
-	}
-	elseif (preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/', $labelcolor)) {
-		$REX['ADDON']['colorizer']['labelcolor'] = htmlspecialchars($labelcolor);
-	}
-	else {
-		$warning = $I18N->msg('colorizer_labelcolor_error');
-	}
-
-	$REX['ADDON']['colorizer']['colorize_favicon'] = 0;
-	
-	if(rex_request("colorize_favicon") == 1) {
-		$REX['ADDON']['colorizer']['colorize_favicon'] = 1;
-	}
-
-	$content = '
-$REX[\'ADDON\'][\'colorizer\'][\'labelcolor\'] = "'.$REX['ADDON']['colorizer']['labelcolor'].'";
-$REX[\'ADDON\'][\'colorizer\'][\'colorize_favicon\'] = '.$REX['ADDON']['colorizer']['colorize_favicon'].';
-	';
-
-	$config_file = $REX['INCLUDE_PATH'] .'/addons/be_utilities/plugins/colorizer/settings.inc.php';
-
-	if($warning == '' && rex_replace_dynamic_contents($config_file, $content) !== false) {
-		echo rex_info($I18N->msg("colorizer_config_updated"));
-	} else {
-		echo rex_warning($I18N->msg("colorizer_config_update_failed",$config_file));
-	} 
-
-	if ($REX['ADDON']['colorizer']['colorize_favicon'] && $REX['ADDON']['colorizer']['labelcolor'] != '') {
-		$hexColor = $REX['ADDON']['colorizer']['labelcolor'];
+	if ($REX['ADDON']['colorizer']['settings']['colorize_favicon'] && $REX['ADDON']['colorizer']['settings']['labelcolor'] != '') {
+		$hexColor = $REX['ADDON']['colorizer']['settings']['labelcolor'];
 		$pluginMediaPath = realpath($REX['HTDOCS_PATH'] . $REX['MEDIA_ADDON_DIR']) . DIRECTORY_SEPARATOR . 'be_utilities/plugins/colorizer/';
 
 		// generate favicon
@@ -49,10 +20,6 @@ $REX[\'ADDON\'][\'colorizer\'][\'colorize_favicon\'] = '.$REX['ADDON']['colorize
 		echo '<link rel="shortcut icon" href="../' . $REX['MEDIA_ADDON_DIR'] . '/be_utilities/plugins/colorizer/' . rex_colorizer_utils::getColorizedFavIconName($hexColor) . '" />' . PHP_EOL;
 		echo '<style>#rex-navi-logout { border-bottom: 10px solid ' . $hexColor . '; }</style>' . PHP_EOL;
 	}
-}
-
-if ($warning != '') {
-  echo rex_warning($warning);
 }
 
 echo '
@@ -71,15 +38,16 @@ echo '
 
                 <div class="rex-form-row">
                   <p class="rex-form-col-a rex-form-text">
-                    <label for="colorizer-labelcolor">'.$I18N->msg("colorizer_labelcolor").'</label>
-                    <input class="rex-form-text" type="text" id="colorizer-labelcolor" name="colorizer-labelcolor" value="'. $REX['ADDON']['colorizer']['labelcolor'].'" />
+                    <label for="labelcolor">'.$I18N->msg("colorizer_labelcolor").'</label>
+                    <input class="rex-form-text" type="text" id="labelcolor" name="settings[labelcolor]" value="'. $REX['ADDON']['colorizer']['settings']['labelcolor'].'" />
                   </p>
                 </div>
 
 				<div class="rex-form-row">
                   <p class="rex-form-col-a rex-form-checkbox">
-                    <input class="rex-form-checkbox" type="checkbox" id="colorize_favicon" name="colorize_favicon" value="1" ';
-                    if($REX['ADDON']['colorizer']['colorize_favicon']) echo 'checked="checked"';
+					<input type="hidden" name="settings[colorize_favicon]" value="0" />
+                    <input class="rex-form-checkbox" type="checkbox" id="colorize_favicon" name="settings[colorize_favicon]" value="1" ';
+                    if ($REX['ADDON']['colorizer']['settings']['colorize_favicon']) echo 'checked="checked"';
                     echo ' />
                     <label for="colorize_favicon">'.$I18N->msg("colorizer_colorize_favicon").'</label>
                   </p>
@@ -105,11 +73,11 @@ echo '
 jQuery(document).ready( function() {
 	jQuery('<img src="../<?php echo rex_colorizer_utils::getMediaAddonDir(); ?>/be_utilities/plugins/colorizer/colorpicker/images/colorpicker_background.png" />');
 
-	jQuery('#colorizer-labelcolor').keyup(function() {
+	jQuery('#labelcolor').keyup(function() {
 		updateColorPreview();
 	});
 
-	jQuery('#colorizer-labelcolor').ColorPicker({
+	jQuery('#labelcolor').ColorPicker({
 		onSubmit: function(hsb, hex, rgb, el) {
 			jQuery(el).ColorPickerHide();
 		},
@@ -117,7 +85,7 @@ jQuery(document).ready( function() {
 			jQuery(this).ColorPickerSetColor(this.value);
 		},
 		onChange: function (hsb, hex, rgb) {
-			jQuery('#colorizer-labelcolor').val('#' + hex);
+			jQuery('#labelcolor').val('#' + hex);
 			jQuery('#rex-navi-logout').css('border-color', '#' + hex);
 		}
 	})
@@ -127,6 +95,6 @@ jQuery(document).ready( function() {
 });
 
 function updateColorPreview() {
-	jQuery('#rex-navi-logout').css('border-color', jQuery('#colorizer-labelcolor').val());
+	jQuery('#rex-navi-logout').css('border-color', jQuery('#labelcolor').val());
 }
 </script>

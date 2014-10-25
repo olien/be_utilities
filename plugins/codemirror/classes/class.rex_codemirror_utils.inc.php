@@ -7,14 +7,14 @@ class rex_codemirror_utils {
 		// head stuff
 		$code = "\n" . '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/codemirror/redaxo.css" media="screen" />';
 		$code .= "\n" . '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/codemirror/vendor/codemirror.css" media="screen" />';
-		$code .= "\n" . '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/codemirror/vendor/theme/' . $REX['ADDON']['codemirror']['theme'] . '.css" media="screen" />';
+		$code .= "\n" . '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/codemirror/vendor/theme/' . $REX['ADDON']['codemirror']['settings']['theme'] . '.css" media="screen" />';
 
 		$params['subject'] = str_replace('</head>', $code . '</head>', $params['subject']);
 
 		// body stuff
 		$code = "\n" . '<script type="text/javascript">
 			var cmSettings = new Array;
-			cmSettings["theme"] = "' . $REX['ADDON']['codemirror']['theme'] . '";
+			cmSettings["theme"] = "' . $REX['ADDON']['codemirror']['settings']['theme'] . '";
 		</script>';
 
 		$code .= "\n" . '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/codemirror/vendor/codemirror.minimum.min.js"></script>';
