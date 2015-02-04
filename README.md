@@ -25,6 +25,7 @@ Mitgelieferte PlugIns
 * `jQuery UI` jQuery UI inkl. und Aristo Skin und jQuery Cookie Plugin für persistente Tabs.
 * `Rex Globals` Einige Tools damit Module und Templates auf globale PHP-Klassen und CSS-Styles zugreifen können.
 * `Update Date` Mini Toolkit um das Update Datum der Website zu ermitteln.
+* `Upload Precompressor` Verkleinert übergroße Bilder (JPG) nach Upload in den Medienpool auf eine festgelegte Maximalgröße.
 
 Weitere PlugIns
 ---------------
@@ -103,4 +104,5 @@ Credits
 * [gharlan](https://github.com/gharlan) für die Inspiration und den Code für das `articlename_sync` PlugIns
 * [joachimdoerr](https://github.com/joachimdoerr) für das `jquery_ui` PlugIn, das hier (in einer modifizierten Version) beigelegt wurde
 * [jdlx](https://github.com/jdlx) und die REDAXO-Community für die Hilfe bei der Namensfindung
+* [DECAF](https://github.com/DECAF) für das Upload Precompressor Plugin
 

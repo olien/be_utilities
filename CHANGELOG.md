@@ -1,6 +1,10 @@
 Backend Utilities - Changelog
 =============================
 
+### Version 1.5.0 DEV
+
+* Upload Precompressor Plugin hinzugefügt, thx@Dirk
+
 ### Version 1.4.0 - 25. Oktober 2014
 
 * Updatefähigkeit für REDAXO 4.6 hergestellt. Einstellungen werden jetzt im Data-Ordner gespeichert.
