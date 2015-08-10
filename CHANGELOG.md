@@ -1,7 +1,7 @@
 Backend Utilities - Changelog
 =============================
 
-### Version 1.5.1 DEV
+### Version 1.5.1 - 10. August 2015
 
 * Frontend Link: Englische Übersetzung hinzugefügt
 
