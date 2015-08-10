@@ -3,7 +3,7 @@ if ($REX['REDAXO']) {
 	// register addon
 	$REX['ADDON']['name']['be_utilities'] = 'Backend Utilities';
 	$REX['ADDON']['perm']['be_utilities'] = 'be_utilities[]';
-	$REX['ADDON']['version']['be_utilities'] = '1.5.0';
+	$REX['ADDON']['version']['be_utilities'] = '1.5.1 DEV';
 	$REX['ADDON']['author']['be_utilities'] = 'RexDude';
 	$REX['ADDON']['supportpage']['be_utilities'] = 'forum.redaxo.de';
 	$REX['PERM'][] = 'be_utilities[]';

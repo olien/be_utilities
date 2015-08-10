@@ -1,6 +1,10 @@
 Backend Utilities - Changelog
 =============================
 
+### Version 1.5.1 DEV
+
+* Frontend Link: Englische Übersetzung hinzugefügt
+
 ### Version 1.5.0 - 04. Februar 2015
 
 * Upload Precompressor Plugin hinzugefügt, thx@Dirk
