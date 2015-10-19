@@ -3,7 +3,7 @@ Backend Utilities - Changelog
 
 ### Version 1.6.0 DEV
 
-* Colorizer: Der vom Plugin genutzte Colorpicker ist nun im gesamten Backend über die CSS Klasse `rex-colorpicker` verfügbar
+* Colorizer: Der vom Plugin genutzte Colorpicker ist nun im gesamten Backend über die CSS Klasse `rex-colorpicker` verfügbar. Hinweis: Bei einem Update muss das Plugin reinstalliert werden!
 
 ### Version 1.5.1 - 10. August 2015
 
