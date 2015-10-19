@@ -10,11 +10,9 @@ class rex_colorizer_utils {
 			$insert .= '<style>#rex-navi-logout { border-bottom: 10px solid ' . $REX['ADDON']['colorizer']['settings']['labelcolor'] . '; }</style>' . PHP_EOL;
 		}
 
-		// colorpicker only for plugin page
-		if (rex_request('page') == 'be_utilities' && rex_request('subpage') == 'plugin.colorizer') {
-			$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/colorpicker/colorpicker.css" />' . PHP_EOL;
-			$insert .= '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/colorpicker/colorpicker.js"></script>' . PHP_EOL;
-		}
+		$insert .= '<link rel="stylesheet" type="text/css" href="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/colorpicker/colorpicker.css" />' . PHP_EOL;
+		$insert .= '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/colorpicker/colorpicker.js"></script>' . PHP_EOL;
+		$insert .= '<script type="text/javascript" src="../' . self::getMediaAddonDir() . '/be_utilities/plugins/colorizer/init.js"></script>' . PHP_EOL;
 
 		$insert .= '<!-- END colorizer -->';
 	
